@@ -81,7 +81,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://virtserver.swaggerhub.com/joeygiordano13/CookieBookAPI/1.0';
+    protected $host = 'http://206.189.193.36/API';
 
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default

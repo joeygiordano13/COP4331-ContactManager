@@ -1,6 +1,6 @@
 <?php
 /**
- * AddContact
+ * SearchContacts
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * AddContact Class Doc Comment
+ * SearchContacts Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AddContact implements ModelInterface, ArrayAccess
+class SearchContacts implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class AddContact implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AddContact';
+    protected static $swaggerModelName = 'SearchContacts';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,7 @@ class AddContact implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'userid' => 'int',
-        'contactid' => 'int',
-        'firstname' => 'string',
-        'lastname' => 'string',
-        'phonenumber' => 'string',
-        'email' => 'string'
+        'search' => 'string'
     ];
 
     /**
@@ -71,12 +66,7 @@ class AddContact implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'userid' => null,
-        'contactid' => null,
-        'firstname' => null,
-        'lastname' => null,
-        'phonenumber' => null,
-        'email' => null
+        'search' => null
     ];
 
     /**
@@ -106,12 +96,7 @@ class AddContact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'userid' => 'userid',
-        'contactid' => 'contactid',
-        'firstname' => 'firstname',
-        'lastname' => 'lastname',
-        'phonenumber' => 'phonenumber',
-        'email' => 'email'
+        'search' => 'search'
     ];
 
     /**
@@ -120,12 +105,7 @@ class AddContact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'userid' => 'setUserid',
-        'contactid' => 'setContactid',
-        'firstname' => 'setFirstname',
-        'lastname' => 'setLastname',
-        'phonenumber' => 'setPhonenumber',
-        'email' => 'setEmail'
+        'search' => 'setSearch'
     ];
 
     /**
@@ -134,12 +114,7 @@ class AddContact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'userid' => 'getUserid',
-        'contactid' => 'getContactid',
-        'firstname' => 'getFirstname',
-        'lastname' => 'getLastname',
-        'phonenumber' => 'getPhonenumber',
-        'email' => 'getEmail'
+        'search' => 'getSearch'
     ];
 
     /**
@@ -202,12 +177,7 @@ class AddContact implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['userid'] = isset($data['userid']) ? $data['userid'] : null;
-        $this->container['contactid'] = isset($data['contactid']) ? $data['contactid'] : null;
-        $this->container['firstname'] = isset($data['firstname']) ? $data['firstname'] : null;
-        $this->container['lastname'] = isset($data['lastname']) ? $data['lastname'] : null;
-        $this->container['phonenumber'] = isset($data['phonenumber']) ? $data['phonenumber'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['search'] = isset($data['search']) ? $data['search'] : null;
     }
 
     /**
@@ -219,23 +189,8 @@ class AddContact implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['userid'] === null) {
-            $invalidProperties[] = "'userid' can't be null";
-        }
-        if ($this->container['contactid'] === null) {
-            $invalidProperties[] = "'contactid' can't be null";
-        }
-        if ($this->container['firstname'] === null) {
-            $invalidProperties[] = "'firstname' can't be null";
-        }
-        if ($this->container['lastname'] === null) {
-            $invalidProperties[] = "'lastname' can't be null";
-        }
-        if ($this->container['phonenumber'] === null) {
-            $invalidProperties[] = "'phonenumber' can't be null";
-        }
-        if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
+        if ($this->container['search'] === null) {
+            $invalidProperties[] = "'search' can't be null";
         }
         return $invalidProperties;
     }
@@ -253,145 +208,25 @@ class AddContact implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets userid
-     *
-     * @return int
-     */
-    public function getUserid()
-    {
-        return $this->container['userid'];
-    }
-
-    /**
-     * Sets userid
-     *
-     * @param int $userid userid
-     *
-     * @return $this
-     */
-    public function setUserid($userid)
-    {
-        $this->container['userid'] = $userid;
-
-        return $this;
-    }
-
-    /**
-     * Gets contactid
-     *
-     * @return int
-     */
-    public function getContactid()
-    {
-        return $this->container['contactid'];
-    }
-
-    /**
-     * Sets contactid
-     *
-     * @param int $contactid contactid
-     *
-     * @return $this
-     */
-    public function setContactid($contactid)
-    {
-        $this->container['contactid'] = $contactid;
-
-        return $this;
-    }
-
-    /**
-     * Gets firstname
+     * Gets search
      *
      * @return string
      */
-    public function getFirstname()
+    public function getSearch()
     {
-        return $this->container['firstname'];
+        return $this->container['search'];
     }
 
     /**
-     * Sets firstname
+     * Sets search
      *
-     * @param string $firstname firstname
+     * @param string $search search
      *
      * @return $this
      */
-    public function setFirstname($firstname)
+    public function setSearch($search)
     {
-        $this->container['firstname'] = $firstname;
-
-        return $this;
-    }
-
-    /**
-     * Gets lastname
-     *
-     * @return string
-     */
-    public function getLastname()
-    {
-        return $this->container['lastname'];
-    }
-
-    /**
-     * Sets lastname
-     *
-     * @param string $lastname lastname
-     *
-     * @return $this
-     */
-    public function setLastname($lastname)
-    {
-        $this->container['lastname'] = $lastname;
-
-        return $this;
-    }
-
-    /**
-     * Gets phonenumber
-     *
-     * @return string
-     */
-    public function getPhonenumber()
-    {
-        return $this->container['phonenumber'];
-    }
-
-    /**
-     * Sets phonenumber
-     *
-     * @param string $phonenumber phonenumber
-     *
-     * @return $this
-     */
-    public function setPhonenumber($phonenumber)
-    {
-        $this->container['phonenumber'] = $phonenumber;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string $email email
-     *
-     * @return $this
-     */
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
+        $this->container['search'] = $search;
 
         return $this;
     }

@@ -80,4 +80,14 @@ class UsersApiTest extends \PHPUnit_Framework_TestCase
     public function testDoLogin()
     {
     }
+
+    /**
+     * Test case for doRegister
+     *
+     * Signs up a user..
+     *
+     */
+    public function testDoRegister()
+    {
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * AddContact
+ * Register
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * AddContact Class Doc Comment
+ * Register Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AddContact implements ModelInterface, ArrayAccess
+class Register implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class AddContact implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AddContact';
+    protected static $swaggerModelName = 'Register';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,8 @@ class AddContact implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'userid' => 'int',
-        'contactid' => 'int',
-        'firstname' => 'string',
-        'lastname' => 'string',
-        'phonenumber' => 'string',
-        'email' => 'string'
+        'username' => 'string',
+        'password' => 'string'
     ];
 
     /**
@@ -71,12 +67,8 @@ class AddContact implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'userid' => null,
-        'contactid' => null,
-        'firstname' => null,
-        'lastname' => null,
-        'phonenumber' => null,
-        'email' => null
+        'username' => null,
+        'password' => null
     ];
 
     /**
@@ -106,12 +98,8 @@ class AddContact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'userid' => 'userid',
-        'contactid' => 'contactid',
-        'firstname' => 'firstname',
-        'lastname' => 'lastname',
-        'phonenumber' => 'phonenumber',
-        'email' => 'email'
+        'username' => 'username',
+        'password' => 'password'
     ];
 
     /**
@@ -120,12 +108,8 @@ class AddContact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'userid' => 'setUserid',
-        'contactid' => 'setContactid',
-        'firstname' => 'setFirstname',
-        'lastname' => 'setLastname',
-        'phonenumber' => 'setPhonenumber',
-        'email' => 'setEmail'
+        'username' => 'setUsername',
+        'password' => 'setPassword'
     ];
 
     /**
@@ -134,12 +118,8 @@ class AddContact implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'userid' => 'getUserid',
-        'contactid' => 'getContactid',
-        'firstname' => 'getFirstname',
-        'lastname' => 'getLastname',
-        'phonenumber' => 'getPhonenumber',
-        'email' => 'getEmail'
+        'username' => 'getUsername',
+        'password' => 'getPassword'
     ];
 
     /**
@@ -202,12 +182,8 @@ class AddContact implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['userid'] = isset($data['userid']) ? $data['userid'] : null;
-        $this->container['contactid'] = isset($data['contactid']) ? $data['contactid'] : null;
-        $this->container['firstname'] = isset($data['firstname']) ? $data['firstname'] : null;
-        $this->container['lastname'] = isset($data['lastname']) ? $data['lastname'] : null;
-        $this->container['phonenumber'] = isset($data['phonenumber']) ? $data['phonenumber'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
+        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
     }
 
     /**
@@ -219,23 +195,11 @@ class AddContact implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['userid'] === null) {
-            $invalidProperties[] = "'userid' can't be null";
+        if ($this->container['username'] === null) {
+            $invalidProperties[] = "'username' can't be null";
         }
-        if ($this->container['contactid'] === null) {
-            $invalidProperties[] = "'contactid' can't be null";
-        }
-        if ($this->container['firstname'] === null) {
-            $invalidProperties[] = "'firstname' can't be null";
-        }
-        if ($this->container['lastname'] === null) {
-            $invalidProperties[] = "'lastname' can't be null";
-        }
-        if ($this->container['phonenumber'] === null) {
-            $invalidProperties[] = "'phonenumber' can't be null";
-        }
-        if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
+        if ($this->container['password'] === null) {
+            $invalidProperties[] = "'password' can't be null";
         }
         return $invalidProperties;
     }
@@ -253,145 +217,49 @@ class AddContact implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets userid
-     *
-     * @return int
-     */
-    public function getUserid()
-    {
-        return $this->container['userid'];
-    }
-
-    /**
-     * Sets userid
-     *
-     * @param int $userid userid
-     *
-     * @return $this
-     */
-    public function setUserid($userid)
-    {
-        $this->container['userid'] = $userid;
-
-        return $this;
-    }
-
-    /**
-     * Gets contactid
-     *
-     * @return int
-     */
-    public function getContactid()
-    {
-        return $this->container['contactid'];
-    }
-
-    /**
-     * Sets contactid
-     *
-     * @param int $contactid contactid
-     *
-     * @return $this
-     */
-    public function setContactid($contactid)
-    {
-        $this->container['contactid'] = $contactid;
-
-        return $this;
-    }
-
-    /**
-     * Gets firstname
+     * Gets username
      *
      * @return string
      */
-    public function getFirstname()
+    public function getUsername()
     {
-        return $this->container['firstname'];
+        return $this->container['username'];
     }
 
     /**
-     * Sets firstname
+     * Sets username
      *
-     * @param string $firstname firstname
+     * @param string $username username
      *
      * @return $this
      */
-    public function setFirstname($firstname)
+    public function setUsername($username)
     {
-        $this->container['firstname'] = $firstname;
+        $this->container['username'] = $username;
 
         return $this;
     }
 
     /**
-     * Gets lastname
+     * Gets password
      *
      * @return string
      */
-    public function getLastname()
+    public function getPassword()
     {
-        return $this->container['lastname'];
+        return $this->container['password'];
     }
 
     /**
-     * Sets lastname
+     * Sets password
      *
-     * @param string $lastname lastname
+     * @param string $password password
      *
      * @return $this
      */
-    public function setLastname($lastname)
+    public function setPassword($password)
     {
-        $this->container['lastname'] = $lastname;
-
-        return $this;
-    }
-
-    /**
-     * Gets phonenumber
-     *
-     * @return string
-     */
-    public function getPhonenumber()
-    {
-        return $this->container['phonenumber'];
-    }
-
-    /**
-     * Sets phonenumber
-     *
-     * @param string $phonenumber phonenumber
-     *
-     * @return $this
-     */
-    public function setPhonenumber($phonenumber)
-    {
-        $this->container['phonenumber'] = $phonenumber;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string $email email
-     *
-     * @return $this
-     */
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
+        $this->container['password'] = $password;
 
         return $this;
     }

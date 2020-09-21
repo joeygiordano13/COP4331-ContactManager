@@ -309,36 +309,36 @@ class ContactsApi
     }
 
     /**
-     * Operation searchByAll
+     * Operation deleteContact
      *
-     * Searches for contacts with any attribute matching search criterion.
+     * Contact deletion.
      *
-     * @param  \Swagger\Client\Model\SearchByAll $search_item Search by all attributes. (optional)
+     * @param  \Swagger\Client\Model\DeleteContact $delete_item Delete by userid and contactid. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function searchByAll($search_item = null)
+    public function deleteContact($delete_item = null)
     {
-        $this->searchByAllWithHttpInfo($search_item);
+        $this->deleteContactWithHttpInfo($delete_item);
     }
 
     /**
-     * Operation searchByAllWithHttpInfo
+     * Operation deleteContactWithHttpInfo
      *
-     * Searches for contacts with any attribute matching search criterion.
+     * Contact deletion.
      *
-     * @param  \Swagger\Client\Model\SearchByAll $search_item Search by all attributes. (optional)
+     * @param  \Swagger\Client\Model\DeleteContact $delete_item Delete by userid and contactid. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchByAllWithHttpInfo($search_item = null)
+    public function deleteContactWithHttpInfo($delete_item = null)
     {
         $returnType = '';
-        $request = $this->searchByAllRequest($search_item);
+        $request = $this->deleteContactRequest($delete_item);
 
         try {
             $options = $this->createHttpClientOption();
@@ -378,18 +378,18 @@ class ContactsApi
     }
 
     /**
-     * Operation searchByAllAsync
+     * Operation deleteContactAsync
      *
-     * Searches for contacts with any attribute matching search criterion.
+     * Contact deletion.
      *
-     * @param  \Swagger\Client\Model\SearchByAll $search_item Search by all attributes. (optional)
+     * @param  \Swagger\Client\Model\DeleteContact $delete_item Delete by userid and contactid. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByAllAsync($search_item = null)
+    public function deleteContactAsync($delete_item = null)
     {
-        return $this->searchByAllAsyncWithHttpInfo($search_item)
+        return $this->deleteContactAsyncWithHttpInfo($delete_item)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -398,19 +398,19 @@ class ContactsApi
     }
 
     /**
-     * Operation searchByAllAsyncWithHttpInfo
+     * Operation deleteContactAsyncWithHttpInfo
      *
-     * Searches for contacts with any attribute matching search criterion.
+     * Contact deletion.
      *
-     * @param  \Swagger\Client\Model\SearchByAll $search_item Search by all attributes. (optional)
+     * @param  \Swagger\Client\Model\DeleteContact $delete_item Delete by userid and contactid. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchByAllAsyncWithHttpInfo($search_item = null)
+    public function deleteContactAsyncWithHttpInfo($delete_item = null)
     {
         $returnType = '';
-        $request = $this->searchByAllRequest($search_item);
+        $request = $this->deleteContactRequest($delete_item);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -436,17 +436,17 @@ class ContactsApi
     }
 
     /**
-     * Create request for operation 'searchByAll'
+     * Create request for operation 'deleteContact'
      *
-     * @param  \Swagger\Client\Model\SearchByAll $search_item Search by all attributes. (optional)
+     * @param  \Swagger\Client\Model\DeleteContact $delete_item Delete by userid and contactid. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function searchByAllRequest($search_item = null)
+    protected function deleteContactRequest($delete_item = null)
     {
 
-        $resourcePath = '/SearchByAll.php';
+        $resourcePath = '/DeleteContact.php';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -457,8 +457,229 @@ class ContactsApi
 
         // body params
         $_tempBody = null;
-        if (isset($search_item)) {
-            $_tempBody = $search_item;
+        if (isset($delete_item)) {
+            $_tempBody = $delete_item;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation editContact
+     *
+     * Update contact information.
+     *
+     * @param  \Swagger\Client\Model\EditContact $edit_item Edit information associated with a certain userid and contactid. (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function editContact($edit_item = null)
+    {
+        $this->editContactWithHttpInfo($edit_item);
+    }
+
+    /**
+     * Operation editContactWithHttpInfo
+     *
+     * Update contact information.
+     *
+     * @param  \Swagger\Client\Model\EditContact $edit_item Edit information associated with a certain userid and contactid. (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function editContactWithHttpInfo($edit_item = null)
+    {
+        $returnType = '';
+        $request = $this->editContactRequest($edit_item);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation editContactAsync
+     *
+     * Update contact information.
+     *
+     * @param  \Swagger\Client\Model\EditContact $edit_item Edit information associated with a certain userid and contactid. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function editContactAsync($edit_item = null)
+    {
+        return $this->editContactAsyncWithHttpInfo($edit_item)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation editContactAsyncWithHttpInfo
+     *
+     * Update contact information.
+     *
+     * @param  \Swagger\Client\Model\EditContact $edit_item Edit information associated with a certain userid and contactid. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function editContactAsyncWithHttpInfo($edit_item = null)
+    {
+        $returnType = '';
+        $request = $this->editContactRequest($edit_item);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'editContact'
+     *
+     * @param  \Swagger\Client\Model\EditContact $edit_item Edit information associated with a certain userid and contactid. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function editContactRequest($edit_item = null)
+    {
+
+        $resourcePath = '/EditContact.php';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($edit_item)) {
+            $_tempBody = $edit_item;
         }
 
         if ($multipart) {
@@ -532,9 +753,9 @@ class ContactsApi
     /**
      * Operation searchContact
      *
-     * Searches for contacts with first or last name matching search criterion.
+     * Searches for contacts with first or last name or email matching search criterion.
      *
-     * @param  \Swagger\Client\Model\SearchContactsByName $search_item Search by name. (optional)
+     * @param  \Swagger\Client\Model\SearchContacts $search_item Search for a contact. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -548,9 +769,9 @@ class ContactsApi
     /**
      * Operation searchContactWithHttpInfo
      *
-     * Searches for contacts with first or last name matching search criterion.
+     * Searches for contacts with first or last name or email matching search criterion.
      *
-     * @param  \Swagger\Client\Model\SearchContactsByName $search_item Search by name. (optional)
+     * @param  \Swagger\Client\Model\SearchContacts $search_item Search for a contact. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -601,9 +822,9 @@ class ContactsApi
     /**
      * Operation searchContactAsync
      *
-     * Searches for contacts with first or last name matching search criterion.
+     * Searches for contacts with first or last name or email matching search criterion.
      *
-     * @param  \Swagger\Client\Model\SearchContactsByName $search_item Search by name. (optional)
+     * @param  \Swagger\Client\Model\SearchContacts $search_item Search for a contact. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -621,9 +842,9 @@ class ContactsApi
     /**
      * Operation searchContactAsyncWithHttpInfo
      *
-     * Searches for contacts with first or last name matching search criterion.
+     * Searches for contacts with first or last name or email matching search criterion.
      *
-     * @param  \Swagger\Client\Model\SearchContactsByName $search_item Search by name. (optional)
+     * @param  \Swagger\Client\Model\SearchContacts $search_item Search for a contact. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -659,7 +880,7 @@ class ContactsApi
     /**
      * Create request for operation 'searchContact'
      *
-     * @param  \Swagger\Client\Model\SearchContactsByName $search_item Search by name. (optional)
+     * @param  \Swagger\Client\Model\SearchContacts $search_item Search for a contact. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -667,7 +888,7 @@ class ContactsApi
     protected function searchContactRequest($search_item = null)
     {
 
-        $resourcePath = '/SearchContactsByName.php';
+        $resourcePath = '/SearchContacts.php';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

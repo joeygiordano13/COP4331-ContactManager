@@ -1,6 +1,6 @@
 <?php
 /**
- * AddContact
+ * EditContact
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * AddContact Class Doc Comment
+ * EditContact Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AddContact implements ModelInterface, ArrayAccess
+class EditContact implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class AddContact implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AddContact';
+    protected static $swaggerModelName = 'EditContact';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,11 +58,7 @@ class AddContact implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'userid' => 'int',
-        'contactid' => 'int',
-        'firstname' => 'string',
-        'lastname' => 'string',
-        'phonenumber' => 'string',
-        'email' => 'string'
+        'contactid' => 'int'
     ];
 
     /**
@@ -72,11 +68,7 @@ class AddContact implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'userid' => null,
-        'contactid' => null,
-        'firstname' => null,
-        'lastname' => null,
-        'phonenumber' => null,
-        'email' => null
+        'contactid' => null
     ];
 
     /**
@@ -107,11 +99,7 @@ class AddContact implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'userid' => 'userid',
-        'contactid' => 'contactid',
-        'firstname' => 'firstname',
-        'lastname' => 'lastname',
-        'phonenumber' => 'phonenumber',
-        'email' => 'email'
+        'contactid' => 'contactid'
     ];
 
     /**
@@ -121,11 +109,7 @@ class AddContact implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'userid' => 'setUserid',
-        'contactid' => 'setContactid',
-        'firstname' => 'setFirstname',
-        'lastname' => 'setLastname',
-        'phonenumber' => 'setPhonenumber',
-        'email' => 'setEmail'
+        'contactid' => 'setContactid'
     ];
 
     /**
@@ -135,11 +119,7 @@ class AddContact implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'userid' => 'getUserid',
-        'contactid' => 'getContactid',
-        'firstname' => 'getFirstname',
-        'lastname' => 'getLastname',
-        'phonenumber' => 'getPhonenumber',
-        'email' => 'getEmail'
+        'contactid' => 'getContactid'
     ];
 
     /**
@@ -204,10 +184,6 @@ class AddContact implements ModelInterface, ArrayAccess
     {
         $this->container['userid'] = isset($data['userid']) ? $data['userid'] : null;
         $this->container['contactid'] = isset($data['contactid']) ? $data['contactid'] : null;
-        $this->container['firstname'] = isset($data['firstname']) ? $data['firstname'] : null;
-        $this->container['lastname'] = isset($data['lastname']) ? $data['lastname'] : null;
-        $this->container['phonenumber'] = isset($data['phonenumber']) ? $data['phonenumber'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
     }
 
     /**
@@ -224,18 +200,6 @@ class AddContact implements ModelInterface, ArrayAccess
         }
         if ($this->container['contactid'] === null) {
             $invalidProperties[] = "'contactid' can't be null";
-        }
-        if ($this->container['firstname'] === null) {
-            $invalidProperties[] = "'firstname' can't be null";
-        }
-        if ($this->container['lastname'] === null) {
-            $invalidProperties[] = "'lastname' can't be null";
-        }
-        if ($this->container['phonenumber'] === null) {
-            $invalidProperties[] = "'phonenumber' can't be null";
-        }
-        if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
         }
         return $invalidProperties;
     }
@@ -296,102 +260,6 @@ class AddContact implements ModelInterface, ArrayAccess
     public function setContactid($contactid)
     {
         $this->container['contactid'] = $contactid;
-
-        return $this;
-    }
-
-    /**
-     * Gets firstname
-     *
-     * @return string
-     */
-    public function getFirstname()
-    {
-        return $this->container['firstname'];
-    }
-
-    /**
-     * Sets firstname
-     *
-     * @param string $firstname firstname
-     *
-     * @return $this
-     */
-    public function setFirstname($firstname)
-    {
-        $this->container['firstname'] = $firstname;
-
-        return $this;
-    }
-
-    /**
-     * Gets lastname
-     *
-     * @return string
-     */
-    public function getLastname()
-    {
-        return $this->container['lastname'];
-    }
-
-    /**
-     * Sets lastname
-     *
-     * @param string $lastname lastname
-     *
-     * @return $this
-     */
-    public function setLastname($lastname)
-    {
-        $this->container['lastname'] = $lastname;
-
-        return $this;
-    }
-
-    /**
-     * Gets phonenumber
-     *
-     * @return string
-     */
-    public function getPhonenumber()
-    {
-        return $this->container['phonenumber'];
-    }
-
-    /**
-     * Sets phonenumber
-     *
-     * @param string $phonenumber phonenumber
-     *
-     * @return $this
-     */
-    public function setPhonenumber($phonenumber)
-    {
-        $this->container['phonenumber'] = $phonenumber;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string $email email
-     *
-     * @return $this
-     */
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * AddContactTest
+ * SearchContactsTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * AddContactTest Class Doc Comment
+ * SearchContactsTest Class Doc Comment
  *
  * @category    Class
- * @description AddContact
+ * @description SearchContacts
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class AddContactTest extends \PHPUnit_Framework_TestCase
+class SearchContactsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,51 +70,16 @@ class AddContactTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "AddContact"
+     * Test "SearchContacts"
      */
-    public function testAddContact()
+    public function testSearchContacts()
     {
     }
 
     /**
-     * Test attribute "userid"
+     * Test attribute "search"
      */
-    public function testPropertyUserid()
-    {
-    }
-
-    /**
-     * Test attribute "contactid"
-     */
-    public function testPropertyContactid()
-    {
-    }
-
-    /**
-     * Test attribute "firstname"
-     */
-    public function testPropertyFirstname()
-    {
-    }
-
-    /**
-     * Test attribute "lastname"
-     */
-    public function testPropertyLastname()
-    {
-    }
-
-    /**
-     * Test attribute "phonenumber"
-     */
-    public function testPropertyPhonenumber()
-    {
-    }
-
-    /**
-     * Test attribute "email"
-     */
-    public function testPropertyEmail()
+    public function testPropertySearch()
     {
     }
 }

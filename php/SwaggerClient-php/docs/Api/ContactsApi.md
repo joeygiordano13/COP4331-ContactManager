@@ -1,12 +1,13 @@
 # Swagger\Client\ContactsApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/joeygiordano13/CookieBookAPI/1.0*
+All URIs are relative to *http://206.189.193.36/API*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addContact**](ContactsApi.md#addContact) | **POST** /AddContact.php | Adds a contact to table.
-[**searchByAll**](ContactsApi.md#searchByAll) | **POST** /SearchByAll.php | Searches for contacts with any attribute matching search criterion.
-[**searchContact**](ContactsApi.md#searchContact) | **POST** /SearchContactsByName.php | Searches for contacts with first or last name matching search criterion.
+[**deleteContact**](ContactsApi.md#deleteContact) | **POST** /DeleteContact.php | Contact deletion.
+[**editContact**](ContactsApi.md#editContact) | **POST** /EditContact.php | Update contact information.
+[**searchContact**](ContactsApi.md#searchContact) | **POST** /SearchContacts.php | Searches for contacts with first or last name or email matching search criterion.
 
 
 # **addContact**
@@ -57,12 +58,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **searchByAll**
-> searchByAll($search_item)
+# **deleteContact**
+> deleteContact($delete_item)
 
-Searches for contacts with any attribute matching search criterion.
+Contact deletion.
 
-Searches for a contact(s).
+Deletes a contact.
 
 ### Example
 ```php
@@ -74,12 +75,12 @@ $apiInstance = new Swagger\Client\Api\ContactsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$search_item = new \Swagger\Client\Model\SearchByAll(); // \Swagger\Client\Model\SearchByAll | Search by all attributes.
+$delete_item = new \Swagger\Client\Model\DeleteContact(); // \Swagger\Client\Model\DeleteContact | Delete by userid and contactid.
 
 try {
-    $apiInstance->searchByAll($search_item);
+    $apiInstance->deleteContact($delete_item);
 } catch (Exception $e) {
-    echo 'Exception when calling ContactsApi->searchByAll: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ContactsApi->deleteContact: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -88,7 +89,55 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **search_item** | [**\Swagger\Client\Model\SearchByAll**](../Model/SearchByAll.md)| Search by all attributes. | [optional]
+ **delete_item** | [**\Swagger\Client\Model\DeleteContact**](../Model/DeleteContact.md)| Delete by userid and contactid. | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **editContact**
+> editContact($edit_item)
+
+Update contact information.
+
+Update contact name, email, and phonenumber.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\ContactsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$edit_item = new \Swagger\Client\Model\EditContact(); // \Swagger\Client\Model\EditContact | Edit information associated with a certain userid and contactid.
+
+try {
+    $apiInstance->editContact($edit_item);
+} catch (Exception $e) {
+    echo 'Exception when calling ContactsApi->editContact: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **edit_item** | [**\Swagger\Client\Model\EditContact**](../Model/EditContact.md)| Edit information associated with a certain userid and contactid. | [optional]
 
 ### Return type
 
@@ -108,7 +157,7 @@ No authorization required
 # **searchContact**
 > searchContact($search_item)
 
-Searches for contacts with first or last name matching search criterion.
+Searches for contacts with first or last name or email matching search criterion.
 
 Searches for a contact(s).
 
@@ -122,7 +171,7 @@ $apiInstance = new Swagger\Client\Api\ContactsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$search_item = new \Swagger\Client\Model\SearchContactsByName(); // \Swagger\Client\Model\SearchContactsByName | Search by name.
+$search_item = new \Swagger\Client\Model\SearchContacts(); // \Swagger\Client\Model\SearchContacts | Search for a contact.
 
 try {
     $apiInstance->searchContact($search_item);
@@ -136,7 +185,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **search_item** | [**\Swagger\Client\Model\SearchContactsByName**](../Model/SearchContactsByName.md)| Search by name. | [optional]
+ **search_item** | [**\Swagger\Client\Model\SearchContacts**](../Model/SearchContacts.md)| Search for a contact. | [optional]
 
 ### Return type
 

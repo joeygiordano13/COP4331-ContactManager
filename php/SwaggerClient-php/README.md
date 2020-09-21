@@ -74,22 +74,26 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://virtserver.swaggerhub.com/joeygiordano13/CookieBookAPI/1.0*
+All URIs are relative to *http://206.189.193.36/API*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *ContactsApi* | [**addContact**](docs/Api/ContactsApi.md#addcontact) | **POST** /AddContact.php | Adds a contact to table.
-*ContactsApi* | [**searchByAll**](docs/Api/ContactsApi.md#searchbyall) | **POST** /SearchByAll.php | Searches for contacts with any attribute matching search criterion.
-*ContactsApi* | [**searchContact**](docs/Api/ContactsApi.md#searchcontact) | **POST** /SearchContactsByName.php | Searches for contacts with first or last name matching search criterion.
+*ContactsApi* | [**deleteContact**](docs/Api/ContactsApi.md#deletecontact) | **POST** /DeleteContact.php | Contact deletion.
+*ContactsApi* | [**editContact**](docs/Api/ContactsApi.md#editcontact) | **POST** /EditContact.php | Update contact information.
+*ContactsApi* | [**searchContact**](docs/Api/ContactsApi.md#searchcontact) | **POST** /SearchContacts.php | Searches for contacts with first or last name or email matching search criterion.
 *UsersApi* | [**doLogin**](docs/Api/UsersApi.md#dologin) | **POST** /Login.php | Logs in as a user for contact manager.
+*UsersApi* | [**doRegister**](docs/Api/UsersApi.md#doregister) | **POST** /Register.php | Signs up a user.
 
 
 ## Documentation For Models
 
  - [AddContact](docs/Model/AddContact.md)
+ - [DeleteContact](docs/Model/DeleteContact.md)
+ - [EditContact](docs/Model/EditContact.md)
  - [Login](docs/Model/Login.md)
- - [SearchByAll](docs/Model/SearchByAll.md)
- - [SearchContactsByName](docs/Model/SearchContactsByName.md)
+ - [Register](docs/Model/Register.md)
+ - [SearchContacts](docs/Model/SearchContacts.md)
 
 
 ## Documentation For Authorization
