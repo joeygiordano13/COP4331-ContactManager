@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**addContact**](ContactsApi.md#addContact) | **POST** /AddContact.php | Adds a contact to table.
 [**deleteContact**](ContactsApi.md#deleteContact) | **POST** /DeleteContact.php | Contact deletion.
 [**editContact**](ContactsApi.md#editContact) | **POST** /EditContact.php | Update contact information.
-[**searchContact**](ContactsApi.md#searchContact) | **POST** /SearchContacts.php | Searches for contacts with first or last name or email matching search criterion.
+[**searchContact**](ContactsApi.md#searchContact) | **POST** /SearchContacts.php | Searches for contacts with first or last name or email matching search criterion, for a given user.
 
 
 # **addContact**
@@ -157,7 +157,7 @@ No authorization required
 # **searchContact**
 > searchContact($search_item)
 
-Searches for contacts with first or last name or email matching search criterion.
+Searches for contacts with first or last name or email matching search criterion, for a given user.
 
 Searches for a contact(s).
 

@@ -57,6 +57,7 @@ class SearchContacts implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'userid' => 'int',
         'search' => 'string'
     ];
 
@@ -66,6 +67,7 @@ class SearchContacts implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'userid' => null,
         'search' => null
     ];
 
@@ -96,6 +98,7 @@ class SearchContacts implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'userid' => 'userid',
         'search' => 'search'
     ];
 
@@ -105,6 +108,7 @@ class SearchContacts implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'userid' => 'setUserid',
         'search' => 'setSearch'
     ];
 
@@ -114,6 +118,7 @@ class SearchContacts implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'userid' => 'getUserid',
         'search' => 'getSearch'
     ];
 
@@ -177,6 +182,7 @@ class SearchContacts implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['userid'] = isset($data['userid']) ? $data['userid'] : null;
         $this->container['search'] = isset($data['search']) ? $data['search'] : null;
     }
 
@@ -189,6 +195,9 @@ class SearchContacts implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['userid'] === null) {
+            $invalidProperties[] = "'userid' can't be null";
+        }
         if ($this->container['search'] === null) {
             $invalidProperties[] = "'search' can't be null";
         }
@@ -206,6 +215,30 @@ class SearchContacts implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets userid
+     *
+     * @return int
+     */
+    public function getUserid()
+    {
+        return $this->container['userid'];
+    }
+
+    /**
+     * Sets userid
+     *
+     * @param int $userid userid
+     *
+     * @return $this
+     */
+    public function setUserid($userid)
+    {
+        $this->container['userid'] = $userid;
+
+        return $this;
+    }
 
     /**
      * Gets search

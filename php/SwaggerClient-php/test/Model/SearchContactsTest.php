@@ -77,6 +77,13 @@ class SearchContactsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "userid"
+     */
+    public function testPropertyUserid()
+    {
+    }
+
+    /**
      * Test attribute "search"
      */
     public function testPropertySearch()

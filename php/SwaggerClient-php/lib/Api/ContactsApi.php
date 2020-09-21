@@ -753,7 +753,7 @@ class ContactsApi
     /**
      * Operation searchContact
      *
-     * Searches for contacts with first or last name or email matching search criterion.
+     * Searches for contacts with first or last name or email matching search criterion, for a given user.
      *
      * @param  \Swagger\Client\Model\SearchContacts $search_item Search for a contact. (optional)
      *
@@ -769,7 +769,7 @@ class ContactsApi
     /**
      * Operation searchContactWithHttpInfo
      *
-     * Searches for contacts with first or last name or email matching search criterion.
+     * Searches for contacts with first or last name or email matching search criterion, for a given user.
      *
      * @param  \Swagger\Client\Model\SearchContacts $search_item Search for a contact. (optional)
      *
@@ -822,7 +822,7 @@ class ContactsApi
     /**
      * Operation searchContactAsync
      *
-     * Searches for contacts with first or last name or email matching search criterion.
+     * Searches for contacts with first or last name or email matching search criterion, for a given user.
      *
      * @param  \Swagger\Client\Model\SearchContacts $search_item Search for a contact. (optional)
      *
@@ -842,7 +842,7 @@ class ContactsApi
     /**
      * Operation searchContactAsyncWithHttpInfo
      *
-     * Searches for contacts with first or last name or email matching search criterion.
+     * Searches for contacts with first or last name or email matching search criterion, for a given user.
      *
      * @param  \Swagger\Client\Model\SearchContacts $search_item Search for a contact. (optional)
      *

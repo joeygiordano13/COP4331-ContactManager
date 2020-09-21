@@ -104,7 +104,7 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for searchContact
      *
-     * Searches for contacts with first or last name or email matching search criterion..
+     * Searches for contacts with first or last name or email matching search criterion, for a given user..
      *
      */
     public function testSearchContact()

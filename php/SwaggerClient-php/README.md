@@ -81,7 +81,7 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**addContact**](docs/Api/ContactsApi.md#addcontact) | **POST** /AddContact.php | Adds a contact to table.
 *ContactsApi* | [**deleteContact**](docs/Api/ContactsApi.md#deletecontact) | **POST** /DeleteContact.php | Contact deletion.
 *ContactsApi* | [**editContact**](docs/Api/ContactsApi.md#editcontact) | **POST** /EditContact.php | Update contact information.
-*ContactsApi* | [**searchContact**](docs/Api/ContactsApi.md#searchcontact) | **POST** /SearchContacts.php | Searches for contacts with first or last name or email matching search criterion.
+*ContactsApi* | [**searchContact**](docs/Api/ContactsApi.md#searchcontact) | **POST** /SearchContacts.php | Searches for contacts with first or last name or email matching search criterion, for a given user.
 *UsersApi* | [**doLogin**](docs/Api/UsersApi.md#dologin) | **POST** /Login.php | Logs in as a user for contact manager.
 *UsersApi* | [**doRegister**](docs/Api/UsersApi.md#doregister) | **POST** /Register.php | Signs up a user.
 
