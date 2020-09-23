@@ -58,7 +58,6 @@ class AddContact implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'userid' => 'int',
-        'contactid' => 'int',
         'firstname' => 'string',
         'lastname' => 'string',
         'phonenumber' => 'string',
@@ -72,7 +71,6 @@ class AddContact implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'userid' => null,
-        'contactid' => null,
         'firstname' => null,
         'lastname' => null,
         'phonenumber' => null,
@@ -107,7 +105,6 @@ class AddContact implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'userid' => 'userid',
-        'contactid' => 'contactid',
         'firstname' => 'firstname',
         'lastname' => 'lastname',
         'phonenumber' => 'phonenumber',
@@ -121,7 +118,6 @@ class AddContact implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'userid' => 'setUserid',
-        'contactid' => 'setContactid',
         'firstname' => 'setFirstname',
         'lastname' => 'setLastname',
         'phonenumber' => 'setPhonenumber',
@@ -135,7 +131,6 @@ class AddContact implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'userid' => 'getUserid',
-        'contactid' => 'getContactid',
         'firstname' => 'getFirstname',
         'lastname' => 'getLastname',
         'phonenumber' => 'getPhonenumber',
@@ -203,7 +198,6 @@ class AddContact implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['userid'] = isset($data['userid']) ? $data['userid'] : null;
-        $this->container['contactid'] = isset($data['contactid']) ? $data['contactid'] : null;
         $this->container['firstname'] = isset($data['firstname']) ? $data['firstname'] : null;
         $this->container['lastname'] = isset($data['lastname']) ? $data['lastname'] : null;
         $this->container['phonenumber'] = isset($data['phonenumber']) ? $data['phonenumber'] : null;
@@ -221,9 +215,6 @@ class AddContact implements ModelInterface, ArrayAccess
 
         if ($this->container['userid'] === null) {
             $invalidProperties[] = "'userid' can't be null";
-        }
-        if ($this->container['contactid'] === null) {
-            $invalidProperties[] = "'contactid' can't be null";
         }
         if ($this->container['firstname'] === null) {
             $invalidProperties[] = "'firstname' can't be null";
@@ -272,30 +263,6 @@ class AddContact implements ModelInterface, ArrayAccess
     public function setUserid($userid)
     {
         $this->container['userid'] = $userid;
-
-        return $this;
-    }
-
-    /**
-     * Gets contactid
-     *
-     * @return int
-     */
-    public function getContactid()
-    {
-        return $this->container['contactid'];
-    }
-
-    /**
-     * Sets contactid
-     *
-     * @param int $contactid contactid
-     *
-     * @return $this
-     */
-    public function setContactid($contactid)
-    {
-        $this->container['contactid'] = $contactid;
 
         return $this;
     }

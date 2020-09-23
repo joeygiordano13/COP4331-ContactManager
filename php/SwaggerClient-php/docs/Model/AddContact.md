@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **userid** | **int** |  | 
-**contactid** | **int** |  | 
 **firstname** | **string** |  | 
 **lastname** | **string** |  | 
 **phonenumber** | **string** |  | 

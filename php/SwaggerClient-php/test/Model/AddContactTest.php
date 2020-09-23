@@ -84,13 +84,6 @@ class AddContactTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "contactid"
-     */
-    public function testPropertyContactid()
-    {
-    }
-
-    /**
      * Test attribute "firstname"
      */
     public function testPropertyFirstname()
