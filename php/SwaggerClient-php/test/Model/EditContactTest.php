@@ -89,4 +89,32 @@ class EditContactTest extends \PHPUnit_Framework_TestCase
     public function testPropertyContactid()
     {
     }
+
+    /**
+     * Test attribute "firstname"
+     */
+    public function testPropertyFirstname()
+    {
+    }
+
+    /**
+     * Test attribute "lastname"
+     */
+    public function testPropertyLastname()
+    {
+    }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+    }
+
+    /**
+     * Test attribute "phonenumber"
+     */
+    public function testPropertyPhonenumber()
+    {
+    }
 }

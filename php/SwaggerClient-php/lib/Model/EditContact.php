@@ -58,7 +58,11 @@ class EditContact implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'userid' => 'int',
-        'contactid' => 'int'
+        'contactid' => 'int',
+        'firstname' => 'string',
+        'lastname' => 'string',
+        'email' => 'string',
+        'phonenumber' => 'string'
     ];
 
     /**
@@ -68,7 +72,11 @@ class EditContact implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'userid' => null,
-        'contactid' => null
+        'contactid' => null,
+        'firstname' => null,
+        'lastname' => null,
+        'email' => null,
+        'phonenumber' => null
     ];
 
     /**
@@ -99,7 +107,11 @@ class EditContact implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'userid' => 'userid',
-        'contactid' => 'contactid'
+        'contactid' => 'contactid',
+        'firstname' => 'firstname',
+        'lastname' => 'lastname',
+        'email' => 'email',
+        'phonenumber' => 'phonenumber'
     ];
 
     /**
@@ -109,7 +121,11 @@ class EditContact implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'userid' => 'setUserid',
-        'contactid' => 'setContactid'
+        'contactid' => 'setContactid',
+        'firstname' => 'setFirstname',
+        'lastname' => 'setLastname',
+        'email' => 'setEmail',
+        'phonenumber' => 'setPhonenumber'
     ];
 
     /**
@@ -119,7 +135,11 @@ class EditContact implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'userid' => 'getUserid',
-        'contactid' => 'getContactid'
+        'contactid' => 'getContactid',
+        'firstname' => 'getFirstname',
+        'lastname' => 'getLastname',
+        'email' => 'getEmail',
+        'phonenumber' => 'getPhonenumber'
     ];
 
     /**
@@ -184,6 +204,10 @@ class EditContact implements ModelInterface, ArrayAccess
     {
         $this->container['userid'] = isset($data['userid']) ? $data['userid'] : null;
         $this->container['contactid'] = isset($data['contactid']) ? $data['contactid'] : null;
+        $this->container['firstname'] = isset($data['firstname']) ? $data['firstname'] : null;
+        $this->container['lastname'] = isset($data['lastname']) ? $data['lastname'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['phonenumber'] = isset($data['phonenumber']) ? $data['phonenumber'] : null;
     }
 
     /**
@@ -200,6 +224,18 @@ class EditContact implements ModelInterface, ArrayAccess
         }
         if ($this->container['contactid'] === null) {
             $invalidProperties[] = "'contactid' can't be null";
+        }
+        if ($this->container['firstname'] === null) {
+            $invalidProperties[] = "'firstname' can't be null";
+        }
+        if ($this->container['lastname'] === null) {
+            $invalidProperties[] = "'lastname' can't be null";
+        }
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
+        }
+        if ($this->container['phonenumber'] === null) {
+            $invalidProperties[] = "'phonenumber' can't be null";
         }
         return $invalidProperties;
     }
@@ -260,6 +296,102 @@ class EditContact implements ModelInterface, ArrayAccess
     public function setContactid($contactid)
     {
         $this->container['contactid'] = $contactid;
+
+        return $this;
+    }
+
+    /**
+     * Gets firstname
+     *
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->container['firstname'];
+    }
+
+    /**
+     * Sets firstname
+     *
+     * @param string $firstname firstname
+     *
+     * @return $this
+     */
+    public function setFirstname($firstname)
+    {
+        $this->container['firstname'] = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastname
+     *
+     * @return string
+     */
+    public function getLastname()
+    {
+        return $this->container['lastname'];
+    }
+
+    /**
+     * Sets lastname
+     *
+     * @param string $lastname lastname
+     *
+     * @return $this
+     */
+    public function setLastname($lastname)
+    {
+        $this->container['lastname'] = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string $email email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets phonenumber
+     *
+     * @return string
+     */
+    public function getPhonenumber()
+    {
+        return $this->container['phonenumber'];
+    }
+
+    /**
+     * Sets phonenumber
+     *
+     * @param string $phonenumber phonenumber
+     *
+     * @return $this
+     */
+    public function setPhonenumber($phonenumber)
+    {
+        $this->container['phonenumber'] = $phonenumber;
 
         return $this;
     }
