@@ -82,6 +82,8 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**deleteContact**](docs/Api/ContactsApi.md#deletecontact) | **POST** /DeleteContact.php | Contact deletion.
 *ContactsApi* | [**editContact**](docs/Api/ContactsApi.md#editcontact) | **POST** /EditContact.php | Update contact information.
 *ContactsApi* | [**searchContact**](docs/Api/ContactsApi.md#searchcontact) | **POST** /SearchContacts.php | Searches for contacts with first or last name or email matching search criterion, for a given user.
+*ContactsApi* | [**toggleContacts**](docs/Api/ContactsApi.md#togglecontacts) | **POST** /ToggleContacts.php | Sort contacts by name or by date created.
+*UsersApi* | [**deleteUser**](docs/Api/UsersApi.md#deleteuser) | **POST** /DeleteUser.php | Delete a user.
 *UsersApi* | [**doLogin**](docs/Api/UsersApi.md#dologin) | **POST** /Login.php | Logs in as a user for contact manager.
 *UsersApi* | [**doRegister**](docs/Api/UsersApi.md#doregister) | **POST** /Register.php | Signs up a user.
 
@@ -90,10 +92,13 @@ Class | Method | HTTP request | Description
 
  - [AddContact](docs/Model/AddContact.md)
  - [DeleteContact](docs/Model/DeleteContact.md)
+ - [DeleteUser](docs/Model/DeleteUser.md)
  - [EditContact](docs/Model/EditContact.md)
  - [Login](docs/Model/Login.md)
  - [Register](docs/Model/Register.md)
+ - [Results](docs/Model/Results.md)
  - [SearchContacts](docs/Model/SearchContacts.md)
+ - [ToggleContacts](docs/Model/ToggleContacts.md)
 
 
 ## Documentation For Authorization
