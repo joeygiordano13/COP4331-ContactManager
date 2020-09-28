@@ -110,14 +110,4 @@ class ContactsApiTest extends \PHPUnit_Framework_TestCase
     public function testSearchContact()
     {
     }
-
-    /**
-     * Test case for toggleContacts
-     *
-     * Sort contacts by name or by date created..
-     *
-     */
-    public function testToggleContacts()
-    {
-    }
 }
