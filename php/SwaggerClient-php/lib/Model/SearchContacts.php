@@ -58,7 +58,8 @@ class SearchContacts implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'userid' => 'int',
-        'search' => 'string'
+        'search' => 'string',
+        'order_by' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class SearchContacts implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'userid' => null,
-        'search' => null
+        'search' => null,
+        'order_by' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class SearchContacts implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'userid' => 'userid',
-        'search' => 'search'
+        'search' => 'search',
+        'order_by' => 'orderBy'
     ];
 
     /**
@@ -109,7 +112,8 @@ class SearchContacts implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'userid' => 'setUserid',
-        'search' => 'setSearch'
+        'search' => 'setSearch',
+        'order_by' => 'setOrderBy'
     ];
 
     /**
@@ -119,7 +123,8 @@ class SearchContacts implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'userid' => 'getUserid',
-        'search' => 'getSearch'
+        'search' => 'getSearch',
+        'order_by' => 'getOrderBy'
     ];
 
     /**
@@ -184,6 +189,7 @@ class SearchContacts implements ModelInterface, ArrayAccess
     {
         $this->container['userid'] = isset($data['userid']) ? $data['userid'] : null;
         $this->container['search'] = isset($data['search']) ? $data['search'] : null;
+        $this->container['order_by'] = isset($data['order_by']) ? $data['order_by'] : null;
     }
 
     /**
@@ -260,6 +266,30 @@ class SearchContacts implements ModelInterface, ArrayAccess
     public function setSearch($search)
     {
         $this->container['search'] = $search;
+
+        return $this;
+    }
+
+    /**
+     * Gets order_by
+     *
+     * @return string
+     */
+    public function getOrderBy()
+    {
+        return $this->container['order_by'];
+    }
+
+    /**
+     * Sets order_by
+     *
+     * @param string $order_by order_by
+     *
+     * @return $this
+     */
+    public function setOrderBy($order_by)
+    {
+        $this->container['order_by'] = $order_by;
 
         return $this;
     }
