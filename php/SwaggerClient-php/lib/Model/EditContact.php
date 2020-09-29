@@ -62,7 +62,8 @@ class EditContact implements ModelInterface, ArrayAccess
         'firstname' => 'string',
         'lastname' => 'string',
         'email' => 'string',
-        'phonenumber' => 'string'
+        'phonenumber' => 'string',
+        'favoritecookie' => 'string'
     ];
 
     /**
@@ -76,7 +77,8 @@ class EditContact implements ModelInterface, ArrayAccess
         'firstname' => null,
         'lastname' => null,
         'email' => null,
-        'phonenumber' => null
+        'phonenumber' => null,
+        'favoritecookie' => null
     ];
 
     /**
@@ -111,7 +113,8 @@ class EditContact implements ModelInterface, ArrayAccess
         'firstname' => 'firstname',
         'lastname' => 'lastname',
         'email' => 'email',
-        'phonenumber' => 'phonenumber'
+        'phonenumber' => 'phonenumber',
+        'favoritecookie' => 'favoritecookie'
     ];
 
     /**
@@ -125,7 +128,8 @@ class EditContact implements ModelInterface, ArrayAccess
         'firstname' => 'setFirstname',
         'lastname' => 'setLastname',
         'email' => 'setEmail',
-        'phonenumber' => 'setPhonenumber'
+        'phonenumber' => 'setPhonenumber',
+        'favoritecookie' => 'setFavoritecookie'
     ];
 
     /**
@@ -139,7 +143,8 @@ class EditContact implements ModelInterface, ArrayAccess
         'firstname' => 'getFirstname',
         'lastname' => 'getLastname',
         'email' => 'getEmail',
-        'phonenumber' => 'getPhonenumber'
+        'phonenumber' => 'getPhonenumber',
+        'favoritecookie' => 'getFavoritecookie'
     ];
 
     /**
@@ -208,6 +213,7 @@ class EditContact implements ModelInterface, ArrayAccess
         $this->container['lastname'] = isset($data['lastname']) ? $data['lastname'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['phonenumber'] = isset($data['phonenumber']) ? $data['phonenumber'] : null;
+        $this->container['favoritecookie'] = isset($data['favoritecookie']) ? $data['favoritecookie'] : null;
     }
 
     /**
@@ -236,6 +242,9 @@ class EditContact implements ModelInterface, ArrayAccess
         }
         if ($this->container['phonenumber'] === null) {
             $invalidProperties[] = "'phonenumber' can't be null";
+        }
+        if ($this->container['favoritecookie'] === null) {
+            $invalidProperties[] = "'favoritecookie' can't be null";
         }
         return $invalidProperties;
     }
@@ -392,6 +401,30 @@ class EditContact implements ModelInterface, ArrayAccess
     public function setPhonenumber($phonenumber)
     {
         $this->container['phonenumber'] = $phonenumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets favoritecookie
+     *
+     * @return string
+     */
+    public function getFavoritecookie()
+    {
+        return $this->container['favoritecookie'];
+    }
+
+    /**
+     * Sets favoritecookie
+     *
+     * @param string $favoritecookie favoritecookie
+     *
+     * @return $this
+     */
+    public function setFavoritecookie($favoritecookie)
+    {
+        $this->container['favoritecookie'] = $favoritecookie;
 
         return $this;
     }

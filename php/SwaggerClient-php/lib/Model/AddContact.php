@@ -61,7 +61,8 @@ class AddContact implements ModelInterface, ArrayAccess
         'firstname' => 'string',
         'lastname' => 'string',
         'phonenumber' => 'string',
-        'email' => 'string'
+        'email' => 'string',
+        'favoritecookie' => 'string'
     ];
 
     /**
@@ -74,7 +75,8 @@ class AddContact implements ModelInterface, ArrayAccess
         'firstname' => null,
         'lastname' => null,
         'phonenumber' => null,
-        'email' => null
+        'email' => null,
+        'favoritecookie' => null
     ];
 
     /**
@@ -108,7 +110,8 @@ class AddContact implements ModelInterface, ArrayAccess
         'firstname' => 'firstname',
         'lastname' => 'lastname',
         'phonenumber' => 'phonenumber',
-        'email' => 'email'
+        'email' => 'email',
+        'favoritecookie' => 'favoritecookie'
     ];
 
     /**
@@ -121,7 +124,8 @@ class AddContact implements ModelInterface, ArrayAccess
         'firstname' => 'setFirstname',
         'lastname' => 'setLastname',
         'phonenumber' => 'setPhonenumber',
-        'email' => 'setEmail'
+        'email' => 'setEmail',
+        'favoritecookie' => 'setFavoritecookie'
     ];
 
     /**
@@ -134,7 +138,8 @@ class AddContact implements ModelInterface, ArrayAccess
         'firstname' => 'getFirstname',
         'lastname' => 'getLastname',
         'phonenumber' => 'getPhonenumber',
-        'email' => 'getEmail'
+        'email' => 'getEmail',
+        'favoritecookie' => 'getFavoritecookie'
     ];
 
     /**
@@ -202,6 +207,7 @@ class AddContact implements ModelInterface, ArrayAccess
         $this->container['lastname'] = isset($data['lastname']) ? $data['lastname'] : null;
         $this->container['phonenumber'] = isset($data['phonenumber']) ? $data['phonenumber'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['favoritecookie'] = isset($data['favoritecookie']) ? $data['favoritecookie'] : null;
     }
 
     /**
@@ -227,6 +233,9 @@ class AddContact implements ModelInterface, ArrayAccess
         }
         if ($this->container['email'] === null) {
             $invalidProperties[] = "'email' can't be null";
+        }
+        if ($this->container['favoritecookie'] === null) {
+            $invalidProperties[] = "'favoritecookie' can't be null";
         }
         return $invalidProperties;
     }
@@ -359,6 +368,30 @@ class AddContact implements ModelInterface, ArrayAccess
     public function setEmail($email)
     {
         $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets favoritecookie
+     *
+     * @return string
+     */
+    public function getFavoritecookie()
+    {
+        return $this->container['favoritecookie'];
+    }
+
+    /**
+     * Sets favoritecookie
+     *
+     * @param string $favoritecookie favoritecookie
+     *
+     * @return $this
+     */
+    public function setFavoritecookie($favoritecookie)
+    {
+        $this->container['favoritecookie'] = $favoritecookie;
 
         return $this;
     }

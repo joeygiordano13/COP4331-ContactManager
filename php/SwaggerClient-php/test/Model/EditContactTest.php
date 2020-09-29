@@ -117,4 +117,11 @@ class EditContactTest extends \PHPUnit_Framework_TestCase
     public function testPropertyPhonenumber()
     {
     }
+
+    /**
+     * Test attribute "favoritecookie"
+     */
+    public function testPropertyFavoritecookie()
+    {
+    }
 }

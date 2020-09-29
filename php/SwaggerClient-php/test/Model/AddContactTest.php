@@ -110,4 +110,11 @@ class AddContactTest extends \PHPUnit_Framework_TestCase
     public function testPropertyEmail()
     {
     }
+
+    /**
+     * Test attribute "favoritecookie"
+     */
+    public function testPropertyFavoritecookie()
+    {
+    }
 }
