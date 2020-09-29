@@ -59,7 +59,8 @@ class SearchContacts implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'userid' => 'int',
         'search' => 'string',
-        'order_by' => 'string'
+        'field' => 'string',
+        'order' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class SearchContacts implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'userid' => null,
         'search' => null,
-        'order_by' => null
+        'field' => null,
+        'order' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class SearchContacts implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'userid' => 'userid',
         'search' => 'search',
-        'order_by' => 'orderBy'
+        'field' => 'field',
+        'order' => 'order'
     ];
 
     /**
@@ -113,7 +116,8 @@ class SearchContacts implements ModelInterface, ArrayAccess
     protected static $setters = [
         'userid' => 'setUserid',
         'search' => 'setSearch',
-        'order_by' => 'setOrderBy'
+        'field' => 'setField',
+        'order' => 'setOrder'
     ];
 
     /**
@@ -124,7 +128,8 @@ class SearchContacts implements ModelInterface, ArrayAccess
     protected static $getters = [
         'userid' => 'getUserid',
         'search' => 'getSearch',
-        'order_by' => 'getOrderBy'
+        'field' => 'getField',
+        'order' => 'getOrder'
     ];
 
     /**
@@ -189,7 +194,8 @@ class SearchContacts implements ModelInterface, ArrayAccess
     {
         $this->container['userid'] = isset($data['userid']) ? $data['userid'] : null;
         $this->container['search'] = isset($data['search']) ? $data['search'] : null;
-        $this->container['order_by'] = isset($data['order_by']) ? $data['order_by'] : null;
+        $this->container['field'] = isset($data['field']) ? $data['field'] : null;
+        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
     }
 
     /**
@@ -206,6 +212,12 @@ class SearchContacts implements ModelInterface, ArrayAccess
         }
         if ($this->container['search'] === null) {
             $invalidProperties[] = "'search' can't be null";
+        }
+        if ($this->container['field'] === null) {
+            $invalidProperties[] = "'field' can't be null";
+        }
+        if ($this->container['order'] === null) {
+            $invalidProperties[] = "'order' can't be null";
         }
         return $invalidProperties;
     }
@@ -271,25 +283,49 @@ class SearchContacts implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets order_by
+     * Gets field
      *
      * @return string
      */
-    public function getOrderBy()
+    public function getField()
     {
-        return $this->container['order_by'];
+        return $this->container['field'];
     }
 
     /**
-     * Sets order_by
+     * Sets field
      *
-     * @param string $order_by order_by
+     * @param string $field field
      *
      * @return $this
      */
-    public function setOrderBy($order_by)
+    public function setField($field)
     {
-        $this->container['order_by'] = $order_by;
+        $this->container['field'] = $field;
+
+        return $this;
+    }
+
+    /**
+     * Gets order
+     *
+     * @return string
+     */
+    public function getOrder()
+    {
+        return $this->container['order'];
+    }
+
+    /**
+     * Sets order
+     *
+     * @param string $order order
+     *
+     * @return $this
+     */
+    public function setOrder($order)
+    {
+        $this->container['order'] = $order;
 
         return $this;
     }

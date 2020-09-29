@@ -91,9 +91,16 @@ class SearchContactsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "order_by"
+     * Test attribute "field"
      */
-    public function testPropertyOrderBy()
+    public function testPropertyField()
+    {
+    }
+
+    /**
+     * Test attribute "order"
+     */
+    public function testPropertyOrder()
     {
     }
 }
