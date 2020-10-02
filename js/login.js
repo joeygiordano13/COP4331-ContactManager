@@ -1,6 +1,7 @@
 var userID = 0;
-var firstName = "";
-var lastName = "";
+var email = "";
+//var firstName = "";
+//var lastName = "";
 
 function doLogin()
 {
@@ -112,6 +113,9 @@ function doRegister()
         document.getElementById("loginResult").innerHTML = `Network Error`;
     };
 
+    saveCookie();
+    window.location.href = "contacts.html";
+
     //Only needed for network testing
     /*
     xhr.onprogress = function(event) { // triggers periodically
@@ -179,3 +183,41 @@ function showLogin()
   </form>
     `
 };
+
+function saveCookie()
+{
+	var minutes = 20;
+	var date = new Date();
+    date.setTime(date.getTime()+(minutes*60*1000));	
+	document.cookie = "userid=" + userID + ",email=" + email + ";expires=" + date.toGMTString();
+}
+
+function readCookie()
+{
+	userID = -1;
+	var data = document.cookie;
+	var splits = data.split(",");
+	for(var i = 0; i < splits.length; i++) 
+	{
+		var thisOne = splits[i].trim();
+		var tokens = thisOne.split("=");
+		if( tokens[0] == "userID" )
+		{
+			userID = parseInt( tokens[1].trim() );
+        }
+        else if ( tokens[0] == "email" )
+        {
+            email = tokens[1];
+        }
+	}
+    
+    // Cookie expired.
+	if( userID < 0 )
+	{
+		window.location.href = "index.html";
+	}
+	else
+	{
+		document.getElementById("inputUsername").innerHTML = "Logged in as " + email;
+	}
+}
