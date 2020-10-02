@@ -4,7 +4,7 @@ var urlExtension = '.php';
 var field = "";
 var order = "";
 var userID = 0;
-var email = "";
+//var email = "";
 var date = "";
 var currentId;
 var currentData;
@@ -55,6 +55,7 @@ function addContact()
     request.open("POST", url, false);
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
+    console.log(first + " " + last + " " + phone + " " + email + " " + cookie);
     if(first && last && phone && email && cookie)
     {
          try
