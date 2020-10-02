@@ -12,7 +12,7 @@
         <h1 id="title">Cookie Contacts</h1>
             <form action="">
                 <div class="foreground" id="loginDiv">
-                    <button type="button"  class="buttons" onclick="openWindow()">Create New Contact</button>
+                    <button type="button"  class="buttons" onclick="openWindow();">Create New Contact</button>
                     <button type="button" id="logout" class="buttons" onclick="logout();">Logout</button>
                     <button type="button" class="buttons" onclick="">Delete Account</button>
                 </div> 
@@ -38,7 +38,7 @@
                     <input type="text"  id="cookie" placeholder="'Chocolate Chip'" maxlength="50">
 
                     <button type="button" class="buttons" onclick="addRow(); clear(); closeWindow(); addContact();">Add Cookie</button>
-                    <button type="button" class="buttons" onclick="closeWindow()">Back</button>
+                    <button type="button" class="buttons" onclick="closeWindow();">Back</button>
                 </form>
             </div>
 
@@ -61,12 +61,12 @@
                     <label for = "phone"><strong>Favorite Cookie:</strong></label>
                     <input type="text"  id="newcookie" placeholder="'Chocolate Chip'" maxlength="50">
 
-                    <button type="button" class="buttons" onclick="updateContact();clear();closeWindow1()">Update</button>
-                    <button type="button" class="buttons" onclick="closeWindow1()">Back</button>
+                    <button type="button" class="buttons" onclick="updateContact();clear();closeWindow1();">Update</button>
+                    <button type="button" class="buttons" onclick="closeWindow1();">Back</button>
                 </form>
             </div>
             
-            <input type="text" name="search" id="search" onekeyup="searchContacts()" placeholder="Search in here" size="71px">
+            <input type="text" name="search" id="search" onekeyup="searchContacts();" placeholder="Search in here" size="71px">
 
         <div class = "tableContainer">
             <table id="cookieTable">
