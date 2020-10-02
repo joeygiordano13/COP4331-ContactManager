@@ -99,7 +99,6 @@ function addRow(data)
     const phoneNumber = document.getElementById("phone").value;
     const email = document.getElementById("email").value;
     const cookie = document.getElementById("cookie").value;
-
     //console.log(firstName);
 
     cell1.innerHTML = firstName;
