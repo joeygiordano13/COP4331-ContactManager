@@ -1,5 +1,5 @@
-var urlBase = 'http://www.cookiebook.team/API';
-var urlExtension = '.php';
+var urlBase = "http://www.cookiebook.team/API";
+var urlExtension = ".php";
 
 var field = "";
 var order = "";
@@ -19,7 +19,7 @@ function updateInfo()
     var cookie = document.getElementById("newcookie").value;
     //var date = document.getElementById("date").value;
 
-    var jsonPayload = '{"contactid" : "' + contactId + '","firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "userid" : "' + userID + '", "favoritecookie" : "' + cookie + '"}'
+    var jsonPayload = '{"userid" : "' + userID + '", "contactid" : "' + contactId + '","firstname" : "' + first + '", "lastname" : "' + last + '", "email" : "' + email + '", "phonenumber" : "' + phone + '", "favoritecookie" : "' + cookie + '"}'
     var url = urlBase + '/EditContact' + urlExtension;
     var request = new XMLHttpRequest();
     request.open("POST", url, false);
@@ -48,7 +48,7 @@ function addContact()
     //var userID = window.sessionStorage.getItem("userId");
     //var date = document.getElementById("date").value;
 
-    var jsonPayload = '{"firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "userid" : "' + userID + '", "favoritecookie" : "' + cookie + '"}'
+    var jsonPayload = '{"userid" : "' + userID + '", "firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "favoritecookie" : "' + cookie + '"}'
     var url = urlBase + '/AddContact' + urlExtension;
 
     var request = new XMLHttpRequest();
@@ -76,7 +76,7 @@ function addContact()
         document.getElementById("addContact").innerHTML = "Please fill out fields";
     }
    
-}
+} 
 
 function addRow(data)
 {
@@ -171,7 +171,7 @@ function search()
 {
     var search = document.getElementById("search").value;
 
-    var jsonPayload = '{"search" : "' + search + '", "userid" : "' + userID + '", "field" : "' + field + '", "order" : "' + order + '"}'
+    var jsonPayload = '{"userid" : "' + userID + '", "search" : "' + search + '", "field" : "' + field + '", "order" : "' + order + '"}'
     var url = urlBase + '/SearchContacts'+ urlExtension;
     var request = new XMLHttpRequest();
     request.open("POST", url, false);
