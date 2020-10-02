@@ -19,7 +19,7 @@
         // Check if username and password match.
         $sql = "SELECT* FROM users WHERE username=$username AND password=$password AND userid=$userid";
         $result = $conn->query($sql);
-        echo $sql;
+        //echo $sql;
 
 		if ($result->num_rows > 0)
         {
