@@ -12,11 +12,11 @@ var currentData;
 function updateInfo()
 {
     var contactId = currentId;
-    var first = document.getElementById("first").value;
-    var last = document.getElementById("last").value;
-    var phone = document.getElementById("phone").value;
-    var email = document.getElementById("email").value;
-    var cookie = document.getElementById("cookie").value;
+    var first = document.getElementById("newfirst").value;
+    var last = document.getElementById("newlast").value;
+    var phone = document.getElementById("newphone").value;
+    var email = document.getElementById("newemail").value;
+    var cookie = document.getElementById("newcookie").value;
     //var date = document.getElementById("date").value;
 
     var jsonPayload = '{"contactid" : "' + contactId + '","firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "userid" : "' + userID + '", "favoritecookie" : "' + cookie + '"}'
