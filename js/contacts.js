@@ -1,10 +1,10 @@
 var urlBase = 'http://www.cookiebook.team/API';
 var urlExtension = '.php';
 
-var field = "";
-var order = "";
+var field = "name";
+var order = "name";
 var userID = 0;
-//var email = "";
+var email = "";
 var date = "";
 var currentId;
 var currentData;
@@ -44,9 +44,8 @@ function addContact()
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("email").value;
     var cookie = document.getElementById("cookie").value;
-    var userID = document.getElementById("userId").value;
-    //var userID = window.sessionStorage.getItem("userId");
-    //var date = document.getElementById("date").value;
+
+    readCookie();
 
     var jsonPayload = '{"firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "userid" : "' + userID + '", "favoritecookie" : "' + cookie + '"}'
     var url = urlBase + '/AddContact' + urlExtension;
@@ -186,4 +185,34 @@ function search()
     {
         alert(err.message);
     }
+}
+
+function readCookie()
+{
+	userID = -1;
+	var data = document.cookie;
+	var splits = data.split(",");
+	for(var i = 0; i < splits.length; i++) 
+	{
+		var thisOne = splits[i].trim();
+		var tokens = thisOne.split("=");
+		if( tokens[0] == "userid" )
+		{
+			userID = parseInt( tokens[1].trim() );
+        }
+        else if ( tokens[0] == "email" )
+        {
+            email = tokens[1];
+        }
+	}
+    
+    // Cookie expired.
+	if( userID < 0 )
+	{
+		window.location.href = "index.html";
+	}
+	else
+	{
+		document.getElementById("inputUsername").innerHTML = "Logged in as " + email;
+	}
 }
