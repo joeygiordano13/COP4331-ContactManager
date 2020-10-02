@@ -1,5 +1,5 @@
 <?php
-   header("Access-Control-Allow-Origin: http://www.cookiebook.team");
+   header("Access-Control-Allow-Origin: *");
    // Login as a user.
    $inData = getRequestInfo();
 
