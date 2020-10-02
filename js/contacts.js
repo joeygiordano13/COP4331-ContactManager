@@ -5,6 +5,7 @@ var field = "";
 var order = "";
 var userID = 0;
 var email = "";
+var date = "";
 var currentId;
 var currentData;
 
@@ -16,9 +17,9 @@ function updateInfo()
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("email").value;
     var cookie = document.getElementById("cookie").value;
-    var date = document.getElementById("date").value;
+    //var date = document.getElementById("date").value;
 
-    var jsonPayload = '{"contactid" : "' + contactId + '","firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "userid" : "' + userID + '", "favoritecookie" : "' + cookie + '", "datecreated" : "' + date + '"}'
+    var jsonPayload = '{"contactid" : "' + contactId + '","firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "userid" : "' + userID + '", "favoritecookie" : "' + cookie + '"}'
     var url = urlBase + '/EditContact' + urlExtension;
     var request = new XMLHttpRequest();
     request.open("POST", url, false);
@@ -45,21 +46,22 @@ function addContact()
     var cookie = document.getElementById("cookie").value;
     var userID = document.getElementById("userId").value;
     //var userID = window.sessionStorage.getItem("userId");
-    var date = document.getElementById("date").value;
+    //var date = document.getElementById("date").value;
 
-    var jsonPayload = '{"firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "userid" : "' + userID + '", "favoritecookie" : "' + cookie + '", "datecreated" :  "' + date + '"}'
+    var jsonPayload = '{"firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "userid" : "' + userID + '", "favoritecookie" : "' + cookie + '"}'
     var url = urlBase + '/AddContact' + urlExtension;
 
     var request = new XMLHttpRequest();
     request.open("POST", url, false);
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-    if(first && last && phone && email && cookie && date)
+    if(first && last && phone && email && cookie)
     {
          try
         {
             request.send(jsonPayload);
             var jsonObject = JSON.parse(request.responseText);
+            date = jsonObject.datecreated;
             alert(jsonObject.info);
         }
 
@@ -91,13 +93,12 @@ function addRow(data)
     const cell7 = row.insertCell(6);
     const cell8 = row.insertCell(7);
 
-
     const firstName = document.getElementById("first").value;
     const lastName = document.getElementById("last").value;
     const phoneNumber = document.getElementById("phone").value;
     const email = document.getElementById("email").value;
     const cookie = document.getElementById("cookie").value;
-    const date = document.getElementById("date").value;
+
     //console.log(firstName);
 
     cell1.innerHTML = firstName;
