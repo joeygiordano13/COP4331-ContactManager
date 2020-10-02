@@ -1,6 +1,8 @@
 var urlBase = 'http://www.cookiebook.team/API';
 var urlExtension = '.php';
 
+var field = "";
+var order = "";
 var userID = 0;
 var email = "";
 var currentId;
@@ -41,7 +43,8 @@ function addContact()
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("email").value;
     var cookie = document.getElementById("cookie").value;
-    var userID = window.sessionStorage.getItem("userId");
+    var userID = document.getElementById("userId").value;
+    //var userID = window.sessionStorage.getItem("userId");
     var date = document.getElementById("date").value;
 
     var jsonPayload = '{"firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "userid" : "' + userID + '", "favoritecookie" : "' + cookie + '", "datecreated" :  "' + date + '"}'
@@ -167,7 +170,7 @@ function search()
 {
     var search = document.getElementById("search").value;
 
-    var jsonPayload = '{"search" : "' + search + '", "userid" : "' + userId + '", "field" : "' + field + '", "order" : "' + order + '"}'
+    var jsonPayload = '{"search" : "' + search + '", "userid" : "' + userID + '", "field" : "' + field + '", "order" : "' + order + '"}'
     var url = urlBase + '/SearchContacts'+ urlExtension;
     var request = new XMLHttpRequest();
     request.open("POST", url, false);
