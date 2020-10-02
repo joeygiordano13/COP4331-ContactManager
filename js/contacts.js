@@ -213,6 +213,6 @@ function readCookie()
 	}
 	else
 	{
-		document.getElementById("inputUsername").innerHTML = "Logged in as " + email;
+		//document.getElementById("inputUsername").innerHTML = "Logged in as " + email;
 	}
 }
