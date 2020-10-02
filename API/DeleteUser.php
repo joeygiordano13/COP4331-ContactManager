@@ -1,4 +1,7 @@
 <?php
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+    header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, X-Requested-With");
     // Delete a user, and all associated contacts.
     $inData = getRequestInfo();
 
@@ -19,7 +22,7 @@
         // Check if email and password match.
         $sql = "SELECT* FROM users WHERE email=$email AND password=$password AND userid=$userid";
         $result = $conn->query($sql);
-        echo $sql;
+        //echo $sql;
 
 		if ($result->num_rows > 0)
         {
