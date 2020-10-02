@@ -57,7 +57,7 @@ class Login implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'username' => 'string',
+        'email' => 'string',
         'password' => 'string'
     ];
 
@@ -67,7 +67,7 @@ class Login implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'username' => null,
+        'email' => null,
         'password' => null
     ];
 
@@ -98,7 +98,7 @@ class Login implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'username' => 'username',
+        'email' => 'email',
         'password' => 'password'
     ];
 
@@ -108,7 +108,7 @@ class Login implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'username' => 'setUsername',
+        'email' => 'setEmail',
         'password' => 'setPassword'
     ];
 
@@ -118,7 +118,7 @@ class Login implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'username' => 'getUsername',
+        'email' => 'getEmail',
         'password' => 'getPassword'
     ];
 
@@ -182,7 +182,7 @@ class Login implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
     }
 
@@ -195,6 +195,9 @@ class Login implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
+        }
         if ($this->container['password'] === null) {
             $invalidProperties[] = "'password' can't be null";
         }
@@ -214,25 +217,25 @@ class Login implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets username
+     * Gets email
      *
      * @return string
      */
-    public function getUsername()
+    public function getEmail()
     {
-        return $this->container['username'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets username
+     * Sets email
      *
-     * @param string $username username
+     * @param string $email email
      *
      * @return $this
      */
-    public function setUsername($username)
+    public function setEmail($email)
     {
-        $this->container['username'] = $username;
+        $this->container['email'] = $email;
 
         return $this;
     }

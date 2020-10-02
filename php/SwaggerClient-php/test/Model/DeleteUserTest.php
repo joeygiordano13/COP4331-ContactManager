@@ -84,9 +84,9 @@ class DeleteUserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "username"
+     * Test attribute "email"
      */
-    public function testPropertyUsername()
+    public function testPropertyEmail()
     {
     }
 

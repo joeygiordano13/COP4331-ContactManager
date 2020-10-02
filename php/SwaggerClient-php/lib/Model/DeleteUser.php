@@ -58,7 +58,7 @@ class DeleteUser implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'userid' => 'int',
-        'username' => 'string',
+        'email' => 'string',
         'password' => 'string'
     ];
 
@@ -69,7 +69,7 @@ class DeleteUser implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'userid' => null,
-        'username' => null,
+        'email' => null,
         'password' => null
     ];
 
@@ -101,7 +101,7 @@ class DeleteUser implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'userid' => 'userid',
-        'username' => 'username',
+        'email' => 'email',
         'password' => 'password'
     ];
 
@@ -112,7 +112,7 @@ class DeleteUser implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'userid' => 'setUserid',
-        'username' => 'setUsername',
+        'email' => 'setEmail',
         'password' => 'setPassword'
     ];
 
@@ -123,7 +123,7 @@ class DeleteUser implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'userid' => 'getUserid',
-        'username' => 'getUsername',
+        'email' => 'getEmail',
         'password' => 'getPassword'
     ];
 
@@ -188,7 +188,7 @@ class DeleteUser implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['userid'] = isset($data['userid']) ? $data['userid'] : null;
-        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
     }
 
@@ -203,6 +203,9 @@ class DeleteUser implements ModelInterface, ArrayAccess
 
         if ($this->container['userid'] === null) {
             $invalidProperties[] = "'userid' can't be null";
+        }
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
         }
         if ($this->container['password'] === null) {
             $invalidProperties[] = "'password' can't be null";
@@ -247,25 +250,25 @@ class DeleteUser implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets username
+     * Gets email
      *
      * @return string
      */
-    public function getUsername()
+    public function getEmail()
     {
-        return $this->container['username'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets username
+     * Sets email
      *
-     * @param string $username username
+     * @param string $email email
      *
      * @return $this
      */
-    public function setUsername($username)
+    public function setEmail($email)
     {
-        $this->container['username'] = $username;
+        $this->container['email'] = $email;
 
         return $this;
     }
