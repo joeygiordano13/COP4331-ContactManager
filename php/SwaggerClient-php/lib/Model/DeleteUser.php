@@ -204,9 +204,6 @@ class DeleteUser implements ModelInterface, ArrayAccess
         if ($this->container['userid'] === null) {
             $invalidProperties[] = "'userid' can't be null";
         }
-        if ($this->container['username'] === null) {
-            $invalidProperties[] = "'username' can't be null";
-        }
         if ($this->container['password'] === null) {
             $invalidProperties[] = "'password' can't be null";
         }
