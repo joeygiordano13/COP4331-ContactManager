@@ -62,6 +62,7 @@ function addContact()
             request.send(jsonPayload);
             var jsonObject = JSON.parse(request.responseText);
             date = jsonObject.datecreated;
+            console.log(date);
             alert(jsonObject.info);
         }
 
