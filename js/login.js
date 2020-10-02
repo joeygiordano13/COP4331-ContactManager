@@ -140,7 +140,7 @@ function showRegister()
     <p id="titleName">Register</p>
 
       <div class="form-group">
-        <label for="inputEmailLabel">Username</label>
+        <label for="inputEmailLabel">Email</label>
         <input type="text" class="form-control" id="inputUsername">
       </div>
       <div class="form-group">
@@ -167,7 +167,7 @@ function showLogin()
     <form class="form-container" id="mainForm">
     <p id="titleName">Login</p>
       <div class="form-group">
-        <label for="inputEmailLabel">Username</label>
+        <label for="inputEmailLabel">Email</label>
         <input type="text" class="form-control" id="inputUsername">
       </div>
       <div class="form-group">
