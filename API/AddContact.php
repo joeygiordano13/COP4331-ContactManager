@@ -64,7 +64,7 @@
 
 	function returnWithInfo($userid, $contactid, $info)
 	{
-        $retValue = '{"userid":' . $userid . ',"contactid":' . $contactid . ',"info":"' . $info . '"}';
+        $retValue = '{"userid":' . $userid . ',"contactid":' . $contactid . ',"info":"' . $info . ',"datecreated":"' . $datecreated . '"}';
         sendResultInfoAsJson($retValue);
     }
 ?>
