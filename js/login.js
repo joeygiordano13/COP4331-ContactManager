@@ -12,7 +12,9 @@ function doLogin()
     var xhr = new XMLHttpRequest();
 
     xhr.open("POST", "http://www.cookiebook.team/API/Login.php", true);
-    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+
+    xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://206.189.193.36/');
+    xhr.setRequestHeader('Access-Control-Allow-Credentials', 'true');
     xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
     xhr.send(jsonPayload);
 
