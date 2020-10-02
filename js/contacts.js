@@ -1,44 +1,38 @@
-var urlBase = 'http://cookiebook.team/API/';
+var urlBase = 'http://cookiebook.team/API';
 var urlExtension = '.php';
+
+var userId = 0;
+var email = "";
+var currentId;
+var currentData;
 
 function updateInfo()
 {
+    var contactId = currentId;
     var first = document.getElementById("first").value;
     var last = document.getElementById("last").value;
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("email").value;
+    var cookie = document.getElementById("cookie").value;
 
-    var updateJSON = '{"firstName" : "' + first + '", "lastName" : "' + last + '", "phone" : "' + phone + '", "email" : "' + email + '", "userId" : "' + user_ID + '"}'
+    var jsonPayload = '{"contactid" : "' + contactId + '","firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "userid" : "' + userId + '", "favoritecookie" : "' + cookie + '"}'
+    var url = urlBase + '/EditContact' + urlExtension;
     var request = new XMLHttpRequest();
     request.open("POST", url, false);
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
     try
     {
-        request.send(updateJSON);
+        request.send(jsonPayload);
 
         var jsonObject = JSON.parse(request.responseText);
-        error = jsonObject.error;
-
-        if(error == "Record Not Found")
-        {
-            return false;
-        }
-
-        if(error =="")
-        {
-            alert("contact added");
-            return false;
-        }
 
     }
     catch(err)
     {
         alert(err.message);
-        return false;
     }
 }
-
 
 function addContact()
 {
@@ -46,123 +40,67 @@ function addContact()
     var last = document.getElementById("last").value;
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("email").value;
-    var userId = window.sessionStorage.getItem("user_id");
+    var cookie = document.getElementById("cookie").value;
+    var userId = window.sessionStorage.getItem("userId");
 
-    var jsonPayload = '{"firstName" : "' + first + '", "lastName" : "' + last + '", "phone" : "' + phone + '", "email" : "' + email + '", "userId" : "' + user_ID + '"}'
+    var jsonPayload = '{"firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "userid" : "' + userId + '", "favoritecookie" : "' + cookie + '"}'
     var url = urlBase + '/addContact' + urlExtension;
 
     var request = new XMLHttpRequest();
     request.open("POST", url, false);
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-    try
+    if(first && last && phone && email && cookie)
     {
-        xhr.send(jsonPayload);
-    }
+         try
+        {
+            request.send(jsonPayload);
+        }
 
-    catch(err)
-    {
-        alert(err.message);
-    }
-}
-
-function createTable(jsonData) {
-
-    
-    var col = [];
-    for (var i = 2; i < jsonData.length; i++) {
-        for (var key in jsonData[i]) {
-            if (col.indexOf(key) === -1) {
-                col.push(key);
-            }
+        catch(err)
+        {
+            alert(err.message);
         }
     }
-    col.push(" ");
-
-    
-    var table = document.createElement("tbody");
-    var tr = table.insertRow(-1);                 
-
-    for (var i = 2; i < col.length; i++) 
+    else
     {
-        var th = document.createElement("th");    
-        th.innerHTML = col[i];
-        tr.appendChild(th);
+        document.getElementById("addContact").innerHTML = "Please fill out fields";
     }
-
    
-    for (var i = 0; i < jsonData.length; i++) 
-    {
-        tr = table.insertRow(-1);
-        for (var j = 2; j < col.length; j++) {
-            var tabCell = tr.insertCell(-1);
-            if(j == col.length - 1)
-            {
-                tabCell.innerHTML = '<button button type="button" class="btn btn-lg btn-success btn-space" data-toggle="modal" data-target="#editForm" id = "' + jsonData[i][col[0]] + '" onclick="editClick(this.id)" ><span class="glyphicon glyphicon-star" aria-hidden="true"></span>Edit</button>';
-            }
-            else
-            {
-                tabCell.innerHTML = jsonData[i][col[j]];
-            }
-        }
-    }
-
-    var divContainer = document.getElementById("cookieTable");
-    divContainer.innerHTML = "";
-    divContainer.appendChild(table);
 }
 
-function searchContacts()
+function addRow(data)
 {
+    const myTable = document.getElementById("cookieTable");
 
-    var searchQuery = document.getElementById("search").value;
-    var jsonPayload = '{"search" : "' + searchQuery + '", "userId" : ' + userId + '}';
-	var url = urlBase + '/searchContacts' + urlExtension;
+    const row = myTable.insertRow(1);
+    row.style.textAlign = "center";
 
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, false);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	try
-	{
-		xhr.send(jsonPayload);
+    const cell1 = row.insertCell(0);
+    const cell2 = row.insertCell(1);
+    const cell3 = row.insertCell(2);
+    const cell4 = row.insertCell(3);
+    const cell5 = row.insertCell(4);
+    const cell6 = row.insertCell(5);
+    const cell7 = row.insertCell(6);
 
-		var jsonObject = JSON.parse( xhr.responseText );
+    const firstName = document.getElementById("first").value;
+    const lastName = document.getElementById("last").value;
+    const phoneNumber = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+    const cookie = document.getElementById("cookie").value;
+    console.log(firstName);
 
-      // Setup Table
-      createTable(jsonObject.results);
-
-	}
-	catch(err)
-	{
-		alert(err.message);
-	}
-
+    cell1.innerHTML = firstName;
+    cell2.innerHTML = lastName;
+    cell3.innerHTML = phoneNumber;
+    cell4.innerHTML = email;
+    cell5.innerHTML = cookie;
+    cell6.innerHTML = '<button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button>';
+    cell7.innerHTML = '<button type="delete";class="btn btnDelete" onclick="deleteRow(this);">Delete</button>';
 }
-/*
-function addRow() 
-{
-    var first = document.getElementsById("first");
-    var last = document.getElementsById("last");
-    var phone = document.getElementsById("phone");
-    var email = document.getElementsById("email");
-    var table = document.getElementsById("cookieTable");
- 
-    var rowCount = table.rows.length;
-    var row = table.insertRow(rowCount);
- 
-    row.insertCell(0).innerHTML= '<input type="button" value = "Delete" onClick="Javascript:deleteRow(this)">';
-    row.insertCell(1).innerHTML= first.value;
-    row.insertCell(2).innerHTML= last.value;
-    row.insertCell(3).innerHTML= phone.value;
-    row.insertCell(4).innerHTML= email.value;
-}
- */
-function deleteRow(obj) 
-{
-    var index = obj.parentNode.parentNode.rowIndex;
-    var table = document.getElementById("cookieTable");
-    table.deleteRow(index);
-}
+
+
 function closeWindow()
 {
     document.getElementById("addWindow").style.display = "none";
@@ -172,15 +110,68 @@ function openWindow()
 {
     document.getElementById("addWindow").style.display = "block";   
 }
+function openWindow1()
+{
+    document.getElementById("updateWindow").style.display = "block";   
+}
+function closeWindow1()
+{
+    document.getElementById("updateWindow").style.display = "none";
+}
 
-async function addRow(dataRow) {
-    const myTable = document.getElementById("cookieTable").getElementsByTagName("tbody")[0];
-    const row = document.createElement("tr");
-    const columnKeys = ["first", "last", "phone", "email"];
-    // loop through dataRow and add to row
-    for (const columnKey of columnKeys) {
-      const rowCell = document.createElement("td");
-      rowCell.innerText = dataRow[columnKey];
-      row.appendChild(rowCell);
+function deleteContact()
+{   
+    var url = urlBase + '/DeleteContact.' + urlExtension;
+    var jsonPayload = '{ID" : "' + id + '"}';
+    var request = new XMLHttpRequest();
+    request.open("POST", url, true);
+    request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    request.send(jsonPayload);
+
+    try
+    {
+        request.onreadystatechange = function()
+        {
+            if(this.readyState == 4 && this.status == 200)
+            {
+                var jsonObject = JSON.parse(request.responseText);
+                document.getElementById("").innerHTML = " Cookies Eaten!";
+            }
+        }
+
+    }
+    catch(err)
+    {
+        document.getElementById("").innerHTML = err.message;
+    }
+}
+
+function clear()
+{
+    document.getElementById("first").value = "";
+    document.getElementById("last").value = "";
+    document.getElementById("phone").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("cookie").value = "";
+}
+
+function search()
+{
+    var search = document.getElementById("search").value;
+
+    var jsonPayload = '{"search" : "' + search + '", "userid" : "' + userId + '"}'
+    var url = urlBase + '/SearchContacts'+ urlExtension;
+    var request = new XMLHttpRequest();
+    request.open("POST", url, false);
+    request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+    try
+    {
+        request.send(jsonPayload);
+        var jsonObject = JSON.parse(request.responseText);
+        addRow(jsonObject.results);
+    }
+    catch(err)
+    {
+        alert(err.message);
     }
 }
