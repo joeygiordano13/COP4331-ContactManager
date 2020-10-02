@@ -7,11 +7,11 @@ function doLogin()
     var usernameInput = document.getElementById("inputUsername").value;
     var passwordInput = document.getElementById("inputPassword").value;
 
-    var jsonPayload = JSON.stringify({username : usernameInput, password : passwordInput});
+    var jsonPayload = JSON.stringify({email : usernameInput, password : passwordInput});
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open("POST", "http://206.189.193.36/API/Login.php", true);
+    xhr.open("POST", "http://www.cookiebook.team/API/Login.php", true);
     xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
     xhr.send(jsonPayload);
 
