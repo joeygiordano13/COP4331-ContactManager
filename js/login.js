@@ -34,6 +34,8 @@ function doLogin()
             if(userID)
             {
                 document.getElementById("loginResult").innerHTML = `Login Success!`;
+                saveCookie();
+                window.location.href = "contacts.html";
             }
             else
             {
@@ -112,9 +114,6 @@ function doRegister()
     xhr.onerror = function() { // only triggers if the request couldn't be made at all
         document.getElementById("loginResult").innerHTML = `Network Error`;
     };
-
-    saveCookie();
-    window.location.href = "contacts.html";
 
     //Only needed for network testing
     /*
