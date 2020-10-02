@@ -1,7 +1,7 @@
-var urlBase = 'http://cookiebook.team/API';
+var urlBase = 'http://www.cookiebook.team/API';
 var urlExtension = '.php';
 
-var userId = 0;
+var userID = 0;
 var email = "";
 var currentId;
 var currentData;
@@ -14,8 +14,9 @@ function updateInfo()
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("email").value;
     var cookie = document.getElementById("cookie").value;
+    var date = document.getElementById("date").value;
 
-    var jsonPayload = '{"contactid" : "' + contactId + '","firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "userid" : "' + userId + '", "favoritecookie" : "' + cookie + '"}'
+    var jsonPayload = '{"contactid" : "' + contactId + '","firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "userid" : "' + userID + '", "favoritecookie" : "' + cookie + '", "datecreated" : "' + date + '"}'
     var url = urlBase + '/EditContact' + urlExtension;
     var request = new XMLHttpRequest();
     request.open("POST", url, false);
@@ -24,9 +25,8 @@ function updateInfo()
     try
     {
         request.send(jsonPayload);
-
         var jsonObject = JSON.parse(request.responseText);
-
+        alert(jsonObject.info);
     }
     catch(err)
     {
@@ -41,20 +41,23 @@ function addContact()
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("email").value;
     var cookie = document.getElementById("cookie").value;
-    var userId = window.sessionStorage.getItem("userId");
+    var userID = window.sessionStorage.getItem("userId");
+    var date = document.getElementById("date").value;
 
-    var jsonPayload = '{"firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "userid" : "' + userId + '", "favoritecookie" : "' + cookie + '"}'
-    var url = urlBase + '/addContact' + urlExtension;
+    var jsonPayload = '{"firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "userid" : "' + userID + '", "favoritecookie" : "' + cookie + '", "datecreated" :  "' + date + '"}'
+    var url = urlBase + '/AddContact' + urlExtension;
 
     var request = new XMLHttpRequest();
     request.open("POST", url, false);
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-    if(first && last && phone && email && cookie)
+    if(first && last && phone && email && cookie && date)
     {
          try
         {
             request.send(jsonPayload);
+            var jsonObject = JSON.parse(request.responseText);
+            alert(jsonObject.info);
         }
 
         catch(err)
@@ -83,21 +86,25 @@ function addRow(data)
     const cell5 = row.insertCell(4);
     const cell6 = row.insertCell(5);
     const cell7 = row.insertCell(6);
+    const cell8 = row.insertCell(7);
+
 
     const firstName = document.getElementById("first").value;
     const lastName = document.getElementById("last").value;
     const phoneNumber = document.getElementById("phone").value;
     const email = document.getElementById("email").value;
     const cookie = document.getElementById("cookie").value;
-    console.log(firstName);
+    const date = document.getElementById("date").value;
+    //console.log(firstName);
 
     cell1.innerHTML = firstName;
     cell2.innerHTML = lastName;
     cell3.innerHTML = phoneNumber;
     cell4.innerHTML = email;
     cell5.innerHTML = cookie;
-    cell6.innerHTML = '<button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button>';
-    cell7.innerHTML = '<button type="delete";class="btn btnDelete" onclick="deleteRow(this);">Delete</button>';
+    cell6.innerHTML = date;
+    cell7.innerHTML = '<button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button>';
+    cell8.innerHTML = '<button type="delete";class="btn btnDelete" onclick="deleteRow(this);">Delete</button>';
 }
 
 
@@ -122,7 +129,7 @@ function closeWindow1()
 function deleteContact()
 {   
     var url = urlBase + '/DeleteContact.' + urlExtension;
-    var jsonPayload = '{ID" : "' + id + '"}';
+    var jsonPayload = '{userid" : "' + userID + '",contactid" :"' + contactId + '"}';
     var request = new XMLHttpRequest();
     request.open("POST", url, true);
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -153,13 +160,14 @@ function clear()
     document.getElementById("phone").value = "";
     document.getElementById("email").value = "";
     document.getElementById("cookie").value = "";
+    document.getElementById("date").value = "";
 }
 
 function search()
 {
     var search = document.getElementById("search").value;
 
-    var jsonPayload = '{"search" : "' + search + '", "userid" : "' + userId + '"}'
+    var jsonPayload = '{"search" : "' + search + '", "userid" : "' + userId + '", "field" : "' + field + '", "order" : "' + order + '"}'
     var url = urlBase + '/SearchContacts'+ urlExtension;
     var request = new XMLHttpRequest();
     request.open("POST", url, false);
