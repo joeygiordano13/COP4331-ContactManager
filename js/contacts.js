@@ -144,6 +144,7 @@ function deleteContact()
     request.open("POST", url, true);
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
     request.send(jsonPayload);
+    console.log(jsonPayload);
 
     try
     {
