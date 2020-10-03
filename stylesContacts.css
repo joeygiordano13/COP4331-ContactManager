@@ -1,12 +1,12 @@
 html{
-	cursor: url("../images/hand.cur"), auto;
+	cursor: url("../images/hand.cur");
 }
+
 body{
 	background-image: url("../images/cookieBackground.jpg");
 	height: 100%;
 	background-size: 100%;
 	padding: 0;
-	
 }
 
 #cookieTable {
