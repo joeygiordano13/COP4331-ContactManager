@@ -249,11 +249,17 @@ function buildTable(data)
             <td>${data[i].phonenumber}</td>
             <td>${data[i].favoritecookie}</td>
             <td>${data[i].datecreated}</td>
-            <td><button type="edit";class="btn btnEdit" onclick="openWindow1(); updateContact(${data[i].contactid});">Edit</button></td>
+            <td><button type="edit";class="btn btnEdit" onclick="openWindow1(); editor(${data[i].contactid});">Edit</button></td>
             <td><button type="delete";class="btn btnDelete"; onclick="deleter(${data[i].contactid});">Delete</button></td>
             </tr>`
         table.innerHTML += row
     }
+}
+function editor(buttonID)
+{
+    var currentID = buttonID;
+    updateContact(currentID);
+    document.location.reload(true);
 }
 function deleter(buttonID)
 {
