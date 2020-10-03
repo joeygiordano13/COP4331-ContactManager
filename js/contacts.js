@@ -57,7 +57,7 @@ function addContact()
     request.open("POST", url, false);
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-    console.log(first + " " + last + " " + phone + " " + email + " " + cookie);
+    //console.log(first + " " + last + " " + phone + " " + email + " " + cookie);
     if(first && last && phone && email && cookie)
     {
          try
@@ -277,7 +277,7 @@ function buildTable(jsonData)
 function editor(contactID, first, last, email, phone, cookie)
 {
     currentID = contactID;
-     console.log("***" + first + "***");
+    //console.log("***" + first + "***");
 
     document.getElementById("newfirst").value = first;
     document.getElementById("newlast").value = last;
