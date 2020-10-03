@@ -114,7 +114,7 @@ function addRow(data)
     cell5.innerHTML = cookie;
     cell6.innerHTML = date;
     cell7.innerHTML = '<button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button>';
-    cell8.innerHTML = '<button type="delete";class="btn btnDelete" onclick="deleteRow(this);">Delete</button>';
+    cell8.innerHTML = '<button type="delete";class="btn btnDelete" onclick="deleteRow(this);deleteContact();">Delete</button>';
 }
 
 
