@@ -73,7 +73,6 @@ function addContact()
     }
     else
     {
-        alert("Please Fill out all fields!");
         document.getElementById("addError").innerHTML = "Please fill out fields";
     }
    
@@ -100,10 +99,10 @@ function addRow(data)
     const phoneNumber = document.getElementById("phone").value;
     const email = document.getElementById("email").value;
     const cookie = document.getElementById("cookie").value;
-    const date = new Date();
-    let dd = String(today.getDate()).padStart(2, '0');
-    let mm = String(today.getMonth() + 1).padStart(2, '0');
-    let yyyy = today.getFullYear();
+    let date = new Date();
+    let dd = String(date.getDate()).padStart(2, '0');
+    let mm = String(date.getMonth() + 1).padStart(2, '0');
+    let yyyy = date.getFullYear();
 
     date = mm + '/' + dd + '/' + yyyy;
     //console.log(firstName);
