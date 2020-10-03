@@ -144,7 +144,6 @@ function deleteContact(data)
     request.open("POST", url, true);
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
     request.send(jsonPayload);
-    console.log(jsonPayload);
 
     try
     {
@@ -231,10 +230,11 @@ function buildTable(data)
     for(var i = 0; i < data.length; i++)
     {
         var row = `<tr>
+                    <td>${data[i].contactid}</td>
                     <td>${data[i].firstname}</td>
                     <td>${data[i].lastname}</td>
-                    <td>${data[i].phonenumber}</td>
                     <td>${data[i].email}</td>
+                    <td>${data[i].phonenumber}</td>
                     <td>${data[i].favoritecookie}</td>
                     <td>${data[i].datecreated}</td>
                     <td><button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button></td>
