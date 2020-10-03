@@ -237,7 +237,7 @@ function buildTable(data)
             table.innerHTML += row
         }
     }
-
+}
 function deleter(buttonID)
 {
     console.log("***" + buttonID + "***");
