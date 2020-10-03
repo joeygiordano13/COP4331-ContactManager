@@ -237,14 +237,14 @@ function buildTable(data)
                     <td>${data[i].favoritecookie}</td>
                     <td>${data[i].datecreated}</td>
                     <td><button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button></td>
-                    <td><button type="delete";class="btn btnDelete" onclick="search();delete(${data[i].contactid});">Delete</button></td>
+                    <td><button type="delete";class="btn btnDelete" onclick="search();deleter(${data[i].contactid});">Delete</button></td>
                     </tr>`
         var
         table.innerHTML += row
     }
 }
 
-function delete(buttonID)
+function deleter(buttonID)
 {
     if(confirm('Are you sure you want to delete?'))
         deleteContact();
