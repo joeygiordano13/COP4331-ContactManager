@@ -221,7 +221,7 @@ function buildTable(data)
     var table = document.getElementById('cookieTable')
     var length = data.length;
     
-    if(length != undefined)
+    if(typeof length != undefined)
     {
         for(var i = 0; i < length; i++)
         {   
