@@ -278,10 +278,11 @@ function buildTable(data)
     {
         var row = `<tr>
                     <td>${data[i].firstname}</td>
-                    <td>${data[i].lastlast}</td>
+                    <td>${data[i].lastname}</td>
                     <td>${data[i].phonenumber}</td>
                     <td>${data[i].email}</td>
-                    <td>${data[i].favortiecookie}</td>
+                    <td>${data[i].favoritecookie}</td>
+                    <td>${data[i].datecreated}</td>
                     </tr>`
         table.innerHTML += row
     }
