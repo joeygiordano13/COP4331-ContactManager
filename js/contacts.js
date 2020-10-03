@@ -218,7 +218,7 @@ function readCookie()
 
 function buildTable(data)
 {
-    if(data.length > 0)
+    if(data != NULL)
     { 
         var table = document.getElementById('cookieTable')
         for(var i = 0; i < data.length; i++)
@@ -237,6 +237,7 @@ function buildTable(data)
             table.innerHTML += row
         }
     }
+    
 }
 function deleter(buttonID)
 {
