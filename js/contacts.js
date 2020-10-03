@@ -257,7 +257,7 @@ function buildTable(data)
 }
 function editor(buttonID)
 {
-    var currentID = buttonID;
+     currentID = buttonID;
 }
 
 function deleter(buttonID)
