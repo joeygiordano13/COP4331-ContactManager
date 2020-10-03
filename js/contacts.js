@@ -34,12 +34,6 @@ function updateInfo()
     }
 }
 
-function editor(buttonID)
-{
-    var contactid = buttonID;
-    for(var i = 0; i < )
-    location.reload();
-}
 
 function addContact()
 {
