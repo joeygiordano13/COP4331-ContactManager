@@ -171,7 +171,7 @@ function deleteContact(data)
 
 function clear()
 {
-    document.getElementById("first").value = "random";
+    document.getElementById("first").value = "";
     document.getElementById("last").value = "";
     document.getElementById("phone").value = "";
     document.getElementById("email").value = "";
