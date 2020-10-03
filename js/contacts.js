@@ -219,7 +219,9 @@ function readCookie()
         {
             email = tokens[1];
         }
-	}
+    }
+    
+	// document.getElementById("inputUsername").innerHTML = "Logged in as " + email;
     
     // Cookie expired.
 	if( userID < 0 )
