@@ -73,7 +73,7 @@ function addContact()
     }
     else
     {
-        document.getElementById("addContact").innerHTML = "Please fill out fields";
+        document.getElementById("addError").innerHTML = "Please fill out fields";
     }
    
 } 
