@@ -250,6 +250,7 @@ function createTable(jsonData)
     {
         var th = document.createElement("th");
         th.innerHTML = col[i];
+        tr.style.backgroundColor = "#ffffff";
         tr.appendChild(th);
     }
     
@@ -263,10 +264,23 @@ function createTable(jsonData)
             if(j == col.length -1)
             {
                 tabCell.innerHTML = '<button type="edit"; id = "' + jsonData[i][col[0]] + '"; class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button>';
+                tabCell.style.backgroundColor = "#ffffff";
+                if(!(i % 2))
+                     tabCell.style.backgroundColor = "#f5f5f5";
             }
             else if(j == col.length -2)
             {
                 tabCell.innerHTML = '<button type="delete";id = "' + jsonData[i][col[0]] + '";class="btn btnDelete" onclick="deleteRow(this);deleteContact();">Delete</button>';
+                tabCell.style.backgroundColor = "#ffffff";
+                if(!(i % 2))
+                    tabCell.style.backgroundColor = "#f5f5f5";
+            }
+            else
+            {
+                tabCell.innerHTML = jsonData[i][col[j]];
+                tabCell.style.backgroundColor = "#ffffff";
+                if(!(i % 2))
+                    tabCell.style.backgroundColor = "#f5f5f5";
             }
         }
     }
