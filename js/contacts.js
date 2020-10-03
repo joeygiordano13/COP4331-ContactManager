@@ -135,8 +135,9 @@ function closeWindow1()
     document.getElementById("updateWindow").style.display = "none";
 }
 
-function deleteContact()
+function deleteContact(data)
 {   
+    var contactId = data;
     var url = urlBase + '/DeleteContact.' + urlExtension;
     var jsonPayload = '{"userid" : "' + userID + '", "contactid" : "' + contactId + '"}';
     var request = new XMLHttpRequest();
@@ -246,8 +247,9 @@ function buildTable(data)
 
 function deleter(buttonID)
 {
+    var currentID = buttonID;
     if(confirm('Are you sure you want to delete?'))
-        deleteContact();
+        deleteContact(currentID);
     search();
 }
 function doLogout()
