@@ -218,7 +218,7 @@ function readCookie()
 
 function buildTable(data)
 {
-    if(data > 0)
+    if(data != null)
     { 
         var table = document.getElementById('cookieTable')
         for(var i = 0; i < data.length; i++)
