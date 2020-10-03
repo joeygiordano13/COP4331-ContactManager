@@ -267,7 +267,7 @@ function buildTable(jsonData)
             <td>${data[i].phonenumber}</td>
             <td>${data[i].favoritecookie}</td>
             <td>${data[i].datecreated}</td>
-            <td><button type="edit";class="btn btnEdit" onclick="editor(${data[i].contactid}, ${fn}, ${l}, ${e}, ${p}, ${fc});">Edit</button></td>
+            <td><button type="edit";class="btn btnEdit" onclick="editor(${data[i].contactid}, '${fn}', '${l}', '${e}', '${p}', '${fc}');">Edit</button></td>
             <td><button type="delete";class="btn btnDelete"; onclick="deleter(${data[i].contactid});">Delete</button></td>
             </tr>`
         table.innerHTML += row
