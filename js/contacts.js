@@ -281,8 +281,8 @@ function deleteUser()
     }
 }
 
-function deleteRow()
+function deleteRow(data)
 {   
-    var row = parentNode.parentNode;
+    var row = data.parentNode.parentNode;
     row.parentNode.removeChild(row);
 }
