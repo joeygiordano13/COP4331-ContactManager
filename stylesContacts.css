@@ -43,7 +43,7 @@ body{
 	right: 100%;
   }
   
-  #cookieTable2 th, #cookieTable td 
+  #cookieTable2 th, #cookieTable2 td 
   {
 	text-align: left;
 	padding: 10px;
@@ -54,7 +54,7 @@ body{
 	border-bottom: 1px solid black;
   }
   
-  #cookieTable2 tr.header, #cookieTable tr:hover {
+  #cookieTable2 tr.header, #cookieTable2 tr:hover {
 	background-color: #2ca8d4;
   }
 
