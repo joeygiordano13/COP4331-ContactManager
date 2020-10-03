@@ -241,7 +241,6 @@ function buildTable(data)
 }
 function deleter(buttonID)
 {
-    console.log("***" + buttonID + "***");
     var currentID = buttonID;
     if(confirm('Are you sure you want to delete?'))
         deleteContact(currentID);
