@@ -10,7 +10,7 @@
     $email = "";
     $userid = $inData["userid"];
     $search = $inData["search"];
-    $field = $inData["field"];
+    //$field = $inData["field"];
     $order = $inData["order"];
     $contactid = 0;
 
@@ -45,17 +45,9 @@
         {
             $sql = "SELECT* FROM contacts where userid=" . $userid . ' ORDER BY ' . $order . ' ASC LIMIT ' . $rowLimit;
         }
-        else if (!strcmp($field, "name")) // search by name
+        else // Search constraints
         {
-            $sql = "SELECT* FROM contacts where (firstname LIKE '%" . $search . "%' OR lastname LIKE '%" . $search . "%') AND userid=" . $userid . ' ORDER BY ' . $order .  ' ASC LIMIT ' . $rowLimit;  
-        }
-        else if (!strcmp($field, "favoritecookie")) // search by cookie
-        {
-            $sql = "SELECT* FROM contacts where favoritecookie LIKE '%" . $search . "%' AND userid=" . $userid . ' ORDER BY ' . $order .  ' ASC LIMIT ' . $rowLimit;
-        }
-        else // search by date
-        {
-            $sql = "SELECT* FROM contacts where datecreated LIKE '%" . $search . "%' AND userid=" . $userid . ' ORDER BY ' . $order .  ' ASC LIMIT ' . $rowLimit;
+            $sql = "SELECT* FROM contacts where (firstname LIKE '%" . $search . "%' OR lastname LIKE '%" . $search . "%' OR favoritecookie LIKE '%" . $search . "%' OR email LIKE '%" . $search . "%') AND userid=" . $userid . ' ORDER BY ' . $order .  ' ASC LIMIT ' . $rowLimit;  
         }
 
         $result = $conn->query($sql);
