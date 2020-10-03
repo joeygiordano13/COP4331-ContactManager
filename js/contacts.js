@@ -276,11 +276,11 @@ function editor(buttonID, first, last, email, phone, cookie)
      var phone = phone;
      var cookie = cookie;
 
-    document.getElementById("newfirst").value = 
-    document.getElementById("newlast").value = 
-    document.getElementById("newemail").value = 
-    document.getElementById("newphone").value = 
-    document.getElementById("newcookie").value = 
+    document.getElementById("newfirst").value = first;
+    document.getElementById("newlast").value = last;
+    document.getElementById("newemail").value = email;
+    document.getElementById("newphone").value = phone;
+    document.getElementById("newcookie").value = cookie;
     openWindow1();
 }
 
