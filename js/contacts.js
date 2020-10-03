@@ -184,6 +184,7 @@ function search()
     {
         request.send(jsonPayload);
         var jsonObject = JSON.parse(request.responseText);
+        buildTable(0);
         buildTable(jsonObject.results);
     }
     catch(err)
