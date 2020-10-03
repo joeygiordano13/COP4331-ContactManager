@@ -138,7 +138,7 @@ function closeWindow1()
 function deleteContact(data)
 {   
     var contactId = data;
-    var url = urlBase + '/DeleteContact.' + urlExtension;
+    var url = urlBase + '/DeleteContact' + urlExtension;
     var jsonPayload = '{"userid" : "' + userID + '", "contactid" : "' + contactId + '"}';
     var request = new XMLHttpRequest();
     request.open("POST", url, true);
