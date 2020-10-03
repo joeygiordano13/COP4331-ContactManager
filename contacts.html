@@ -38,7 +38,7 @@
                     <input type="text"  id="cookie" placeholder="'Chocolate Chip'" maxlength="50">
 
                     <button type="button" class="buttons" onclick="clear(); closeWindow(); addContact(); buildTable();search();">Add Cookie</button>
-                    <button type="button" class="buttons" onclick="closeWindow();">Back</button>
+                    <button type="button" class="buttons" onclick="clear(); closeWindow();">Back</button>
                 </form>
             </div>
 
@@ -61,8 +61,8 @@
                     <label for = "phone"><strong>Favorite Cookie:</strong></label>
                     <input type="text"  id="newcookie" maxlength="50">
 
-                    <button type="button" class="buttons" onclick="updateContact();clear();closeWindow1();">Update</button>
-                    <button type="button" class="buttons" onclick="closeWindow1();">Back</button>
+                    <button type="button" class="buttons" onclick=" clear(); closeWindow1(); updateContact(); buildTable(); search();">Update</button>
+                    <button type="button" class="buttons" onclick="clear();closeWindow1();">Back</button>
                 </form>
             </div>
             
@@ -85,11 +85,5 @@
             </table>
         </div>
     </div>   
-   <!-- <script>
-        
-     
-
-      
-    </script> -->
 </body>
 </html>
