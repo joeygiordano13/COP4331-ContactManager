@@ -182,6 +182,7 @@ function search()
     {
         request.send(jsonPayload);
         var jsonObject = JSON.parse(request.responseText);
+        deleteRow(jsonObject.results);
         buildTable(jsonObject.results);
     }
     catch(err)
@@ -278,4 +279,10 @@ function deleteUser()
             alert(err.message);
         }
     }
+}
+
+function deleteRow()
+{   
+    var row = btnDelete.parentNode.parentNode;
+    row.parentNode.removeChild(row);
 }
