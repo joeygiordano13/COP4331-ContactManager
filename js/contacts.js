@@ -143,23 +143,15 @@ function deleteContact(data)
     var request = new XMLHttpRequest();
     request.open("POST", url, true);
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-    request.send(jsonPayload);
+    
 
     try
     {
-        request.onreadystatechange = function()
-        {
-            if(this.readyState == 4 && this.status == 200)
-            {
-                var jsonObject = JSON.parse(request.responseText);
-                document.getElementById("").innerHTML = " Cookies Eaten!";
-            }
-        }
-
+        request.send(jsonPayload);
     }
     catch(err)
     {
-        document.getElementById("").innerHTML = err.message;
+        alert(err.message);
     }
 }
 
