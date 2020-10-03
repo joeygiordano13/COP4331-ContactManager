@@ -220,28 +220,23 @@ function readCookie()
 function buildTable(data)
 {
     var table = document.getElementById('cookieTable')
-    var length = data.length;
-    
-    if(length === undefined)
-        length = 0;
-        
-        if(length > 0)
-        {
-            for(var i = 0; i < length; i++)
-            {   
-                var row = `<tr>
-                    <td>${data[i].firstname}</td>
-                    <td>${data[i].lastname}</td>
-                    <td>${data[i].email}</td>
-                    <td>${data[i].phonenumber}</td>
-                    <td>${data[i].favoritecookie}</td>
-                    <td>${data[i].datecreated}</td>
-                    <td><button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button></td>
-                    <td><button type="delete";class="btn btnDelete"; onclick="deleter(${data[i].contactid});">Delete</button></td>
-                    </tr>`
-                table.innerHTML += row
-            }
+    if(data > 0)
+    {
+        for(var i = 0; i < data.length; i++)
+        {   
+            var row = `<tr>
+                <td>${data[i].firstname}</td>
+                <td>${data[i].lastname}</td>
+                <td>${data[i].email}</td>
+                <td>${data[i].phonenumber}</td>
+                <td>${data[i].favoritecookie}</td>
+                <td>${data[i].datecreated}</td>
+                <td><button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button></td>
+                <td><button type="delete";class="btn btnDelete"; onclick="deleter(${data[i].contactid});">Delete</button></td>
+                </tr>`
+            table.innerHTML += row
         }
+    }
 }
 function deleter(buttonID)
 {
