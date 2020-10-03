@@ -11,15 +11,15 @@ var currentData;
 function editor(dataId)
 {
     var currentID = dataId;
-    for(var i = 0; i < currentData.length; i++)
+    for(var i = 0; i < currentID.length; i++)
     {
         if(currentData[i]["contactid"] == currentID)
         {
-            document.getElementById("newfirst").value = currentData[i]["firstname"];
-            document.getElementById("newlast").value = currentData[i]["lastname"];
-            document.getElementById("newemail").value = currentData[i]["email"];
-            document.getElementById("newphone").value = currentData[i]["phonenumber"];
-            document.getElementById("newcookie").value = currentData[i]["favortiecookie"];
+            document.getElementById("newfirst").value = currentID[i]["firstname"];
+            document.getElementById("newlast").value = currentID[i]["lastname"];
+            document.getElementById("newemail").value = currentID[i]["email"];
+            document.getElementById("newphone").value = currentID[i]["phonenumber"];
+            document.getElementById("newcookie").value = currentID[i]["favortiecookie"];
         }
     }
 }
