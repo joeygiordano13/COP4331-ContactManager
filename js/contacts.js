@@ -310,7 +310,7 @@ function doLogout()
 
 function deleteUser()
 {
-    if (confirm("Are you sure you want to delete your account?"))
+    if (!confirm("Are you sure you want to delete your account?"))
     {
         var url = urlBase + '/DeleteUser' + urlExtension;
         var jsonPayload = '{"userid" : "' + userID + '"}';
