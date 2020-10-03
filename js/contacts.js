@@ -243,7 +243,6 @@ function createTable(jsonData)
     col.push("Delete");
 
     var table = document.createElement("table");
-    table.setAttribute('class', 'center')
 
     var tr = table.insertRow(-1);
     for(var i = 0; i < col.length; i++)
