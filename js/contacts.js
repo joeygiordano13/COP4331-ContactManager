@@ -237,6 +237,8 @@ function buildTable(data)
             table.innerHTML += row
         }
     }
+    else
+        document.location.reload(true);
 }
 function deleter(buttonID)
 {
