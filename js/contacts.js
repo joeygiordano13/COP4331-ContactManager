@@ -130,9 +130,16 @@ function openWindow()
 {
     document.getElementById("addWindow").style.display = "block";   
 }
-function openWindow1()
-{
-    document.getElementById("updateWindow").style.display = "block";   
+
+
+function openWindow1(first, last, email, phone, cookie)
+{   
+    document.getElementById("updateWindow").style.display = "block"; 
+    document.getElementById("newfirst").value = first;
+    document.getElementById("newlast").value = last;
+    document.getElementById("newemail").value = email;
+    document.getElementById("newphone").value = phone;
+    document.getElementById("newcookie").value = cookie;
 }
 function closeWindow1()
 {
@@ -250,12 +257,13 @@ function buildTable(data)
             <td>${data[i].phonenumber}</td>
             <td>${data[i].favoritecookie}</td>
             <td>${data[i].datecreated}</td>
-            <td><button type="edit";class="btn btnEdit" onclick="openWindow1(); editor(${data[i].contactid});">Edit</button></td>
+            <td><button type="edit";class="btn btnEdit" onclick="openWindow1(${data[i].firstname}, ${data[i].lastname}, ${data[i].email}, ${data[i].phonenumber}, ${data[i].favoritecookie}); editor(${data[i].contactid});">Edit</button></td>
             <td><button type="delete";class="btn btnDelete"; onclick="deleter(${data[i].contactid});">Delete</button></td>
             </tr>`
         table.innerHTML += row
     }
 }
+
 function editor(buttonID)
 {
      currentID = buttonID;
