@@ -45,7 +45,7 @@ function addContact()
 
     readCookie();
 
-    var jsonPayload = JSON.stringify({userid : userID, contactid : contactId, firstname : first, lastname : last, email : email, phonenumber : phone, favoritecookie : cookie});
+    var jsonPayload = JSON.stringify({userid : userID, firstname : first, lastname : last, email : email, phonenumber : phone, favoritecookie : cookie});
     //var jsonPayload = '{"userid" : "' + userID + '", "firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "favoritecookie" : "' + cookie + '"}'
     var url = urlBase + '/AddContact' + urlExtension;
 
