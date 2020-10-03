@@ -223,7 +223,7 @@ function readCookie()
 		//document.getElementById("inputUsername").innerHTML = "Logged in as " + email;
 	}
 }
-
+/*
 function createTable(jsonData)
 {   
     currentData = jsonData;
@@ -268,4 +268,21 @@ function createTable(jsonData)
     var divContainer = document.getElementById("showData");
     divContainer.innerHTML = "";
     divContainer.appendChild(table);
+}
+*/
+
+function buildTable(data)
+{
+    var table = document.getElementById('cookieTable')
+    for(var i = 0; i < data.length; i++)
+    {
+        var row = `<tr>
+                    <td>${data[i].firstname}</td>
+                    <td>${data[i].lastlast}</td>
+                    <td>${data[i].phonenumber}</td>
+                    <td>${data[i].email}</td>
+                    <td>${data[i].favortiecookie}</td>
+                    </tr>`
+        table.innerHTML += row
+    }
 }
