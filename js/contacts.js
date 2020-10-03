@@ -8,14 +8,14 @@ var email = "";
 //var date = "";
 var currentId;
 
-function updateContact(data)
+function updateContact(data,firstdata, lastdata, phonedata, emaildata, cookiedata)
 {
     var contactID = data;
-    var first = document.getElementById("newfirst").value;
-    var last = document.getElementById("newlast").value;
-    var phone = document.getElementById("newphone").value;
-    var email = document.getElementById("newemail").value;
-    var cookie = document.getElementById("newcookie").value;
+    var first = firstdata;
+    var last = lastdata;
+    var phone = phonedata;
+    var email = emaildata;
+    var cookie = cookiedata;
     //var date = document.getElementById("date").value;
 
     var jsonPayload = JSON.stringify({userid : userID, contactid : contactID, firstname : first, lastname : last, email : email, phonenumber : phone, favoritecookie : cookie});
@@ -258,7 +258,12 @@ function buildTable(data)
 function editor(buttonID)
 {
     var currentID = buttonID;
-    updateContact(currentID);
+    var first = document.getElementById("newfirst").value;
+    var last = document.getElementById("newlast").value;
+    var phone = document.getElementById("newphone").value;
+    var email = document.getElementById("newemail").value;
+    var cookie = document.getElementById("newcookie").value;
+    updateContact(currentID, first, last, phone, email, cookie);
 }
 function deleter(buttonID)
 {
