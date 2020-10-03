@@ -260,16 +260,27 @@ function buildTable(jsonData)
             <td>${data[i].phonenumber}</td>
             <td>${data[i].favoritecookie}</td>
             <td>${data[i].datecreated}</td>
-            <td><button type="edit";class="btn btnEdit" onclick=" editor(${data[i].contactid});">Edit</button></td>
+            <td><button type="edit";class="btn btnEdit" onclick=" editor(${data[i].contactid}, ${data[i].firstname}, ${data[i].lastname}, ${data[i].email}, ${data[i].phonenumber}, ${data[i].favoritecookie});">Edit</button></td>
             <td><button type="delete";class="btn btnDelete"; onclick="deleter(${data[i].contactid});">Delete</button></td>
             </tr>`
         table.innerHTML += row
     }
 }
 
-function editor(contactID)
+function editor(contactID, first, last, email, phone, cookie)
 {
      currentID = contactID;
+     var first = first;
+     var last = last;
+     var email = email;
+     var phone = phone;
+     var cookie = cookie;
+
+    document.getElementById("newfirst").value = first;
+    document.getElementById("newlast").value = last;
+    document.getElementById("newemail").value = email;
+    document.getElementById("newphone").value = phone;
+    document.getElementById("newcookie").value = cookie;
 
     openWindow1();
 }
