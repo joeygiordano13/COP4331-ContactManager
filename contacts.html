@@ -13,7 +13,7 @@
             <form action="">
                 <div class="foreground" id="loginDiv">
                     <button type="button"  class="buttons" onclick="openWindow();">Create New Contact</button>
-                    <button type="button" id="logout" class="buttons" onclick="logout();">Logout</button>
+                    <button type="button" id="logout" class="buttons" onclick="doLogout();">Logout</button>
                     <button type="button" class="buttons" onclick="">Delete Account</button>
                 </div> 
             </form>
@@ -21,7 +21,7 @@
             <div class ="contactWindow" id="addWindow">
                 <form class="form-container">
                     <h1>Add Cookies</h1>
-
+                    <p id="addError"></p>
                     <label for = "first"><strong>First Name:</strong></label>
                     <input type="text"  id="first" placeholder="'JohnCookie'" maxlength="50" >
                     
@@ -37,7 +37,7 @@
                     <label for = "phone"><strong>Favorite Cookie:</strong></label>
                     <input type="text"  id="cookie" placeholder="'Chocolate Chip'" maxlength="50">
 
-                    <button type="button" class="buttons" onclick="addRow(); clear(); closeWindow(); addContact();">Add Cookie</button>
+                    <button type="button" class="buttons" onclick="clear(); closeWindow(); addContact(); buildTable();search();">Add Cookie</button>
                     <button type="button" class="buttons" onclick="closeWindow();">Back</button>
                 </form>
             </div>
@@ -66,7 +66,8 @@
                 </form>
             </div>
             
-            <input type="text" name="search" id="search" onekeyup="searchContacts();" placeholder="Search in here" size="71px">
+            <input type="text" name="search" id="search" placeholder="Search in here" size="50px">
+            <button type="button" onclick="search();">Search</button>
 
         <div class = "tableContainer">
             <table id="cookieTable">
@@ -80,6 +81,7 @@
                     <td style="text-align:center;width:6%">Edit</td>
                     <td style="text-align:center;width:5%">Delete</td>
                 </tr>
+                <table id="showData"></p>
                <!-- <tr>
                     <td>UCF</td>
                     <td>Knightro</td>
@@ -109,8 +111,8 @@
             </table>
         </div>
     </div>   
-    <script>
-  
+   <!-- <script>
+        
         function deleteRow(btnDelete)
         {   
             var row = btnDelete.parentNode.parentNode;
@@ -119,6 +121,6 @@
         }
 
       
-    </script> 
+    </script> -->
 </body>
 </html>

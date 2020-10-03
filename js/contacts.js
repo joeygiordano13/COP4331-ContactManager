@@ -5,13 +5,11 @@ var field = "name";
 var order = "name";
 var userID = 0;
 var email = "";
-var date = "";
+//var date = "";
 var currentId;
-var currentData;
 
-function updateInfo()
+function updateContact()
 {
-    var contactId = currentId;
     var first = document.getElementById("newfirst").value;
     var last = document.getElementById("newlast").value;
     var phone = document.getElementById("newphone").value;
@@ -19,7 +17,8 @@ function updateInfo()
     var cookie = document.getElementById("newcookie").value;
     //var date = document.getElementById("date").value;
 
-    var jsonPayload = '{"userid" : "' + userID + '", "contactid" : "' + contactId + '","firstname" : "' + first + '", "lastname" : "' + last + '", "email" : "' + email + '", "phonenumber" : "' + phone + '", "favoritecookie" : "' + cookie + '"}'
+    var jsonPayload = JSON.stringify({userid : userID, contactid : contactId, firstname : first, lastname : last, email : email, phonenumber : phone, favoritecookie : cookie});
+    //var jsonPayload = '{"userid" : "' + userID + '", "contactid" : "' + contactId + '","firstname" : "' + first + '", "lastname" : "' + last + '", "email" : "' + email + '", "phonenumber" : "' + phone + '", "favoritecookie" : "' + cookie + '"}'
     var url = urlBase + '/EditContact' + urlExtension;
     var request = new XMLHttpRequest();
     request.open("POST", url, false);
@@ -28,8 +27,7 @@ function updateInfo()
     try
     {
         request.send(jsonPayload);
-        var jsonObject = JSON.parse(request.responseText);
-        alert(jsonObject.info);
+        location.reload();
     }
     catch(err)
     {
@@ -45,7 +43,10 @@ function addContact()
     var email = document.getElementById("email").value;
     var cookie = document.getElementById("cookie").value;
 
-    var jsonPayload = '{"userid" : "' + userID + '", "firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "favoritecookie" : "' + cookie + '"}'
+    readCookie();
+
+    var jsonPayload = JSON.stringify({userid : userID, firstname : first, lastname : last, email : email, phonenumber : phone, favoritecookie : cookie});
+    //var jsonPayload = '{"userid" : "' + userID + '", "firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "favoritecookie" : "' + cookie + '"}'
     var url = urlBase + '/AddContact' + urlExtension;
 
     var request = new XMLHttpRequest();
@@ -59,7 +60,8 @@ function addContact()
         {
             request.send(jsonPayload);
             var jsonObject = JSON.parse(request.responseText);
-            date = jsonObject.datecreated;
+            // date = jsonObject.datecreated;
+            // console.log(date);
             alert(jsonObject.info);
         }
 
@@ -70,11 +72,12 @@ function addContact()
     }
     else
     {
-        document.getElementById("addContact").innerHTML = "Please fill out fields";
+        document.getElementById("addError").innerHTML = "Please fill out fields";
     }
+    document.location.reload(true);
    
 } 
-
+/*
 function addRow(data)
 {
     const myTable = document.getElementById("cookieTable");
@@ -96,6 +99,12 @@ function addRow(data)
     const phoneNumber = document.getElementById("phone").value;
     const email = document.getElementById("email").value;
     const cookie = document.getElementById("cookie").value;
+    let date = new Date();
+    let dd = String(date.getDate()).padStart(2, '0');
+    let mm = String(date.getMonth() + 1).padStart(2, '0');
+    let yyyy = date.getFullYear();
+
+    date = mm + '/' + dd + '/' + yyyy;
     //console.log(firstName);
 
     cell1.innerHTML = firstName;
@@ -105,9 +114,9 @@ function addRow(data)
     cell5.innerHTML = cookie;
     cell6.innerHTML = date;
     cell7.innerHTML = '<button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button>';
-    cell8.innerHTML = '<button type="delete";class="btn btnDelete" onclick="deleteRow(this);">Delete</button>';
+    cell8.innerHTML = '<button type="delete";class="btn btnDelete" onclick="deleteRow(this);deleteContact();">Delete</button>';
 }
-
+*/
 
 function closeWindow()
 {
@@ -127,30 +136,25 @@ function closeWindow1()
     document.getElementById("updateWindow").style.display = "none";
 }
 
-function deleteContact()
+function deleteContact(data)
 {   
-    var url = urlBase + '/DeleteContact.' + urlExtension;
-    var jsonPayload = '{userid" : "' + userID + '",contactid" :"' + contactId + '"}';
+    var contactId = data;
+    var url = urlBase + '/DeleteContact' + urlExtension;
+
+    var jsonPayload = JSON.stringify({userid : userID, contactid : contactId});
+    //var jsonPayload = '{"userid" : "' + userID + '", "contactid" : "' + contactId + '"}';
     var request = new XMLHttpRequest();
     request.open("POST", url, true);
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-    request.send(jsonPayload);
+    
 
     try
     {
-        request.onreadystatechange = function()
-        {
-            if(this.readyState == 4 && this.status == 200)
-            {
-                var jsonObject = JSON.parse(request.responseText);
-                document.getElementById("").innerHTML = " Cookies Eaten!";
-            }
-        }
-
+        request.send(jsonPayload);
     }
     catch(err)
     {
-        document.getElementById("").innerHTML = err.message;
+        alert(err.message);
     }
 }
 
@@ -168,7 +172,8 @@ function search()
 {
     var search = document.getElementById("search").value;
 
-    var jsonPayload = '{"userid" : "' + userID + '", "search" : "' + search + '", "field" : "' + field + '", "order" : "' + order + '"}'
+    var jsonPayload = JSON.stringify({userid : userID, search : search, field : field, order : order});
+    //var jsonPayload = '{"userid" : "' + userID + '", "search" : "' + search + '", "field" : "' + field + '", "order" : "' + order + '"}'
     var url = urlBase + '/SearchContacts'+ urlExtension;
     var request = new XMLHttpRequest();
     request.open("POST", url, false);
@@ -177,7 +182,7 @@ function search()
     {
         request.send(jsonPayload);
         var jsonObject = JSON.parse(request.responseText);
-        addRow(jsonObject.results);
+        buildTable(jsonObject.results);
     }
     catch(err)
     {
@@ -211,6 +216,46 @@ function readCookie()
 	}
 	else
 	{
-		document.getElementById("inputUsername").innerHTML = "Logged in as " + email;
+		//document.getElementById("inputUsername").innerHTML = "Logged in as " + email;
 	}
+}
+
+function buildTable(data)
+{
+    var table = document.getElementById('cookieTable');
+    let length = 0;
+
+    if(data != null)
+    {
+        length = data.length;
+    }
+    for(var i = 0; i < length; i++)
+    {   
+        var row = `<tr>
+            <td>${data[i].firstname}</td>
+            <td>${data[i].lastname}</td>
+            <td>${data[i].email}</td>
+            <td>${data[i].phonenumber}</td>
+            <td>${data[i].favoritecookie}</td>
+            <td>${data[i].datecreated}</td>
+            <td><button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button></td>
+            <td><button type="delete";class="btn btnDelete"; onclick="deleter(${data[i].contactid});">Delete</button></td>
+            </tr>`
+        table.innerHTML += row
+    }
+}
+function deleter(buttonID)
+{
+    var currentID = buttonID;
+    if(confirm('Are you sure you want to delete?'))
+        deleteContact(currentID);
+    document.location.reload(true);
+}
+
+function doLogout()
+{
+	userId = 0;
+	userName = "";
+	document.cookie = "userName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+	window.location.href = "index.html";
 }
