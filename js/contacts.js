@@ -170,10 +170,11 @@ function clear()
 
 function clearTable()
 {
-    var table = document.getElementById('cookieTable');
+    var table = document.getElementById('cookieTable2');
     table.innerHTML = "";
 
 }
+
 function search()
 {
     var search = document.getElementById("search").value;
@@ -229,7 +230,7 @@ function readCookie()
 
 function buildTable(data)
 {
-    var table = document.getElementById('cookieTable');
+    var table = document.getElementById('cookieTable2');
     let length = 0;
 
     if(data != null)
