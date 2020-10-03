@@ -219,10 +219,15 @@ function readCookie()
 
 function buildTable(data)
 {
-    var table = document.getElementById('cookieTable')
-    if(data.length > 0)
+    var table = document.getElementById('cookieTable');
+    let length = 0;
+
+    if(data != null)
     {
-        for(var i = 0; i < data.length; i++)
+        length = data.length;
+    }
+
+        for(var i = 0; i < length; i++)
         {   
             var row = `<tr>
                 <td>${data[i].firstname}</td>
@@ -236,9 +241,6 @@ function buildTable(data)
                 </tr>`
             table.innerHTML += row
         }
-    }
-    else
-        document.location.reload(true);
 }
 function deleter(buttonID)
 {
