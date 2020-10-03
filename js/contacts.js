@@ -7,8 +7,10 @@ var userID = 0;
 var email = "";
 //var date = "";
 var currentId;
-
-
+function editor(data)
+{
+    currentId = data;
+}
 function updateContact()
 {
     var first = document.getElementById("newfirst").value;
@@ -247,15 +249,15 @@ function buildTable(data)
             <td>${data[i].phonenumber}</td>
             <td>${data[i].favoritecookie}</td>
             <td>${data[i].datecreated}</td>
-            <td><button type="edit";class="btn btnEdit" onclick=" openWindow1();">Edit</button></td>
+            <td><button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button></td>
             <td><button type="delete";class="btn btnDelete"; onclick="deleter(${data[i].contactid});">Delete</button></td>
             </tr>`
         table.innerHTML += row
     }
 }
-function deleter(dataId)
+function deleter(buttonID)
 {
-    var currentID = dataId;
+    var currentID = buttonID;
     if(confirm('Are you sure you want to delete?'))
         deleteContact(currentID);
     document.location.reload(true);
