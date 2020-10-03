@@ -26,19 +26,12 @@ function updateInfo()
     try
     {
         request.send(jsonPayload);
-     
+        location.reload();
     }
     catch(err)
     {
         alert(err.message);
     }
-}
-
-function editor(buttonID)
-{
-    var contactid = buttonID;
-    for(var i = 0; i < )
-    location.reload();
 }
 
 function addContact()
@@ -173,7 +166,7 @@ function clear()
 
 function search()
 {
-    var search = document.getElementById("search").value;
+    var search = document.getElementById("searchbox").value;
 
     var jsonPayload = '{"userid" : "' + userID + '", "search" : "' + search + '", "field" : "' + field + '", "order" : "' + order + '"}'
     var url = urlBase + '/SearchContacts'+ urlExtension;
