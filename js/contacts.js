@@ -227,33 +227,7 @@ function readCookie()
 function createTable(jsonData)
 {   
     currentData = jsonData;
-    
-    var col = [];
-    for(var i = 0; i < jsonData.length; i++)
-    {
-        for(var key in jsonData[i])
-        {
-            if(col.indexOf(key) === -1)
-            {
-                col.push(key);
-            }
-        }
-    }
-    col.push("Edit");
-    col.push("Delete");
-
-    var table = document.createElement("table");
-
-    var tr = table.insertRow(-1);
-    
-    for(var i = 0; i < col.length; i++)
-    {
-        var th = document.createElement("th");
-        th.innerHTML = col[i];
-        tr.style.backgroundColor = "#ffffff";
-        tr.appendChild(th);
-    }
-    
+        
     for(var i = 0; i < jsonData.length; i++)
     {
         tr = table.insertRow(-1);
@@ -270,7 +244,7 @@ function createTable(jsonData)
             }
             else if(j == col.length -2)
             {
-                tabCell.innerHTML = '<button type="delete";id = "' + jsonData[i][col[0]] + '";class="btn btnDelete" onclick="deleteRow(this);deleteContact();">Delete</button>';
+                tabCell.innerHTML = '<button type="delete"; id = "' + jsonData[i][col[0]] + '" ;class="btn btnDelete" onclick="deleteRow(this);deleteContact();">Delete</button>';
                 tabCell.style.backgroundColor = "#ffffff";
                 if(!(i % 2))
                     tabCell.style.backgroundColor = "#f5f5f5";
