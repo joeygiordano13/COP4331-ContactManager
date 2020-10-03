@@ -1,8 +1,8 @@
 var urlBase = "http://www.cookiebook.team/API";
 var urlExtension = ".php";
 
-var field = "";
-var order = "";
+var field = "name";
+var order = "name";
 var userID = 0;
 var email = "";
 //var date = "";
@@ -34,6 +34,12 @@ function updateInfo()
     }
 }
 
+function editor(buttonID)
+{
+    var contactid = buttonID;
+    for(var i = 0; i < )
+    location.reload();
+}
 
 function addContact()
 {
