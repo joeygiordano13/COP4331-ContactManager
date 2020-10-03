@@ -227,7 +227,12 @@ function readCookie()
 function createTable(jsonData)
 {   
     currentData = jsonData;
-        
+ 
+    var table = document.createElement("table");
+
+    var tr = table.insertRow(-1);
+
+    
     for(var i = 0; i < jsonData.length; i++)
     {
         tr = table.insertRow(-1);
