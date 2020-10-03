@@ -31,7 +31,6 @@ function updateContact(data)
     try
     {
         request.send(jsonPayload);
-        location.reload();
     }
     catch(err)
     {
