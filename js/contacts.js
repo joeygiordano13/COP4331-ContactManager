@@ -224,6 +224,7 @@ function buildTable(data)
     
     if(length === undefined)
         length = 0;
+        
         if(length > 0)
         {
             for(var i = 0; i < length; i++)
