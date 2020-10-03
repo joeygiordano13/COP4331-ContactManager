@@ -59,7 +59,6 @@ class SearchContacts implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'userid' => 'int',
         'search' => 'string',
-        'field' => 'string',
         'order' => 'string'
     ];
 
@@ -71,7 +70,6 @@ class SearchContacts implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'userid' => null,
         'search' => null,
-        'field' => null,
         'order' => null
     ];
 
@@ -104,7 +102,6 @@ class SearchContacts implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'userid' => 'userid',
         'search' => 'search',
-        'field' => 'field',
         'order' => 'order'
     ];
 
@@ -116,7 +113,6 @@ class SearchContacts implements ModelInterface, ArrayAccess
     protected static $setters = [
         'userid' => 'setUserid',
         'search' => 'setSearch',
-        'field' => 'setField',
         'order' => 'setOrder'
     ];
 
@@ -128,7 +124,6 @@ class SearchContacts implements ModelInterface, ArrayAccess
     protected static $getters = [
         'userid' => 'getUserid',
         'search' => 'getSearch',
-        'field' => 'getField',
         'order' => 'getOrder'
     ];
 
@@ -194,7 +189,6 @@ class SearchContacts implements ModelInterface, ArrayAccess
     {
         $this->container['userid'] = isset($data['userid']) ? $data['userid'] : null;
         $this->container['search'] = isset($data['search']) ? $data['search'] : null;
-        $this->container['field'] = isset($data['field']) ? $data['field'] : null;
         $this->container['order'] = isset($data['order']) ? $data['order'] : null;
     }
 
@@ -212,9 +206,6 @@ class SearchContacts implements ModelInterface, ArrayAccess
         }
         if ($this->container['search'] === null) {
             $invalidProperties[] = "'search' can't be null";
-        }
-        if ($this->container['field'] === null) {
-            $invalidProperties[] = "'field' can't be null";
         }
         if ($this->container['order'] === null) {
             $invalidProperties[] = "'order' can't be null";
@@ -278,30 +269,6 @@ class SearchContacts implements ModelInterface, ArrayAccess
     public function setSearch($search)
     {
         $this->container['search'] = $search;
-
-        return $this;
-    }
-
-    /**
-     * Gets field
-     *
-     * @return string
-     */
-    public function getField()
-    {
-        return $this->container['field'];
-    }
-
-    /**
-     * Sets field
-     *
-     * @param string $field field
-     *
-     * @return $this
-     */
-    public function setField($field)
-    {
-        $this->container['field'] = $field;
 
         return $this;
     }

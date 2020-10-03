@@ -91,13 +91,6 @@ class SearchContactsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "field"
-     */
-    public function testPropertyField()
-    {
-    }
-
-    /**
      * Test attribute "order"
      */
     public function testPropertyOrder()
