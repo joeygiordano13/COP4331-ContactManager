@@ -238,8 +238,7 @@ function buildTable(data)
             table.innerHTML += row
         }
     }
-    else
-        break;
+    
 }
 function deleter(buttonID)
 {
