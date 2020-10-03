@@ -260,33 +260,23 @@ function buildTable(jsonData)
             <td>${data[i].phonenumber}</td>
             <td>${data[i].favoritecookie}</td>
             <td>${data[i].datecreated}</td>
-            <td><button type="edit";class="btn btnEdit" onclick=" editor(${data[i].contactid}, ${data[i].firstname}, ${data[i].lastname}, ${data[i].email}, ${data[i].phonenumber}, ${data[i].favoritecookie});">Edit</button></td>
+            <td><button type="edit";class="btn btnEdit" onclick=" editor(${data[i].contactid});">Edit</button></td>
             <td><button type="delete";class="btn btnDelete"; onclick="deleter(${data[i].contactid});">Delete</button></td>
             </tr>`
         table.innerHTML += row
     }
 }
 
-function editor(buttonID, first, last, email, phone, cookie)
+function editor(contactID)
 {
-     currentID = buttonID;
-     var first = first;
-     var last = last;
-     var email = email;
-     var phone = phone;
-     var cookie = cookie;
+     currentID = contactID;
 
-    document.getElementById("newfirst").value = first;
-    document.getElementById("newlast").value = last;
-    document.getElementById("newemail").value = email;
-    document.getElementById("newphone").value = phone;
-    document.getElementById("newcookie").value = cookie;
     openWindow1();
 }
 
-function deleter(buttonID)
+function deleter(contactID)
 {
-    var currentID = buttonID;
+    var currentID = contactID;
     if(confirm('Are you sure you want to delete?'))
         deleteContact(currentID);
     document.location.reload(true);
