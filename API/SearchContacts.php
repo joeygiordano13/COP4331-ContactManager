@@ -10,7 +10,6 @@
     $email = "";
     $userid = $inData["userid"];
     $search = $inData["search"];
-    //$field = $inData["field"];
     $order = $inData["order"];
     $contactid = 0;
 
@@ -60,7 +59,7 @@
             while ($searchCount > 0)
             {
                 $row = $result->fetch_assoc();
-                $thisJsonObject = '{"contactid":' . $row["contactid"] . ',"firstname":"' . $row["firstname"] . '","lastname":"' . $row["lastname"] . '","email":"' . $row["email"] . '","phonenumber":"' . $row["phonenumber"] . '","favoritecookie":"' . $row["favoritecookie"] . '","datecreated":"' . $inData["datecreated"] . '"}';
+                $thisJsonObject = '{"contactid":' . $row["contactid"] . ',"firstname":"' . $row["firstname"] . '","lastname":"' . $row["lastname"] . '","email":"' . $row["email"] . '","phonenumber":"' . $row["phonenumber"] . '","favoritecookie":"' . $row["favoritecookie"] . '","datecreated":"' . $row["datecreated"] . '"}';
                 
                 // Push json object onto array for matching contact
                 $searchResults .= $thisJsonObject;

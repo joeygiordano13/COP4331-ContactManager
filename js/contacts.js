@@ -7,21 +7,9 @@ var userID = 0;
 var email = "";
 //var date = "";
 var currentId;
-var currentData;
-function editor(dataId)
+function editor(data)
 {
-    var currentID = dataId;
-    for(var i = 0; i < currentData.length; i++)
-    {
-        if(currentData[i]["contactid"] == currentID)
-        {
-            document.getElementById("newfirst").value = currentData[i]["firstname"];
-            document.getElementById("newlast").value = currentData[i]["lastname"];
-            document.getElementById("newemail").value = currentData[i]["email"];
-            document.getElementById("newphone").value = currentData[i]["phonenumber"];
-            document.getElementById("newcookie").value = currentData[i]["favortiecookie"];
-        }
-    }
+    currentId = data;
 }
 function updateContact()
 {
@@ -263,15 +251,15 @@ function buildTable(data)
             <td>${data[i].phonenumber}</td>
             <td>${data[i].favoritecookie}</td>
             <td>${data[i].datecreated}</td>
-            <td><button type="edit";class="btn btnEdit" onclick="openWindow1();editor(${data[i].contactid});">Edit</button></td>
+            <td><button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button></td>
             <td><button type="delete";class="btn btnDelete"; onclick="deleter(${data[i].contactid});">Delete</button></td>
             </tr>`
         table.innerHTML += row
     }
 }
-function deleter(dataId)
+function deleter(buttonID)
 {
-    var currentID = dataId;
+    var currentID = buttonID;
     if(confirm('Are you sure you want to delete?'))
         deleteContact(currentID);
     document.location.reload(true);
