@@ -171,7 +171,7 @@ function deleteContact(data)
 
 function clear()
 {
-    document.getElementById("first").value = "";
+    document.getElementById("first").value = "random";
     document.getElementById("last").value = "";
     document.getElementById("phone").value = "";
     document.getElementById("email").value = "";
@@ -260,7 +260,7 @@ function buildTable(jsonData)
             <td>${data[i].phonenumber}</td>
             <td>${data[i].favoritecookie}</td>
             <td>${data[i].datecreated}</td>
-            <td><button type="edit";class="btn btnEdit" onclick=" editor(${data[i].contactid}, ${data[i].firstname}, ${data[i].lastname}, ${data[i].email}, ${data[i].phonenumber}, ${data[i].favoritecookie});">Edit</button></td>
+            <td><button type="edit";class="btn btnEdit" onclick="editor(${data[i].contactid}, ${data[i].firstname}, ${data[i].lastname}, ${data[i].email}, ${data[i].phonenumber}, ${data[i].favoritecookie});">Edit</button></td>
             <td><button type="delete";class="btn btnDelete"; onclick="deleter(${data[i].contactid});">Delete</button></td>
             </tr>`
         table.innerHTML += row
