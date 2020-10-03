@@ -227,6 +227,8 @@ function readCookie()
 function createTable(jsonData)
 {   
     currentData = jsonData;
+    
+    var col = [];
  
     var table = document.createElement("table");
 
