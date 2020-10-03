@@ -44,6 +44,20 @@ body{
 	right: 100%;
   }
   
+  #cookieTable2th, #cookieTable2 td 
+  {
+	text-align: left;
+	padding: 10px;
+  }
+  
+  #cookieTable2 tr 
+  {
+	border-bottom: 1px solid black;
+  }
+  
+  #cookieTable2 tr.header, #cookieTable2 tr:hover {
+	background-color: #2ca8d4;
+  }
 .buttons
 {
 	font-size: 30px;
