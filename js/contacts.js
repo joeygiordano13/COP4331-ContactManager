@@ -18,8 +18,8 @@ function updateContact(data)
     var cookie = document.getElementById("newcookie").value;
     //var date = document.getElementById("date").value;
 
-    //var jsonPayload = JSON.stringify({userid : userID, contactid : contactID, firstname : first, lastname : last, email : email, phonenumber : phone, favoritecookie : cookie});
-    var jsonPayload = '{"userid" : "' + userID + '", "contactid" : "' + contactId + '","firstname" : "' + first + '", "lastname" : "' + last + '", "email" : "' + email + '", "phonenumber" : "' + phone + '", "favoritecookie" : "' + cookie + '"}'
+    var jsonPayload = JSON.stringify({userid : userID, contactid : contactID, firstname : first, lastname : last, email : email, phonenumber : phone, favoritecookie : cookie});
+    //var jsonPayload = '{"userid" : "' + userID + '", "contactid" : "' + contactId + '","firstname" : "' + first + '", "lastname" : "' + last + '", "email" : "' + email + '", "phonenumber" : "' + phone + '", "favoritecookie" : "' + cookie + '"}'
     var url = urlBase + '/EditContact' + urlExtension;
 
     var request = new XMLHttpRequest();
