@@ -67,7 +67,7 @@
             </div>
             
             <input type="text" name="search" id="search" placeholder="Search in here" size="50px">
-            <button type="button" onclick="search();buildTable(0)">Search</button>
+            <button type="button" onkeyup="search();">Search</button>
 
         <div class = "tableContainer">
             <table id="cookieTable">
@@ -113,12 +113,7 @@
     </div>   
    <!-- <script>
         
-        function deleteRow(btnDelete)
-        {   
-            var row = btnDelete.parentNode.parentNode;
-            if(confirm("Are you sure you would like to delete?"))
-             row.parentNode.removeChild(row);
-        }
+     
 
       
     </script> -->
