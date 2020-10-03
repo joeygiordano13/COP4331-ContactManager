@@ -166,7 +166,7 @@ function clear()
 
 function search()
 {
-    var search = document.getElementById("searchbox").value;
+    var search = document.getElementById("search").value;
 
     var jsonPayload = '{"userid" : "' + userID + '", "search" : "' + search + '", "field" : "' + field + '", "order" : "' + order + '"}'
     var url = urlBase + '/SearchContacts'+ urlExtension;
