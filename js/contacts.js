@@ -239,7 +239,7 @@ function buildTable(data)
                     <td><button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button></td>
                     <td><button type="delete";class="btn btnDelete" onclick="search();deleter(${data[i].contactid});">Delete</button></td>
                     </tr>`
-        var
+        
         table.innerHTML += row
     }
 }
