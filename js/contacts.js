@@ -5,6 +5,7 @@ var field = "name";
 var order = "name";
 var userID = 0;
 var email = "";
+var data;
 //var date = "";
 var currentID;
 
@@ -132,14 +133,15 @@ function openWindow()
 }
 
 
-function openWindow1(first, last, email, phone, cookie)
+function openWindow1()
 {   
     document.getElementById("updateWindow").style.display = "block"; 
-    document.getElementById("newfirst").value = first;
-    document.getElementById("newlast").value = last;
-    document.getElementById("newemail").value = email;
-    document.getElementById("newphone").value = phone;
-    document.getElementById("newcookie").value = cookie;
+
+    //document.getElementById("newfirst").value = first;
+    //document.getElementById("newlast").value = last;
+    //document.getElementById("newemail").value = email;
+    //document.getElementById("newphone").value = phone;
+    //document.getElementById("newcookie").value = cookie;
 }
 function closeWindow1()
 {
@@ -239,8 +241,9 @@ function readCookie()
 	}
 }
 
-function buildTable(data)
-{
+function buildTable(jsonData)
+{   
+    data = jsonData;
     var table = document.getElementById('cookieTable2');
     let length = 0;
 
@@ -257,16 +260,28 @@ function buildTable(data)
             <td>${data[i].phonenumber}</td>
             <td>${data[i].favoritecookie}</td>
             <td>${data[i].datecreated}</td>
-            <td><button type="edit";class="btn btnEdit" onclick="openWindow1(${data[i].firstname}, ${data[i].lastname}, ${data[i].email}, ${data[i].phonenumber}, ${data[i].favoritecookie}); editor(${data[i].contactid});">Edit</button></td>
+            <td><button type="edit";class="btn btnEdit" onclick=" editor(${data[i].contactid}, ${data[i].firstname}, ${data[i].lastname}, ${data[i].email}, ${data[i].phonenumber}, ${data[i].favoritecookie});">Edit</button></td>
             <td><button type="delete";class="btn btnDelete"; onclick="deleter(${data[i].contactid});">Delete</button></td>
             </tr>`
         table.innerHTML += row
     }
 }
 
-function editor(buttonID)
+function editor(buttonID, first, last, email, phone, cookie)
 {
      currentID = buttonID;
+     var first = first;
+     var last = last;
+     var email = email;
+     var phone = phone;
+     var cookie = cookie;
+
+    document.getElementById("newfirst").value = 
+    document.getElementById("newlast").value = 
+    document.getElementById("newemail").value = 
+    document.getElementById("newphone").value = 
+    document.getElementById("newcookie").value = 
+    openWindow1();
 }
 
 function deleter(buttonID)
