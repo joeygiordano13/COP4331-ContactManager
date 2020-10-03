@@ -171,7 +171,7 @@ function deleteContact(data)
 
 function clear()
 {
-    document.getElementById("first").value = "";
+    document.getElementById("first").value = "random";
     document.getElementById("last").value = "";
     document.getElementById("phone").value = "";
     document.getElementById("email").value = "";
@@ -269,7 +269,7 @@ function buildTable(jsonData)
 
 function editor(contactID, first, last, email, phone, cookie)
 {
-     currentID = contactID;
+    currentID = contactID;
      
     document.getElementById("newfirst").value = first;
     document.getElementById("newlast").value = last;
