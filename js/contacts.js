@@ -227,8 +227,10 @@ function readCookie()
 function buildTable(data)
 {
     var table = document.getElementById('cookieTable')
+
     for(var i = 0; i < data.length; i++)
     {   
+        var contactid = `${data[i].contactid}`
         var row = `<tr>
                     <td>${data[i].firstname}</td>
                     <td>${data[i].lastname}</td>
@@ -237,7 +239,7 @@ function buildTable(data)
                     <td>${data[i].favoritecookie}</td>
                     <td>${data[i].datecreated}</td>
                     <td><button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button></td>
-                    <td><button type="delete";class="btn btnDelete";id="'data[i]'";onclick="deleter(this.id);">Delete</button></td>
+                    <td><button type="delete";class="btn btnDelete"; onclick="deleter(contactid);">Delete</button></td>
                     </tr>`
         
         table.innerHTML += row
@@ -246,6 +248,7 @@ function buildTable(data)
 
 function deleter(buttonID)
 {
+    console.log("***" + buttonID + "***");
     var currentID = buttonID;
     if(confirm('Are you sure you want to delete?'))
         deleteContact(currentID);
