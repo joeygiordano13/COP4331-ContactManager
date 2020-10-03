@@ -220,8 +220,7 @@ function buildTable(data)
 {
     var table = document.getElementById('cookieTable')
 
-    if(data > 0)
-    { 
+   
         for(var i = 0; i < data.length; i++)
         {   
             var row = `<tr>
@@ -237,8 +236,6 @@ function buildTable(data)
         
             table.innerHTML += row
         }
-    }
-
 }
 function deleter(buttonID)
 {
