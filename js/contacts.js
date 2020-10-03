@@ -8,7 +8,7 @@ var email = "";
 //var date = "";
 var currentId;
 
-function updateInfo()
+function updateContact()
 {
     var first = document.getElementById("newfirst").value;
     var last = document.getElementById("newlast").value;
