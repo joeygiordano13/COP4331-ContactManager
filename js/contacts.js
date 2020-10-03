@@ -223,53 +223,6 @@ function readCookie()
 		//document.getElementById("inputUsername").innerHTML = "Logged in as " + email;
 	}
 }
-/*
-function createTable(jsonData)
-{   
-    currentData = jsonData;
-    
-    var col = [];
- 
-    var table = document.createElement("table");
-
-    var tr = table.insertRow(-1);
-
-    
-    for(var i = 0; i < jsonData.length; i++)
-    {
-        tr = table.insertRow(-1);
-
-        for(var j = 0; j < col.length; j++)
-        {
-            var tabCell = tr.insertCell(-1);
-            if(j == col.length -1)
-            {
-                tabCell.innerHTML = '<button type="edit"; id = "' + jsonData[i][col[0]] + '"; class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button>';
-                tabCell.style.backgroundColor = "#ffffff";
-                if(!(i % 2))
-                     tabCell.style.backgroundColor = "#f5f5f5";
-            }
-            else if(j == col.length -2)
-            {
-                tabCell.innerHTML = '<button type="delete"; id = "' + jsonData[i][col[0]] + '" ;class="btn btnDelete" onclick="deleteRow(this);deleteContact();">Delete</button>';
-                tabCell.style.backgroundColor = "#ffffff";
-                if(!(i % 2))
-                    tabCell.style.backgroundColor = "#f5f5f5";
-            }
-            else
-            {
-                tabCell.innerHTML = jsonData[i][col[j]];
-                tabCell.style.backgroundColor = "#ffffff";
-                if(!(i % 2))
-                    tabCell.style.backgroundColor = "#f5f5f5";
-            }
-        }
-    }
-    var divContainer = document.getElementById("showData");
-    divContainer.innerHTML = "";
-    divContainer.appendChild(table);
-}
-*/
 
 function buildTable(data)
 {
@@ -288,4 +241,12 @@ function buildTable(data)
                     </tr>`
         table.innerHTML += row
     }
+}
+
+function doLogout()
+{
+	userId = 0;
+	userName = "";
+	document.cookie = "userName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+	window.location.href = "index.html";
 }
