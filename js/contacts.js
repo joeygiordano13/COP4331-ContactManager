@@ -254,7 +254,7 @@ function buildTable(jsonData)
 
     for(var i = 0; i < length; i++)
     {   
-        console.log(`${data[i].firstname}`);
+        console.log(typeof `${data[i].firstname}`);
         var row = `<tr>
             <td>${data[i].firstname}</td>
             <td>${data[i].lastname}</td>
