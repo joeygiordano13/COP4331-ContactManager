@@ -259,7 +259,6 @@ function editor(buttonID)
 {
     var currentID = buttonID;
     updateContact(currentID);
-    document.location.reload(true);
 }
 function deleter(buttonID)
 {
