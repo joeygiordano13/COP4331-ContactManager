@@ -243,8 +243,9 @@ function deleter(buttonID)
     var currentID = buttonID;
     if(confirm('Are you sure you want to delete?'))
         deleteContact(currentID);
-    window.location.href = "contacts.html";
+    document.location.reload(true);
 }
+
 function doLogout()
 {
 	userId = 0;
