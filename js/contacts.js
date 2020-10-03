@@ -45,8 +45,6 @@ function addContact()
     var email = document.getElementById("email").value;
     var cookie = document.getElementById("cookie").value;
 
-    readCookie();
-
     var jsonPayload = '{"userid" : "' + userID + '", "firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "favoritecookie" : "' + cookie + '"}'
     var url = urlBase + '/AddContact' + urlExtension;
 

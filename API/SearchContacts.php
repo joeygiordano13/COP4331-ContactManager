@@ -47,7 +47,7 @@
         }
         else if (!strcmp($field, "name")) // search by name
         {
-            $sql = "SELECT* FROM contacts where firstname LIKE '%" . $search . "%' OR lastname LIKE '%" . $search . "%' AND userid=" . $userid . ' ORDER BY ' . $order .  ' ASC LIMIT ' . $rowLimit;  
+            $sql = "SELECT* FROM contacts where (firstname LIKE '%" . $search . "%' OR lastname LIKE '%" . $search . "%') AND userid=" . $userid . ' ORDER BY ' . $order .  ' ASC LIMIT ' . $rowLimit;  
         }
         else if (!strcmp($field, "favoritecookie")) // search by cookie
         {
