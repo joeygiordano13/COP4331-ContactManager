@@ -35,6 +35,7 @@ function updateContact()
     {
         alert(err.message);
     }
+    document.location.reload(true);
 }
 
 function addContact()
