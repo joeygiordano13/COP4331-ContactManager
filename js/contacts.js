@@ -168,6 +168,12 @@ function clear()
     document.getElementById("date").value = "";
 }
 
+function clearTable()
+{
+    var table = document.getElementById('cookieTable');
+    table.innerHTML = "";
+
+}
 function search()
 {
     var search = document.getElementById("search").value;
@@ -178,6 +184,7 @@ function search()
     var request = new XMLHttpRequest();
     request.open("POST", url, false);
     request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+    
     try
     {
         request.send(jsonPayload);
