@@ -18,8 +18,8 @@ function updateContact(data)
     var cookie = document.getElementById("newcookie").value;
     //var date = document.getElementById("date").value;
 
-    var jsonPayload = JSON.stringify({userid : userID, contactid : contactID, firstname : first, lastname : last, email : email, phonenumber : phone, favoritecookie : cookie});
-    //var jsonPayload = '{"userid" : "' + userID + '", "contactid" : "' + contactId + '","firstname" : "' + first + '", "lastname" : "' + last + '", "email" : "' + email + '", "phonenumber" : "' + phone + '", "favoritecookie" : "' + cookie + '"}'
+    //var jsonPayload = JSON.stringify({userid : userID, contactid : contactID, firstname : first, lastname : last, email : email, phonenumber : phone, favoritecookie : cookie});
+    var jsonPayload = '{"userid" : "' + userID + '", "contactid" : "' + contactId + '","firstname" : "' + first + '", "lastname" : "' + last + '", "email" : "' + email + '", "phonenumber" : "' + phone + '", "favoritecookie" : "' + cookie + '"}'
     var url = urlBase + '/EditContact' + urlExtension;
 
     var request = new XMLHttpRequest();
@@ -249,7 +249,7 @@ function buildTable(data)
             <td>${data[i].phonenumber}</td>
             <td>${data[i].favoritecookie}</td>
             <td>${data[i].datecreated}</td>
-            <td><button type="edit";class="btn btnEdit" onclick="openWindow1();updateContact(${data[i].contactid});">Edit</button></td>
+            <td><button type="edit";class="btn btnEdit" onclick="openWindow1(); updateContact(${data[i].contactid});">Edit</button></td>
             <td><button type="delete";class="btn btnDelete"; onclick="deleter(${data[i].contactid});">Delete</button></td>
             </tr>`
         table.innerHTML += row
