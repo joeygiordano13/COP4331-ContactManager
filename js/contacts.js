@@ -7,7 +7,6 @@ var userID = 0;
 var email = "";
 //var date = "";
 var currentId;
-var currentData;
 
 function updateInfo()
 {
@@ -77,7 +76,7 @@ function addContact()
     }
    
 } 
-
+/*
 function addRow(data)
 {
     const myTable = document.getElementById("cookieTable");
@@ -116,7 +115,7 @@ function addRow(data)
     cell7.innerHTML = '<button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button>';
     cell8.innerHTML = '<button type="delete";class="btn btnDelete" onclick="deleteRow(this);deleteContact();">Delete</button>';
 }
-
+*/
 
 function closeWindow()
 {
@@ -139,7 +138,7 @@ function closeWindow1()
 function deleteContact()
 {   
     var url = urlBase + '/DeleteContact.' + urlExtension;
-    var jsonPayload = '{userid" : "' + userID + '",contactid" :"' + contactId + '"}';
+    var jsonPayload = '{"userid" : "' + userID + '", "contactid" : "' + contactId + '"}';
     var request = new XMLHttpRequest();
     request.open("POST", url, true);
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -223,4 +222,55 @@ function readCookie()
 	{
 		//document.getElementById("inputUsername").innerHTML = "Logged in as " + email;
 	}
+}
+
+function createTable(jsonData)
+{   
+    currentData = jsonData;
+    
+    var col = [];
+    for(var i = 0; i < jsonData.length; i++)
+    {
+        for(var key in jsonData[i])
+        {
+            if(col.indexOf(key) === -1)
+            {
+                col.push(key);
+            }
+        }
+    }
+    col.push("Edit");
+    col.push("Delete");
+
+    var table = document.createElement("table");
+    table.setAttribute('class', 'center')
+
+    var tr = table.insertRow(-1);
+    for(var i = 0; i < col.length; i++)
+    {
+        var th = document.createElement("th");
+        th.innerHTML = col[i];
+        tr.appendChild(th);
+    }
+    
+    for(var i = 0; i < jsonData.length; i++)
+    {
+        tr = table.insertRow(-1);
+
+        for(var j = 0; j < col.length; j++)
+        {
+            var tabCell = tr.insertCell(-1);
+            if(j == col.length -1)
+            {
+                tabCell.innerHTML = '<button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button>';
+            }
+            else if(j == col.length -2)
+            {
+                tabCell.innerHTML = '<button type="delete";class="btn btnDelete" onclick="deleteRow(this);deleteContact();">Delete</button>';
+            }
+        }
+    }
+    var divContainer = document.getElementById("showData");
+    divContainer.innerHTML = "";
+    divContainer.appendChild(table);
 }
