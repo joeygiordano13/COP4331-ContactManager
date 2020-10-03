@@ -17,7 +17,8 @@ function updateInfo()
     var cookie = document.getElementById("newcookie").value;
     //var date = document.getElementById("date").value;
 
-    var jsonPayload = '{"userid" : "' + userID + '", "contactid" : "' + contactId + '","firstname" : "' + first + '", "lastname" : "' + last + '", "email" : "' + email + '", "phonenumber" : "' + phone + '", "favoritecookie" : "' + cookie + '"}'
+    var jsonPayload = JSON.stringify({userid : userID, contactid : contactId, firstname : first, lastname : last, email : email, phonenumber : phone, favoritecookie : cookie});
+    //var jsonPayload = '{"userid" : "' + userID + '", "contactid" : "' + contactId + '","firstname" : "' + first + '", "lastname" : "' + last + '", "email" : "' + email + '", "phonenumber" : "' + phone + '", "favoritecookie" : "' + cookie + '"}'
     var url = urlBase + '/EditContact' + urlExtension;
     var request = new XMLHttpRequest();
     request.open("POST", url, false);
@@ -44,7 +45,8 @@ function addContact()
 
     readCookie();
 
-    var jsonPayload = '{"userid" : "' + userID + '", "firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "favoritecookie" : "' + cookie + '"}'
+    var jsonPayload = JSON.stringify({userid : userID, contactid : contactId, firstname : first, lastname : last, email : email, phonenumber : phone, favoritecookie : cookie});
+    //var jsonPayload = '{"userid" : "' + userID + '", "firstname" : "' + first + '", "lastname" : "' + last + '", "phonenumber" : "' + phone + '", "email" : "' + email + '", "favoritecookie" : "' + cookie + '"}'
     var url = urlBase + '/AddContact' + urlExtension;
 
     var request = new XMLHttpRequest();
@@ -138,7 +140,9 @@ function deleteContact(data)
 {   
     var contactId = data;
     var url = urlBase + '/DeleteContact' + urlExtension;
-    var jsonPayload = '{"userid" : "' + userID + '", "contactid" : "' + contactId + '"}';
+
+    var jsonPayload = JSON.stringify({userid : userID, contactid : contactId});
+    //var jsonPayload = '{"userid" : "' + userID + '", "contactid" : "' + contactId + '"}';
     var request = new XMLHttpRequest();
     request.open("POST", url, true);
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -168,7 +172,8 @@ function search()
 {
     var search = document.getElementById("search").value;
 
-    var jsonPayload = '{"userid" : "' + userID + '", "search" : "' + search + '", "field" : "' + field + '", "order" : "' + order + '"}'
+    var jsonPayload = JSON.stringify({userid : userID, search : search, field : field, order : order});
+    //var jsonPayload = '{"userid" : "' + userID + '", "search" : "' + search + '", "field" : "' + field + '", "order" : "' + order + '"}'
     var url = urlBase + '/SearchContacts'+ urlExtension;
     var request = new XMLHttpRequest();
     request.open("POST", url, false);

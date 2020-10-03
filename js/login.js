@@ -1,7 +1,5 @@
 var userID = 0;
 var email = "";
-//var firstName = "";
-//var lastName = "";
 
 function doLogin()
 {
@@ -19,18 +17,16 @@ function doLogin()
     xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
     xhr.send(jsonPayload);
 
+    // Is called when xhr finishes the request
     xhr.onload = function() {
-        //alert(`Loaded: ${xhr.status} ${xhr.response}`);
         if(xhr.status == 500)
         {
             document.getElementById("loginResult").innerHTML = `500 internal server error`;
         } 
         else if(xhr.status == 200)
         {
-            //alert(`Response is \"${xhr.response}\"`);
             var jsonObject = JSON.parse(xhr.response);
             userID = jsonObject.userid;
-            //alert(`id is \"${userID}\"`);
             if(userID)
             {
                 document.getElementById("loginResult").innerHTML = `Login Success!`;
@@ -60,9 +56,7 @@ function doLogin()
         alert(`Received ${event.loaded} of ${event.total}`);
     };
     */
-
-    //alert("Finished xhr");
-};
+}
 
 function doRegister()
 {
@@ -84,18 +78,16 @@ function doRegister()
     xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
     xhr.send(jsonPayload);
 
+    // Is called when xhr finishes the request
     xhr.onload = function() {
-        //alert(`Loaded: ${xhr.status} ${xhr.response}`);
         if(xhr.status == 500)
         {
             document.getElementById("loginResult").innerHTML = `500 internal server error`;
         } 
         else if(xhr.status == 200)
         {
-            //alert(`Response is \"${xhr.response}\"`);
             var jsonObject = JSON.parse(xhr.response);
             userID = jsonObject.userid;
-            //alert(`id is \"${userID}\"`);
             if(typeof jsonObject.error == 'undefined')
             {
                 showLogin();
@@ -124,16 +116,10 @@ function doRegister()
         alert(`Received ${event.loaded} of ${event.total}`);
     };
     */
-
-    //alert("Finished xhr");
-};
+}
 
 function showRegister()
 {
-    /*
-    var element = document.getElementById("titleName");
-    element.innerHTML = "WOW"
-    */
     document.getElementById("mainForm").innerHTML =
     `
     <form class="form-container" id="mainForm">
@@ -158,7 +144,7 @@ function showRegister()
       </div>
       <span id="loginResult"></span>
     `
-};
+}
 
 function showLogin()
 {
@@ -181,7 +167,7 @@ function showLogin()
       <span id="loginResult"></span>
   </form>
     `
-};
+}
 
 function saveCookie()
 {
