@@ -74,6 +74,7 @@ function addContact()
     {
         document.getElementById("addError").innerHTML = "Please fill out fields";
     }
+    document.location.reload(true);
    
 } 
 /*
