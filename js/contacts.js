@@ -7,7 +7,10 @@ var userID = 0;
 var email = "";
 //var date = "";
 var currentId;
-
+function editor(data)
+{
+    currentId = data;
+}
 function updateContact()
 {
     var first = document.getElementById("newfirst").value;
@@ -168,6 +171,13 @@ function clear()
     document.getElementById("date").value = "";
 }
 
+function clearTable()
+{
+    var table = document.getElementById('cookieTable2');
+    table.innerHTML = "";
+
+}
+
 function search()
 {
     var search = document.getElementById("search").value;
@@ -178,6 +188,7 @@ function search()
     var request = new XMLHttpRequest();
     request.open("POST", url, false);
     request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+    
     try
     {
         request.send(jsonPayload);
@@ -222,7 +233,7 @@ function readCookie()
 
 function buildTable(data)
 {
-    var table = document.getElementById('cookieTable');
+    var table = document.getElementById('cookieTable2');
     let length = 0;
 
     if(data != null)
@@ -258,4 +269,24 @@ function doLogout()
 	userName = "";
 	document.cookie = "userName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
 	window.location.href = "index.html";
+}
+
+function deleteUser()
+{
+    if (confirm("Are you sure you want to delete your account?"))
+    {
+        var url = urlBase + '/DeleteUser' + urlExtension;
+        var jsonPayload = '{"userid" : "' + userID + '"}';
+        var request = new XMLHttpRequest();
+        request.open("POST", url, false);
+        request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+        try
+        {
+            request.send(jsonPayload);
+        }
+        catch(err)
+        {
+            alert(err.message);
+        }
+    }
 }

@@ -14,7 +14,7 @@
                 <div class="foreground" id="loginDiv">
                     <button type="button"  class="buttons" onclick="openWindow();">Create New Contact</button>
                     <button type="button" id="logout" class="buttons" onclick="doLogout();">Logout</button>
-                    <button type="button" class="buttons" onclick="">Delete Account</button>
+                    <button type="button" class="buttons" onclick="deleteUser();">Delete Account</button>
                 </div> 
             </form>
 
@@ -47,27 +47,27 @@
                     <h1>Update Cookies</h1>
 
                     <label for = "first"><strong>First Name:</strong></label>
-                    <input type="text"  id="newfirst" placeholder="'JohnCookie'" maxlength="50" >
+                    <input type="text"  id="newfirst"  maxlength="50" >
                     
                     <label for = "last"><strong>Last Name:</strong></label>
-                    <input type="text"  id="newlast" placeholder="'CookieSmith'" maxlength="50">
+                    <input type="text"  id="newlast"  maxlength="50">
                    
                     <label for = "phone"><strong>Phone:</strong></label>
-                    <input type="text"  id="newphone" placeholder="'xxx-xxx-xxxx'" maxlength="20">
+                    <input type="text"  id="newphone"  maxlength="20">
    
                     <label for = "email"><strong>Email:</strong></label>
-                    <input type="text"  id="newemail" placeholder="'cookies@more.please'" maxlength="50">
+                    <input type="text"  id="newemail"  maxlength="50">
 
                     <label for = "phone"><strong>Favorite Cookie:</strong></label>
-                    <input type="text"  id="newcookie" placeholder="'Chocolate Chip'" maxlength="50">
+                    <input type="text"  id="newcookie" maxlength="50">
 
                     <button type="button" class="buttons" onclick="updateContact();clear();closeWindow1();">Update</button>
                     <button type="button" class="buttons" onclick="closeWindow1();">Back</button>
                 </form>
             </div>
             
-            <input type="text" name="search" id="search" placeholder="Search in here" size="50px">
-            <button type="button" onclick="search();">Search</button>
+            <input type="text" name="search" id="search" placeholder="Search in here" onkeyup="clearTable();search();" size="50px">
+            <!--<button type="button" onclick="search();">Search</button> -->
 
         <div class = "tableContainer">
             <table id="cookieTable">
@@ -81,44 +81,13 @@
                     <td style="text-align:center;width:6%">Edit</td>
                     <td style="text-align:center;width:5%">Delete</td>
                 </tr>
-                <table id="showData"></p>
-               <!-- <tr>
-                    <td>UCF</td>
-                    <td>Knightro</td>
-                    <td>ucf@knights.com</td>
-                    <td>123-456-7890</td>
-                    <td>Oatmeal</td>
-                </tr>
-
-                <tr>
-                    <td>USF</td>
-                    <td>Bulls</td>
-                    <td>usf@bulls.com</td>
-                    <td>012-345-6789</td>
-                </tr>
-                <tr>
-                    <td>UF</td>
-                    <td>Gators</td>
-                    <td>uf@gators.com</td>
-                    <td>098-654-4321</td>
-                </tr>
-                <tr>
-                    <td>FSU</td>
-                    <td>Seminoles</td>
-                    <td>FSU@seminoles.com</td>
-                    <td>321-456-7890</td>
-                </tr> -->
+                <table id="cookieTable2"></table>
             </table>
         </div>
     </div>   
    <!-- <script>
         
-        function deleteRow(btnDelete)
-        {   
-            var row = btnDelete.parentNode.parentNode;
-            if(confirm("Are you sure you would like to delete?"))
-             row.parentNode.removeChild(row);
-        }
+     
 
       
     </script> -->
