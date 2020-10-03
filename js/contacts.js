@@ -270,12 +270,7 @@ function buildTable(jsonData)
 function editor(contactID, first, last, email, phone, cookie)
 {
      currentID = contactID;
-     var first = first;
-     var last = last;
-     var email = email;
-     var phone = phone;
-     var cookie = cookie;
-
+     
     document.getElementById("newfirst").value = first;
     document.getElementById("newlast").value = last;
     document.getElementById("newemail").value = email;
