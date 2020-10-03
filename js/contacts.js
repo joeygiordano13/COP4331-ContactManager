@@ -259,7 +259,7 @@ function buildTable(jsonData)
         let e = data[i].email;
         let p = data[i].phonenumber;
         let fc = data[i].favoritecookie;
-        console.log(typeof `${data[i].firstname}` + "__" + f);
+        console.log(typeof `${data[i].firstname}` + "__" + fn);
         var row = `<tr>
             <td>${data[i].firstname}</td>
             <td>${data[i].lastname}</td>
