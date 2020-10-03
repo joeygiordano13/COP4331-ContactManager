@@ -245,6 +245,7 @@ function createTable(jsonData)
     var table = document.createElement("table");
 
     var tr = table.insertRow(-1);
+    
     for(var i = 0; i < col.length; i++)
     {
         var th = document.createElement("th");
@@ -261,11 +262,11 @@ function createTable(jsonData)
             var tabCell = tr.insertCell(-1);
             if(j == col.length -1)
             {
-                tabCell.innerHTML = '<button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button>';
+                tabCell.innerHTML = '<button type="edit"; id = "' + jsonData[i][col[0]] + '"; class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button>';
             }
             else if(j == col.length -2)
             {
-                tabCell.innerHTML = '<button type="delete";class="btn btnDelete" onclick="deleteRow(this);deleteContact();">Delete</button>';
+                tabCell.innerHTML = '<button type="delete";id = "' + jsonData[i][col[0]] + '";class="btn btnDelete" onclick="deleteRow(this);deleteContact();">Delete</button>';
             }
         }
     }
