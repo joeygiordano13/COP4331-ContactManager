@@ -259,7 +259,7 @@ function buildTable(jsonData)
         let e = data[i].email;
         let p = data[i].phonenumber;
         let fc = data[i].favoritecookie;
-        console.log(typeof `${data[i].firstname}` + "__" + fn);
+        //console.log(typeof `${data[i].firstname}` + "__" + fn);
         var row = `<tr>
             <td>${data[i].firstname}</td>
             <td>${data[i].lastname}</td>
@@ -267,7 +267,7 @@ function buildTable(jsonData)
             <td>${data[i].phonenumber}</td>
             <td>${data[i].favoritecookie}</td>
             <td>${data[i].datecreated}</td>
-            <td><button type="edit";class="btn btnEdit" onclick="editor(${data[i].contactid}, ${data[i].firstname}, ${data[i].lastname}, ${data[i].email}, ${data[i].phonenumber}, ${data[i].favoritecookie});">Edit</button></td>
+            <td><button type="edit";class="btn btnEdit" onclick="editor(${data[i].contactid}, ${fn}, ${l}, ${e}, ${p}, ${fc});">Edit</button></td>
             <td><button type="delete";class="btn btnDelete"; onclick="deleter(${data[i].contactid});">Delete</button></td>
             </tr>`
         table.innerHTML += row
