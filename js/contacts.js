@@ -283,6 +283,6 @@ function deleteUser()
 
 function deleteRow()
 {   
-    var row = btnDelete.parentNode.parentNode;
+    var row = parentNode.parentNode;
     row.parentNode.removeChild(row);
 }
