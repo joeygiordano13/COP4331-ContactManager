@@ -283,6 +283,8 @@ function buildTable(data)
                     <td>${data[i].email}</td>
                     <td>${data[i].favoritecookie}</td>
                     <td>${data[i].datecreated}</td>
+                    <td>'<button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button>';</td>
+                    <td>'<button type="delete";class="btn btnDelete" onclick="deleteRow(this);deleteContact();">Delete</button>';</td>
                     </tr>`
         table.innerHTML += row
     }
