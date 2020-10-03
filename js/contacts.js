@@ -228,8 +228,10 @@ function buildTable(data)
 {
     var table = document.getElementById('cookieTable')
     for(var i = 0; i < data.length; i++)
-    {
+    {   
+        contactid = `${data[i].datecreated}`
         var row = `<tr>
+                    
                     <td>${data[i].firstname}</td>
                     <td>${data[i].lastname}</td>
                     <td>${data[i].email}</td>
@@ -237,7 +239,7 @@ function buildTable(data)
                     <td>${data[i].favoritecookie}</td>
                     <td>${data[i].datecreated}</td>
                     <td><button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button></td>
-                    <td><button type="delete";class="btn btnDelete" id="${data[i].datecreated}";onclick="search();deleter(this.id);">Delete</button></td>
+                    <td><button type="delete";class="btn btnDelete" ;onclick="search();deleter(contactid);">Delete</button></td>
                     </tr>`
         
         table.innerHTML += row
