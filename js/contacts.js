@@ -230,7 +230,6 @@ function buildTable(data)
     for(var i = 0; i < data.length; i++)
     {
         var row = `<tr>
-                    <td>${data[i].contactid}</td>
                     <td>${data[i].firstname}</td>
                     <td>${data[i].lastname}</td>
                     <td>${data[i].email}</td>
