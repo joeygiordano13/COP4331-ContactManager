@@ -220,7 +220,7 @@ function readCookie()
 function buildTable(data)
 {
     var table = document.getElementById('cookieTable')
-    if(data > 0)
+    if(data.length > 0)
     {
         for(var i = 0; i < data.length; i++)
         {   
