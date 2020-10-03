@@ -1,8 +1,8 @@
 var urlBase = "http://www.cookiebook.team/API";
 var urlExtension = ".php";
 
-var field = "name";
-var order = "name";
+var field = "";
+var order = "";
 var userID = 0;
 var email = "";
 //var date = "";
@@ -10,7 +10,6 @@ var currentId;
 
 function updateInfo()
 {
-    var contactId = currentId;
     var first = document.getElementById("newfirst").value;
     var last = document.getElementById("newlast").value;
     var phone = document.getElementById("newphone").value;
@@ -27,13 +26,19 @@ function updateInfo()
     try
     {
         request.send(jsonPayload);
-        var jsonObject = JSON.parse(request.responseText);
-        alert(jsonObject.info);
+     
     }
     catch(err)
     {
         alert(err.message);
     }
+}
+
+function editor(buttonID)
+{
+    var contactid = buttonID;
+    for(var i = 0; i < )
+    location.reload();
 }
 
 function addContact()
