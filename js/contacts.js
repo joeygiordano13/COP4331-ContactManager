@@ -5,7 +5,7 @@ var field = "name";
 var order = "name";
 var userID = 0;
 var email = "";
-var date = "";
+//var date = "";
 var currentId;
 var currentData;
 
@@ -61,8 +61,8 @@ function addContact()
         {
             request.send(jsonPayload);
             var jsonObject = JSON.parse(request.responseText);
-            date = jsonObject.datecreated;
-            console.log(date);
+            // date = jsonObject.datecreated;
+            // console.log(date);
             alert(jsonObject.info);
         }
 
@@ -99,6 +99,12 @@ function addRow(data)
     const phoneNumber = document.getElementById("phone").value;
     const email = document.getElementById("email").value;
     const cookie = document.getElementById("cookie").value;
+    const date = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0');
+    let yyyy = today.getFullYear();
+
+    date = mm + '/' + dd + '/' + yyyy;
     //console.log(firstName);
 
     cell1.innerHTML = firstName;
