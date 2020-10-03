@@ -325,6 +325,7 @@ function deleteUser()
         {
             alert(err.message);
         }
+        window.location.href = "index.html";
     }
-    window.location.href = "index.html";
+    
 }
