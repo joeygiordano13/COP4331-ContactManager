@@ -136,7 +136,8 @@ body{
 }
 #search
 {	
-	text-align: center;
+	display: block;
+	margin: 0 auto;
 	font-size: 18pt;
 }
 
