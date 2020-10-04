@@ -67,7 +67,7 @@ function addContact()
             // date = jsonObject.datecreated;
             // console.log(date);
            // alert(jsonObject.info);
-           document.location.reload(true);
+           location.reload();
         }
 
         catch(err)
