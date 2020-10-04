@@ -58,12 +58,11 @@ function addContact()
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
     //console.log(first + " " + last + " " + phone + " " + email + " " + cookie);
-   
-    
+
     try
     {
         request.send(jsonPayload);
-        var jsonObject = JSON.parse(request.responseText);
+        //var jsonObject = JSON.parse(request.responseText);
         // date = jsonObject.datecreated;
         // console.log(date);
        
@@ -71,7 +70,7 @@ function addContact()
 
     catch(err)
     {
-        alert(err.message);
+        //alert(err.message);
     }
     document.location.reload(true);
 } 
