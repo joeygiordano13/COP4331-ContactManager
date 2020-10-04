@@ -28,7 +28,7 @@ body{
 	padding: 10px;
   }
   
-  #cookieTable tr
+  #cookieTable2 tr
   {
 	border-bottom: 1px solid black;
   }
@@ -37,7 +37,7 @@ body{
 	background-color: #2ca8d4;
 	width: 100px;
   }
-  
+
 .buttons
 {
 	font-size: 30px;
