@@ -156,7 +156,7 @@ function deleteContact(data)
     var jsonPayload = JSON.stringify({userid : userID, contactid : contactId});
     //var jsonPayload = '{"userid" : "' + userID + '", "contactid" : "' + contactId + '"}';
     var request = new XMLHttpRequest();
-    request.open("POST", url, true);
+    request.open("POST", url, false);
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
     try
