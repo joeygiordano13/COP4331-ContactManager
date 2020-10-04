@@ -93,15 +93,13 @@ body{
 }
 
 #title
-{	
-	
-	text-align: left;
-	width: 100%;
-	border-radius: 25px;
+{
+	text-align: center;
+	display: inline;
 	background: #2ca8d4;
 	font-size: 35px;
 	font-family: 'Ubuntu', sans-serif;
-	color: black;
+	color: white;
 }
 .newContactsInformation
 {
