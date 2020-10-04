@@ -67,13 +67,14 @@ body{
 	position: center;
 	position: relative;
 }*/
+
 .tableContainer{
 	overflow: hidden;
 	float: 50%;
 	flex: 30%;
 	width: 100%;
 	position: center;
-	position: relative;
+	
 }
 
 /*#loginDiv
