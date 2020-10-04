@@ -60,23 +60,20 @@ function addContact()
     //console.log(first + " " + last + " " + phone + " " + email + " " + cookie);
    
     
-         try
-        {
-            request.send(jsonPayload);
-            var jsonObject = JSON.parse(request.responseText);
-            // date = jsonObject.datecreated;
-            // console.log(date);
-            alert(jsonObject.info);
-        }
+    try
+    {
+        request.send(jsonPayload);
+        var jsonObject = JSON.parse(request.responseText);
+        // date = jsonObject.datecreated;
+        // console.log(date);
+       
+    }
 
-        catch(err)
-        {
-            alert(err.message);
-        }
-    
-
+    catch(err)
+    {
+        alert(err.message);
+    }
     document.location.reload(true);
-   
 } 
 /*
 function addRow(data)
