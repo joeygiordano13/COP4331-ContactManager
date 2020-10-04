@@ -42,7 +42,7 @@
 		}
 		else
 		{
-			returnWithInfo($userid, $contactid, "Successfully Added Contact!");
+			//returnWithInfo($userid, $contactid, "Successfully Added Contact!");
 		}
 	}
 	$conn->close();
