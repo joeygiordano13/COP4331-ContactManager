@@ -34,6 +34,7 @@ body{
   
   #cookieTable tr.header, #cookieTable tr:hover {
 	background-color: #2ca8d4;
+	width: 100%;
   }
 .buttons
 {
