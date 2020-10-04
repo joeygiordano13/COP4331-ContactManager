@@ -12,6 +12,8 @@ body{
 #cookieTable, #cookieTable2{
 	display: block;
 	margin: 0 auto;
+	font-size: 18pt;
+	align-content: center;
 	font-family: 'Ubuntu', sans-serif;
 	margin-top: 30px;
 	margin-left: 100px;
