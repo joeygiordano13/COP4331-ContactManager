@@ -18,12 +18,14 @@ body{
 	border: 1px solid black;
 	font-size: 20px;
 	background-color: white;
+	right: 100%;
   }
   
   #cookieTable th, #cookieTable2 td 
   {
 	text-align: left;
-	width:100%;
+	width:120px;
+	padding: 10px;
   }
   
   #cookieTable tr, #cookieTable2 tr
@@ -33,6 +35,7 @@ body{
   
   #cookieTable tr.header, #cookieTable2 tr:hover {
 	background-color: #2ca8d4;
+	width: 100px;
   }
 
 .buttons
