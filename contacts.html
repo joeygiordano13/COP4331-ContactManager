@@ -37,8 +37,8 @@
                     <label for = "phone"><strong>Favorite Cookie:</strong></label>
                     <input type="text"  id="cookie" placeholder="'Chocolate Chip'" maxlength="50">
 
-                    <button type="button" class="buttons" onclick="clear(); closeWindow(); addContact(); buildTable();search();">Add Cookie</button>
-                    <button type="button" class="buttons" onclick="closeWindow();">Back</button>
+                    <button type="button" class="buttons" onclick="clear(); closeWindow(); addContact(); search();">Add Cookie</button>
+                    <button type="button" class="buttons" onclick="clear(); closeWindow();">Back</button>
                 </form>
             </div>
 
@@ -47,22 +47,22 @@
                     <h1>Update Cookies</h1>
 
                     <label for = "first"><strong>First Name:</strong></label>
-                    <input type="text"  id="newfirst"  maxlength="50" >
+                    <input type="text"  id="newfirst"  placeholder="'New First Name'"maxlength="50" >
                     
                     <label for = "last"><strong>Last Name:</strong></label>
-                    <input type="text"  id="newlast"  maxlength="50">
+                    <input type="text"  id="newlast" placeholder="'New Last Name'" maxlength="50">
                    
-                    <label for = "phone"><strong>Phone:</strong></label>
-                    <input type="text"  id="newphone"  maxlength="20">
-   
                     <label for = "email"><strong>Email:</strong></label>
-                    <input type="text"  id="newemail"  maxlength="50">
+                    <input type="text"  id="newemail" placeholder="'New Email'" maxlength="50">
 
+                    <label for = "phone"><strong>Phone:</strong></label>
+                    <input type="text"  id="newphone"  placeholder="'New Phone who dis'" maxlength="20">
+   
                     <label for = "phone"><strong>Favorite Cookie:</strong></label>
-                    <input type="text"  id="newcookie" maxlength="50">
+                    <input type="text"  id="newcookie" placeholder="'New Favortie Cookie'"maxlength="50">
 
-                    <button type="button" class="buttons" onclick="updateContact();clear();closeWindow1();">Update</button>
-                    <button type="button" class="buttons" onclick="closeWindow1();">Back</button>
+                    <button type="button" class="buttons" onclick=" clear();updateControl();search();">Update</button>
+                    <button type="button" class="buttons" onclick="clear();closeWindow1();">Back</button>
                 </form>
             </div>
             
@@ -85,11 +85,5 @@
             </table>
         </div>
     </div>   
-   <!-- <script>
-        
-     
-
-      
-    </script> -->
 </body>
 </html>

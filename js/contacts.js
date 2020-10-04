@@ -5,14 +5,13 @@ var field = "name";
 var order = "name";
 var userID = 0;
 var email = "";
+var data;
 //var date = "";
-var currentId;
-function editor(data)
-{
-    currentId = data;
-}
+var currentID;
+
 function updateContact()
 {
+    var contactID = currentID;
     var first = document.getElementById("newfirst").value;
     var last = document.getElementById("newlast").value;
     var phone = document.getElementById("newphone").value;
@@ -20,9 +19,10 @@ function updateContact()
     var cookie = document.getElementById("newcookie").value;
     //var date = document.getElementById("date").value;
 
-    var jsonPayload = JSON.stringify({userid : userID, contactid : contactId, firstname : first, lastname : last, email : email, phonenumber : phone, favoritecookie : cookie});
+    var jsonPayload = JSON.stringify({userid : userID, contactid : contactID, firstname : first, lastname : last, email : email, phonenumber : phone, favoritecookie : cookie});
     //var jsonPayload = '{"userid" : "' + userID + '", "contactid" : "' + contactId + '","firstname" : "' + first + '", "lastname" : "' + last + '", "email" : "' + email + '", "phonenumber" : "' + phone + '", "favoritecookie" : "' + cookie + '"}'
     var url = urlBase + '/EditContact' + urlExtension;
+
     var request = new XMLHttpRequest();
     request.open("POST", url, false);
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -30,12 +30,13 @@ function updateContact()
     try
     {
         request.send(jsonPayload);
-        location.reload();
+        
     }
     catch(err)
     {
         alert(err.message);
     }
+    document.location.reload(true);
 }
 
 function addContact()
@@ -56,7 +57,7 @@ function addContact()
     request.open("POST", url, false);
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-    console.log(first + " " + last + " " + phone + " " + email + " " + cookie);
+    //console.log(first + " " + last + " " + phone + " " + email + " " + cookie);
     if(first && last && phone && email && cookie)
     {
          try
@@ -130,9 +131,17 @@ function openWindow()
 {
     document.getElementById("addWindow").style.display = "block";   
 }
+
+
 function openWindow1()
-{
-    document.getElementById("updateWindow").style.display = "block";   
+{   
+    document.getElementById("updateWindow").style.display = "block"; 
+
+    //document.getElementById("newfirst").value = first;
+    //document.getElementById("newlast").value = last;
+    //document.getElementById("newemail").value = email;
+    //document.getElementById("newphone").value = phone;
+    //document.getElementById("newcookie").value = cookie;
 }
 function closeWindow1()
 {
@@ -149,7 +158,6 @@ function deleteContact(data)
     var request = new XMLHttpRequest();
     request.open("POST", url, true);
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-    
 
     try
     {
@@ -163,7 +171,7 @@ function deleteContact(data)
 
 function clear()
 {
-    document.getElementById("first").value = "";
+    document.getElementById("first").value = "random";
     document.getElementById("last").value = "";
     document.getElementById("phone").value = "";
     document.getElementById("email").value = "";
@@ -218,7 +226,9 @@ function readCookie()
         {
             email = tokens[1];
         }
-	}
+    }
+    
+	// document.getElementById("inputUsername").innerHTML = "Logged in as " + email;
     
     // Cookie expired.
 	if( userID < 0 )
@@ -231,8 +241,9 @@ function readCookie()
 	}
 }
 
-function buildTable(data)
-{
+function buildTable(jsonData)
+{   
+    data = jsonData;
     var table = document.getElementById('cookieTable2');
     let length = 0;
 
@@ -240,8 +251,15 @@ function buildTable(data)
     {
         length = data.length;
     }
+
     for(var i = 0; i < length; i++)
     {   
+        let fn = data[i].firstname;
+        let l = data[i].lastname;
+        let e = data[i].email;
+        let p = data[i].phonenumber;
+        let fc = data[i].favoritecookie;
+        //console.log(typeof `${data[i].firstname}` + "__" + fn);
         var row = `<tr>
             <td>${data[i].firstname}</td>
             <td>${data[i].lastname}</td>
@@ -249,20 +267,39 @@ function buildTable(data)
             <td>${data[i].phonenumber}</td>
             <td>${data[i].favoritecookie}</td>
             <td>${data[i].datecreated}</td>
-            <td><button type="edit";class="btn btnEdit" onclick="openWindow1();updateInfo()">Edit</button></td>
+            <td><button type="edit";class="btn btnEdit" onclick="editor(${data[i].contactid}, '${fn}', '${l}', '${e}', '${p}', '${fc}');">Edit</button></td>
             <td><button type="delete";class="btn btnDelete"; onclick="deleter(${data[i].contactid});">Delete</button></td>
             </tr>`
         table.innerHTML += row
     }
 }
-function deleter(buttonID)
+
+function editor(contactID, first, last, email, phone, cookie)
 {
-    var currentID = buttonID;
+    currentID = contactID;
+    //console.log("***" + first + "***");
+
+    document.getElementById("newfirst").value = first;
+    document.getElementById("newlast").value = last;
+    document.getElementById("newemail").value = email;
+    document.getElementById("newphone").value = phone;
+    document.getElementById("newcookie").value = cookie;
+
+    openWindow1();
+}
+
+function deleter(contactID)
+{
+    var currentID = contactID;
     if(confirm('Are you sure you want to delete?'))
         deleteContact(currentID);
     document.location.reload(true);
 }
 
+function updateControl()
+{
+    updateContact(currentID);
+}
 function doLogout()
 {
 	userId = 0;
@@ -289,4 +326,5 @@ function deleteUser()
             alert(err.message);
         }
     }
+    window.location.href = "index.html";
 }
