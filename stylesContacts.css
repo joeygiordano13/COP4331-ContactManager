@@ -68,10 +68,10 @@ body{
 	position: relative;
 }*/
 .tableContainer{
-	overflow: hidden;
+
 	float: 50%;
 	flex: 30%;
-	width: 70%;
+	width: 100%;
 	position: center;
 	position: relative;
 }
