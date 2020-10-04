@@ -21,7 +21,7 @@ body{
 	right: 100%;
   }
   
-  #cookieTable th, #cookieTable td 
+  #cookieTable th, #cookieTable2 td 
   {
 	text-align: left;
 	width:120px;
@@ -50,12 +50,7 @@ body{
 	right: 100%;
   }
   
-  #cookieTable td 
-  {
-	text-align: left;
-	width: 100px;
-	padding: 10px;
-  }
+ 
   
   #cookieTable2 tr 
   {
