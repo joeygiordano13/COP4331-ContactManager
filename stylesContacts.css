@@ -69,11 +69,9 @@ body{
 }*/
 
 .tableContainer{
-	overflow: hidden;
-	float: 50%;
-	flex: 30%;
-	width: 100%;
-	position: center;
+	display: block;
+	margin: 0 auto;
+	font-size: 18pt;
 	
 }
 
