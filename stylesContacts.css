@@ -55,7 +55,7 @@ body{
 	color: #FFFFFF;
 	opacity: 50%;
 }
-
+/*
 .foreground
 {
 	overflow: hidden;
@@ -66,7 +66,7 @@ body{
 	border-color: 3px solid blue;
 	position: center;
 	position: relative;
-}
+}*/
 .tableContainer{
 	overflow: hidden;
 	float: 50%;
