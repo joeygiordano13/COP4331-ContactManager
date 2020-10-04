@@ -78,7 +78,7 @@ body{
 
 #loginDiv
 {
-	
+	position: absolute;
 	font-size: 30px;
 	max-width: 300px;
 	margin: 20px;
