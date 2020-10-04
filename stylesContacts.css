@@ -91,6 +91,7 @@ body{
 
 #title
 {
+	text-align: center;
 	display: inline;
 	background: #2ca8d4;
 	margin-left: 100px;
