@@ -9,7 +9,7 @@ body{
 	padding: 0;
 }
 
-#cookieTable #cookieTable2{
+#cookieTable, #cookieTable2{
 	font-family: 'Ubuntu', sans-serif;
 	margin-top: 30px;
 	margin-left: 100px;
