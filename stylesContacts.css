@@ -28,7 +28,7 @@ body{
 	padding: 10px;
   }
   
-  #cookieTable tr 
+  #cookieTable tr
   {
 	border-bottom: 1px solid black;
   }
@@ -38,18 +38,6 @@ body{
 	width: 100px;
   }
   
- 
-  
-  #cookieTable2 tr 
-  {
-	border-bottom: 1px solid black;
-  }
-  
-  #cookieTable2 tr.header, #cookieTable2 tr:hover {
-	background-color: #2ca8d4;
-	width: 100px;
-  }
-
 .buttons
 {
 	font-size: 30px;
