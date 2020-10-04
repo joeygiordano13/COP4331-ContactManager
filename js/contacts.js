@@ -58,19 +58,22 @@ function addContact()
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
     //console.log(first + " " + last + " " + phone + " " + email + " " + cookie);
+   
+    
          try
         {
             request.send(jsonPayload);
             var jsonObject = JSON.parse(request.responseText);
             // date = jsonObject.datecreated;
             // console.log(date);
+            alert(jsonObject.info);
         }
 
         catch(err)
         {
             alert(err.message);
         }
-    }
+    
 
     document.location.reload(true);
    
