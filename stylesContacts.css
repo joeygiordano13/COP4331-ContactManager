@@ -35,33 +35,6 @@ body{
   #cookieTable tr.header, #cookieTable tr:hover {
 	background-color: #2ca8d4;
   }
-
-  #cookieTable2 {
-	font-family: 'Ubuntu', sans-serif;
-	margin-top: 30px;
-	margin-left: 100px;
-	border-collapse: collapse; 
-	width: 80%;
-	border: 1px solid black;
-	font-size: 20px;
-	background-color: white;
-	right: 100%;
-  }
-  
-  #cookieTable2th, #cookieTable2 td 
-  {
-	text-align: left;
-	padding: 40px;
-  }
-  
-  #cookieTable2 tr 
-  {
-	border-bottom: 1px solid black;
-  }
-  
-  #cookieTable2 tr.tablebox, #cookieTable2 tr:hover {
-	background-color: #2ca8d4;
-  }
 .buttons
 {
 	font-size: 30px;
