@@ -245,7 +245,7 @@ function readCookie()
 function buildTable(jsonData)
 {   
     data = jsonData;
-    var table = document.getElementById('cookieTable');
+    var table = document.getElementById('cookieTable2');
     let length = 0;
 
     if(data != null)
