@@ -79,7 +79,7 @@ function addContact()
     {
         document.getElementById("addError").innerHTML = "Please fill out fields";
     }
-    location.reload();
+    //location.reload();
     
 } 
 /*
