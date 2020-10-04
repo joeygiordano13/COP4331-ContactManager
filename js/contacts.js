@@ -168,6 +168,7 @@ function deleteContact(data)
     {
         alert(err.message);
     }
+    location.reload();
 }
 
 function clear()
@@ -294,7 +295,7 @@ function deleter(contactID)
     var currentID = contactID;
     if(confirm('Are you sure you want to delete?'))
         deleteContact(currentID);
-    location.reload();
+    
 }
 
 function updateControl()
