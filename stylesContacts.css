@@ -95,6 +95,7 @@ body{
 #title
 {
 	text-align: center;
+	width: 100%;
 	border-radius: 25px;
 	background: #2ca8d4;
 	font-size: 35px;
