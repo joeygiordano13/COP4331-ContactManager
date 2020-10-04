@@ -76,7 +76,7 @@ body{
 	position: relative;
 }
 
-#loginDiv
+/*#loginDiv
 {
 	position: relative;
 	font-size: 30px;
@@ -88,8 +88,9 @@ body{
 	display: block;
 	float: left;
 	
+	
 	font-family: 'Helvetica';
-}
+}*/
 
 #title
 {
