@@ -10,7 +10,7 @@ body{
 }
 
 #cookieTable, #cookieTable2{
-	
+	overflow: scroll;
 	align-content: center;
 	font-family: 'Ubuntu', sans-serif;
 	margin-top: 30px;
