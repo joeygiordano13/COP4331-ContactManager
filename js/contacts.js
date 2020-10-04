@@ -58,21 +58,28 @@ function addContact()
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
     //console.log(first + " " + last + " " + phone + " " + email + " " + cookie);
-
-    try
+    if(first && last && email && phone && cookie)
     {
-        request.send(jsonPayload);
-        //var jsonObject = JSON.parse(request.responseText);
-        // date = jsonObject.datecreated;
-        // console.log(date);
-       
+         try
+        {
+            request.send(jsonPayload);
+            var jsonObject = JSON.parse(request.responseText);
+            // date = jsonObject.datecreated;
+            // console.log(date);
+           // alert(jsonObject.info);
+        }
+
+        catch(err)
+        {
+           // alert(err.message);
+        }
     }
-
-    catch(err)
+    else
     {
-        //alert(err.message);
+        document.getElementById("addError").innerHTML = "Please fill out fields";
     }
     document.location.reload(true);
+   
 } 
 /*
 function addRow(data)
