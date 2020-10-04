@@ -28,12 +28,12 @@ body{
 	padding: 10px;
   }
   
-  #cookieTable2 tr
+  #cookieTable tr, #cookieTable2 tr
   {
 	border-bottom: 1px solid black;
   }
   
-  #cookieTable tr.header, #cookieTable tr:hover {
+  #cookieTable2 tr.header, #cookieTable2 tr:hover {
 	background-color: #2ca8d4;
 	width: 100px;
   }
