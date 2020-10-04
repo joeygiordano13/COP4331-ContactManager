@@ -58,15 +58,12 @@ function addContact()
     request.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
     //console.log(first + " " + last + " " + phone + " " + email + " " + cookie);
-    if(first && last && phone && email && cookie)
-    {
          try
         {
             request.send(jsonPayload);
             var jsonObject = JSON.parse(request.responseText);
             // date = jsonObject.datecreated;
             // console.log(date);
-            alert(jsonObject.info);
         }
 
         catch(err)
@@ -74,10 +71,7 @@ function addContact()
             alert(err.message);
         }
     }
-    else
-    {
-        document.getElementById("addError").innerHTML = "Please fill out fields";
-    }
+
     document.location.reload(true);
    
 } 
