@@ -36,7 +36,7 @@ function updateContact()
     {
         alert(err.message);
     }
-    document.location.reload(true);
+    location.reload();
 }
 
 function addContact()
@@ -294,7 +294,7 @@ function deleter(contactID)
     var currentID = contactID;
     if(confirm('Are you sure you want to delete?'))
         deleteContact(currentID);
-    document.location.reload(true);
+    location.reload();
 }
 
 function updateControl()
