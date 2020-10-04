@@ -24,7 +24,7 @@ body{
   #cookieTable th, #cookieTable td 
   {
 	text-align: left;
-	
+	width:120px;
 	padding: 10px;
   }
   
