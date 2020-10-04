@@ -7,9 +7,6 @@
 
     // must be logged in as correct userid.
     $userid = $inData["userid"];
-    // provide correct email and password.
-    $email = $inData["email"];
-    $password = $inData["password"];
 
     $conn = new mysqli('localhost', 'root', '8C@UnIoOwUK2k7gZl%N9Mi', 'cookiebook');
 
@@ -20,9 +17,8 @@
     else
     {
         // Check if email and password match.
-        $sql = "SELECT* FROM users WHERE email=$email AND password=$password AND userid=$userid";
+        $sql = "SELECT* FROM users WHERE userid=$userid";
         $result = $conn->query($sql);
-        //echo $sql;
 
 		if ($result->num_rows > 0)
         {
@@ -48,7 +44,7 @@
         }
         else
         {
-            returnWithError("Incorrect Credentials.");
+            returnWithError("Deletion Failed.");
         }
 	$conn->close();
     }
