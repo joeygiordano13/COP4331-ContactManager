@@ -41,6 +41,7 @@ body{
 
 .buttons
 {
+	padding: 25px 40px;
 	text-align-last: center;
 	display: inline-block;
 	font-size: 35px;
