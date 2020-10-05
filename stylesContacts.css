@@ -213,7 +213,7 @@ body{
 	animation:  fadeOut 3s;
 }
 
-@keyframes
+@keyframes fade-out
 {
 	from{
 		opacity: 1;
