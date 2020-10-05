@@ -19,6 +19,7 @@ body{
 	border: 1px solid black;
 	font-size: 23px;
 	background-color: white;
+	table-layout: fixed;
   }
   
   #cookieTable th, #cookieTable2 td 
