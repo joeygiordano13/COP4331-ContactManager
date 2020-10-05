@@ -199,10 +199,13 @@ body{
     align-items: center;
 }
 
-.fade-in
-{
-	animation: fade 6s;
-}
+.fade-in {
+	animation: fadeIn ease 10s;
+	-webkit-animation: fadeIn ease 10s;
+	-moz-animation: fadeIn ease 10s;
+	-o-animation: fadeIn ease 10s;
+	-ms-animation: fadeIn ease 10s;
+  }
 @keyframes fade-in
 {
 	from{
@@ -221,10 +224,13 @@ body{
 		opacity: 1;
 	}
 }
-.fade-out
-{
-	animation:  fadeOut 3s;
-}
+.fade-out {
+	animation: fadeOut ease 8s;
+	-webkit-animation: fadeOut ease 8s;
+	-moz-animation: fadeOut ease 8s;
+	-o-animation: fadeOut ease 8s;
+	-ms-animation: fadeOut ease 8s;
+  }
 
 @keyframes fade-out
 {
