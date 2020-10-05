@@ -58,18 +58,12 @@ body{
 	color: #FFFFFF;
 	opacity: 50%;
 }
-/*
+
 .foreground
 {
-	overflow: hidden;
-	flex: 50%;
-	width: 60%;
-	height: 82.5%;
-	display: inline-block;
-	border-color: 3px solid blue;
-	position: center;
-	position: relative;
-}*/
+	margin-left: auto;
+	margin-right: auto;
+}
 
 .tableContainer{
 	margin-left: auto;
