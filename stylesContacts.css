@@ -162,7 +162,7 @@ body{
 
   /* Add styles to the form container */
 .form-container {
-	max-width: 900px;
+	max-width: 800px;
 	background-color: white;
 	font-size: 25px;
 	text-align: center;
