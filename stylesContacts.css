@@ -38,7 +38,7 @@ body{
 	width: 100px;
 	
   }
-  #cookieTable2 tr:nth-child(even)
+  #cookieTable2 td:nth-child(even)
   {
 	  background-color: #878787;
   }
