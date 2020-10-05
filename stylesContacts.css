@@ -196,7 +196,7 @@ body{
 
 #fade-in
 {
-	animation: : fadeIn 6s;
+	animation: fadeIn 6s;
 }
 
 @keyframes fade-in
