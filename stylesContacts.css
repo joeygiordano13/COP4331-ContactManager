@@ -202,7 +202,7 @@ body{
 	animation: fade 6s;
 }
 
-@keyframes fade-in
+@-webkit-keyframes fade-in
 {
 	from{
 		opacity: 0;
@@ -216,7 +216,7 @@ body{
 	animation:  fadeOut 3s;
 }
 
-@keyframes fade-out
+@-webkit-keyframes fade-out
 {
 	from{
 		opacity: 1;
