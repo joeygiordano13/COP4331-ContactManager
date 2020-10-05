@@ -1,6 +1,6 @@
-html{
+/*html{
 	cursor: url("../images/cookiecursor.cur"),auto;
-}
+}*/
 
 body{
 	background-image: url("../images/cookieBackground.jpg");
@@ -49,7 +49,8 @@ body{
 	border-radius: 50px;
 	font-family: 'Ubuntu', sans-serif;
 	background-color: #2ca8d4;
-	opacity: 100%
+	opacity: 100%;
+	cursor: pointer;
 }
 
 .buttons:hover
@@ -179,7 +180,7 @@ body{
 	font-size: 25px;
 	
   }
-  
+
 #addError
 {
 	width: 50%;
