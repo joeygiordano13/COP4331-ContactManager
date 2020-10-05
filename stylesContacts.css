@@ -253,6 +253,7 @@ body{
 
 #addError
 {
+	width:50%;
 	font-size: 30px;
 	background: #2ca8d4;
 }
