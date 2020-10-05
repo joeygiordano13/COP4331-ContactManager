@@ -90,7 +90,8 @@ body{
 
 }
 #title
-{
+{	margin-right:auto;
+	margin-left: auto;
 	text-align: center;
 	width: 50%;
 	background: #2ca8d4;
