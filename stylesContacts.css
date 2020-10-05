@@ -168,8 +168,7 @@ body{
 	background-color: black;
 	font-size: 20px;
 	text-align: center;
-	-webkit-animation: fadein 5s;
-	animation: fadein 5s;
+	
   }
   
   /* Full-width input fields */
