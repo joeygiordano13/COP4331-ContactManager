@@ -254,7 +254,7 @@ body{
 #addError
 {
 	text-align: center;
-	width:50%;
+	width:auto;
 	font-size: 30px;
 	background: #2ca8d4;
 }
