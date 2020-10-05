@@ -288,7 +288,7 @@ function editor(contactID, first, last, email, phone, cookie)
     document.getElementById("newcookie").value = cookie;
 
     openWindow1();
-    closeWindow();
+    
 }
 
 function deleter(contactID)
