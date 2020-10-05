@@ -39,7 +39,7 @@ body{
 	width: 100px;
   }
 
-.buttons
+.button1
 {
 	width: 20%;
 	
@@ -52,7 +52,7 @@ body{
 	opacity: 100%
 }
 
-.buttons:hover
+.buttons1hover
 {
 	background-color: #2ca8d4;
 	color: #FFFFFF;
