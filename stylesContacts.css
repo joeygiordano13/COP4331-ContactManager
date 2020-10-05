@@ -39,7 +39,7 @@ body{
 	width: 100px;
   }
 
-.button1
+.buttons
 {
 	width: 20%;
 	text-align-last: center;
@@ -50,7 +50,7 @@ body{
 	opacity: 100%
 }
 
-.buttons1:hover
+.buttons :hover
 {
 	background-color: #2ca8d4;
 	color: #FFFFFF;
