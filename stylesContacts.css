@@ -157,6 +157,8 @@ body{
 	position: fixed;
 	margin-left: 25%;
 	border: 3px solid black;
+	-webkit-animation: fadein 5s;
+	animation: fadein 5s;
   }
 
   /* Add styles to the form container */
