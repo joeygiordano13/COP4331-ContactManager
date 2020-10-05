@@ -76,7 +76,10 @@ body{
 	margin-right: auto;
 	
 }
-
+.buttonCreate
+{
+	margin-left: 10px;
+}
 #title
 {
 	text-align: center;
