@@ -78,7 +78,8 @@ body{
 }
 #createButton
 {
-	margin-left: 300px;
+	margin-left: auto;
+	margin-right: auto;
 }
 .logoutButton
 {
