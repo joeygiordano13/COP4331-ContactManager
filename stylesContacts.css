@@ -163,22 +163,22 @@ body{
   }
 
   /* Add styles to the form container */
-.form-container {
+.form-container 
+{
 	max-width: 800px;
 	background-color: black;
 	font-size: 20px;
 	text-align: left;
-	
-  }
+}
   
   /* Full-width input fields */
-  .form-container input[type=text], .form-container input[type=password] {
+  .form-container input[type=text], .form-container input[type=password] 
+  {
 	width: 900%;
 	margin: 20px 0;
 	border:1px solid black;
-	background: #f1f1f1;
+	background: black;
 	font-size: 25px;
-	
   }
 
 #addError
