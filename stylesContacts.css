@@ -41,10 +41,12 @@ body{
 
 .buttons
 {
+	margin-right: auto;
+	margin-left: auto;
 	padding:20px,50px;
 	font-size: 30px;
 	border-radius: 25px;
-	
+	width: 100%;
 	font-family: 'Ubuntu', sans-serif;
 	background-color: #2ca8d4;
 	opacity: 100%
