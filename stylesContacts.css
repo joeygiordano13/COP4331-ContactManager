@@ -145,8 +145,6 @@ body{
 
 /* The popup form - hidden by default */
 .contactWindow {
-	display: none;
-	
 	border: 3px solid black;
   }
 
