@@ -166,10 +166,11 @@ body{
 .form-container 
 {
 	max-width: 800px;
-	background-color: black;
+	background-color: blue;
 	font-size: 20px;
 	text-align: left;
-}
+	
+  }
   
   /* Full-width input fields */
   .form-container input[type=text], .form-container input[type=password] 
@@ -177,7 +178,7 @@ body{
 	width: 900%;
 	margin: 20px 0;
 	border:1px solid black;
-	background: black;
+	background: #f1f1f1;
 	font-size: 25px;
   }
 
