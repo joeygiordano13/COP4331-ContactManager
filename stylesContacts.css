@@ -42,7 +42,7 @@ body{
 .buttons
 {
 	width: 20%;
-	padding: 5px 20px;
+	
 	text-align-last: center;
 	display: inline-block;
 	font-size: 35px;
@@ -87,7 +87,7 @@ body{
 
 .deleteButton
 {
-	
+
 }
 #title
 {
