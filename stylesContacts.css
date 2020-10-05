@@ -76,9 +76,18 @@ body{
 	margin-right: auto;
 	
 }
-.buttonCreate
+.createButton
 {
 	margin-left: 10px;
+}
+.logoutButton
+{
+
+}
+
+.deleteButton
+{
+	
 }
 #title
 {
