@@ -156,7 +156,7 @@ body{
 	display: none;
 	position: fixed;
 	margin-left: 25%;
-
+	margin-bottom: 25%;
 	border: 3px solid black;
   }
 
@@ -172,7 +172,7 @@ body{
   
   /* Full-width input fields */
   .form-container input[type=text], .form-container input[type=password] {
-	width: 900%;
+	width: 100%;
 	margin: 20px 0;
 	border:1px solid black;
 	background: #f1f1f1;
