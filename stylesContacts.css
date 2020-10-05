@@ -163,9 +163,7 @@ body{
 
   /* Add styles to the form container */
 .form-container {
-	margin-top: 50px;
 	max-width: 900px;
-	padding: 10px;
 	background-color: white;
 	font-size: 25px;
 	text-align: center;
