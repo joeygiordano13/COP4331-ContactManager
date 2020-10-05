@@ -1,6 +1,6 @@
-/*html{
-	cursor: url("../images/cookiecursor.cur"), auto;
-}*/
+html{
+	cursor: url("../images/cookiecursor.cur");
+}
 
 body{
 	background-image: url("../images/cookieBackground.jpg");
