@@ -41,8 +41,10 @@ body{
 
 .buttons
 {
-
+	text-align-last: center;
+	display: inline-block;
 	font-size: 35px;
+	cursor: pointer;
 	border-radius: 50px;
 	font-family: 'Ubuntu', sans-serif;
 	background-color: #2ca8d4;
