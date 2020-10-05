@@ -143,14 +143,6 @@ body{
 	font-size: 18pt;
 }
 
-.contactmonsters
-{
-	margin-top: 200px;
-	float: left;
-	width: 0px;
-	height: auto;
-}
-
 /* The popup form - hidden by default */
 .contactWindow {
 	display: none;
