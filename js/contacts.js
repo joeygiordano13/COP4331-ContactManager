@@ -79,7 +79,7 @@ function addContact()
     }
     else
     {
-        document.getElementById("addError").innerHTML = "Please fill out fields";
+        document.getElementById("addError").innerHTML = "Please fill out empty fields";
     }
     
     
