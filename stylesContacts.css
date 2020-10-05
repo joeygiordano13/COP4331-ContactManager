@@ -8,10 +8,10 @@ body{
 	background-size: 100%;
 	padding: 0;
 }
-.scroll::-webkit-scrollbar{
+#cookieTable::-webkit-scrollbar, #cookieTable2::-webkit-scrollbar{
 	display: none;
 }
-.scroll{
+#cookieTable, #cookieTable2{
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }
