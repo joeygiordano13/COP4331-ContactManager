@@ -23,6 +23,7 @@ body{
   
   #cookieTable th, #cookieTable2 td 
   {
+	overflow: scroll;
 	text-align: auto;
 	padding: 10px;
   }
