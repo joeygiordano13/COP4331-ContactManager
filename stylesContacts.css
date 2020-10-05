@@ -58,11 +58,18 @@ body{
 	color: #FFFFFF;
 	opacity: 50%;
 }
-
+/*
 .foreground
 {
-	top:20%
-}
+	overflow: hidden;
+	flex: 50%;
+	width: 60%;
+	height: 82.5%;
+	display: inline-block;
+	border-color: 3px solid blue;
+	position: center;
+	position: relative;
+}*/
 
 .tableContainer{
 	margin-left: auto;
@@ -70,7 +77,7 @@ body{
 	
 }
 
-/*#loginDiv
+#loginDiv
 {
 	position: relative;
 	font-size: 30px;
@@ -84,7 +91,7 @@ body{
 	
 	
 	font-family: 'Helvetica';
-}*/
+}
 
 #title
 {
