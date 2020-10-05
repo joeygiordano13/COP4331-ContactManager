@@ -11,57 +11,58 @@
 <body onload="readCookie();search();">
   
         <h1 id="title">Cookie Book Contacts</h1>
+        <div class ="contactWindow" id="addWindow">
+            <form class="form-container">
+                <h1>Add Cookies</h1>
+                <p id="addError"></p>
+                <label for = "first"><strong>First Name:</strong></label>
+                <input type="text"  id="first" placeholder="'JohnCookie'" maxlength="50" >
                 
+                <label for = "last"><strong>Last Name:</strong></label>
+                <input type="text"  id="last" placeholder="'CookieSmith'" maxlength="50">
+               
+                <label for = "email"><strong>Email:</strong></label>
+                <input type="text"  id="email" placeholder="'cookies@more.please'" maxlength="50">
+
+                <label for = "phone"><strong>Phone:</strong></label>
+                <input type="text"  id="phone" placeholder="'xxx-xxx-xxxx'" maxlength="20">
+
+                <label for = "phone"><strong>Favorite Cookie:</strong></label>
+                <input type="text"  id="cookie" placeholder="'Chocolate Chip'" maxlength="50">
+
+                <button type="button" class="buttons" onclick="clear();  addContact();">Add</button>
+                <button type="button" class="buttons" onclick="clear(); closeWindow();">Cancel</button>
+            </form>
+        </div>
+        <div class ="contactWindow" id="updateWindow">
+            <form class="form-container">
+                <h1>Update Cookies</h1>
+
+                <label for = "first"><strong>First Name:</strong></label>
+                <input type="text"  id="newfirst"  placeholder="'New First Name'"maxlength="50" >
+                
+                <label for = "last"><strong>Last Name:</strong></label>
+                <input type="text"  id="newlast" placeholder="'New Last Name'" maxlength="50">
+               
+                <label for = "email"><strong>Email:</strong></label>
+                <input type="text"  id="newemail" placeholder="'New Email'" maxlength="50">
+
+                <label for = "phone"><strong>Phone:</strong></label>
+                <input type="text"  id="newphone"  placeholder="'New Phone who dis'" maxlength="20">
+
+                <label for = "phone"><strong>Favorite Cookie:</strong></label>
+                <input type="text"  id="newcookie" placeholder="'New Favortie Cookie'"maxlength="50">
+
+                <button type="button" class="buttons" id="update" onclick=" clear();updateControl();search();">Update</button>
+                <button type="button" class="buttons" id="back" onclick="clear();closeWindow1();">Cancel</button>
+            </form>
+        </div>
                     <button type="button" class="buttons" id="createButton" onclick="openWindow();">Create New Contact</button>
                     <button type="button" class="buttons" id="logoutButton"  onclick="doLogout();">Logout</button>
                     
-            <div class ="contactWindow" id="addWindow">
-                <form class="form-container">
-                    <h1>Add Cookies</h1>
-                    <p id="addError"></p>
-                    <label for = "first"><strong>First Name:</strong></label>
-                    <input type="text"  id="first" placeholder="'JohnCookie'" maxlength="50" >
-                    
-                    <label for = "last"><strong>Last Name:</strong></label>
-                    <input type="text"  id="last" placeholder="'CookieSmith'" maxlength="50">
-                   
-                    <label for = "email"><strong>Email:</strong></label>
-                    <input type="text"  id="email" placeholder="'cookies@more.please'" maxlength="50">
+            
 
-                    <label for = "phone"><strong>Phone:</strong></label>
-                    <input type="text"  id="phone" placeholder="'xxx-xxx-xxxx'" maxlength="20">
-
-                    <label for = "phone"><strong>Favorite Cookie:</strong></label>
-                    <input type="text"  id="cookie" placeholder="'Chocolate Chip'" maxlength="50">
-
-                    <button type="button" class="buttons" onclick="clear();  addContact();">Add</button>
-                    <button type="button" class="buttons" onclick="clear(); closeWindow();">Cancel</button>
-                </form>
-            </div>
-
-            <div class ="contactWindow" id="updateWindow">
-                <form class="form-container">
-                    <h1>Update Cookies</h1>
-
-                    <label for = "first"><strong>First Name:</strong></label>
-                    <input type="text"  id="newfirst"  placeholder="'New First Name'"maxlength="50" >
-                    
-                    <label for = "last"><strong>Last Name:</strong></label>
-                    <input type="text"  id="newlast" placeholder="'New Last Name'" maxlength="50">
-                   
-                    <label for = "email"><strong>Email:</strong></label>
-                    <input type="text"  id="newemail" placeholder="'New Email'" maxlength="50">
-
-                    <label for = "phone"><strong>Phone:</strong></label>
-                    <input type="text"  id="newphone"  placeholder="'New Phone who dis'" maxlength="20">
-   
-                    <label for = "phone"><strong>Favorite Cookie:</strong></label>
-                    <input type="text"  id="newcookie" placeholder="'New Favortie Cookie'"maxlength="50">
-
-                    <button type="button" class="buttons" id="update" onclick=" clear();updateControl();search();">Update</button>
-                    <button type="button" class="buttons" id="back" onclick="clear();closeWindow1();">Cancel</button>
-                </form>
-            </div>
+           
             
             <input type="text" name="search" id="search" placeholder="Search in here" onkeyup="clearTable();search();" size="50px">
             <!--<button type="button" onclick="search();">Search</button> -->
