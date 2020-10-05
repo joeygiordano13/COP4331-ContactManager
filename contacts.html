@@ -10,12 +10,13 @@
 
 <body onload="readCookie();search();">
   
-        <h1 id="title">Cookie Book Contacts</h1>
+        <h1 id="title">Cookie Book Contacts
+            <button type="button" class="buttons" id="logoutButton"  onclick="doLogout();">Logout</button>
+        </h1>
                 
                     <button type="button" class="buttons" id="createButton" onclick="openWindow();">Create New Contact</button>
-                    <button type="button" class="buttons" id="logoutButton"  onclick="doLogout();">Logout</button>
+                  
                     
-               
             <div class ="contactWindow" id="addWindow" onload="document.body.style.opacity=">
                 <form class="form-container">
                     <h1>Add Cookies</h1>
@@ -75,7 +76,7 @@
                     <th>Email</th>
                     <th>Phone Number</th>
                     <th>Favorite Cookie</th>
-                    <th>Date Updated</th>
+                    <th>Date Created</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
