@@ -58,7 +58,7 @@ body{
 	background-color: #2ca8d4;
 	color: #FFFFFF;
 	opacity: 50%;
-	cursor: pointer;
+	
 }
 /*
 .foreground
@@ -153,19 +153,19 @@ body{
 	height: auto;
 }
 
-/* The popup form - hidden by default 
+/* The popup form - hidden by default */
 .contactWindow {
 	display: none;
 	position: fixed;
 	margin-left: 25%;
 
 	border: 3px solid black;
-  }*/
+  }
 
   /* Add styles to the form container */
 .form-container {
 	max-width: 800px;
-	background-color: white;
+	background-color: black;
 	font-size: 20px;
 	text-align: center;
 	-webkit-animation: fadein 5s;
