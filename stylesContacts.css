@@ -10,8 +10,8 @@ body{
 }
 
 #cookieTable, #cookieTable2{
-	overflow: scroll;
-	position: relative;
+	overflow: hidden;
+	
 	font-family: 'Ubuntu', sans-serif;
 	margin-top: 30px;
 	margin-left: 100px;
@@ -25,7 +25,7 @@ body{
   
   #cookieTable th, #cookieTable2 td 
   {
-	overflow: scroll;
+	overflow: hidden;
 	position:relative;
 	text-align: center;
 	padding: 10px;
