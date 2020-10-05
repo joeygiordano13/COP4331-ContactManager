@@ -1,6 +1,6 @@
-/*html{
+html{
 	cursor: url("../images/cookiecursor.cur"),auto;
-}*/
+}
 
 body{
 	background-image: url("../images/cookieBackground.jpg");
@@ -49,8 +49,7 @@ body{
 	border-radius: 50px;
 	font-family: 'Ubuntu', sans-serif;
 	background-color: #2ca8d4;
-	opacity: 100%;
-	
+	opacity: 100%
 }
 
 .buttons:hover
@@ -58,7 +57,6 @@ body{
 	background-color: #2ca8d4;
 	color: #FFFFFF;
 	opacity: 50%;
-	
 }
 /*
 .foreground
@@ -163,23 +161,23 @@ body{
   }
 
   /* Add styles to the form container */
-.form-container 
-{
+.form-container {
 	max-width: 800px;
-	background-color: blue;
+	background-color: white;
 	font-size: 20px;
-	text-align: left;
-	
+	text-align: center;
+	-webkit-animation: fadein 5s;
+	animation: fadein 5s;
   }
   
   /* Full-width input fields */
-  .form-container input[type=text], .form-container input[type=password] 
-  {
+  .form-container input[type=text], .form-container input[type=password] {
 	width: 900%;
 	margin: 20px 0;
 	border:1px solid black;
 	background: #f1f1f1;
 	font-size: 25px;
+	
   }
 
 #addError
