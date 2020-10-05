@@ -67,6 +67,7 @@ function addContact()
             // date = jsonObject.datecreated;
             // console.log(date);
            // alert(jsonObject.info);
+           location.reload();
            
         }
 
@@ -74,12 +75,13 @@ function addContact()
         {
            // alert(err.message);
         }
+        
     }
     else
     {
         document.getElementById("addError").innerHTML = "Please fill out fields";
     }
-    location.reload();
+    
     
 } 
 /*
