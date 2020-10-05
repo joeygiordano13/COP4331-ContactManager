@@ -50,7 +50,7 @@ body{
 	opacity: 100%
 }
 
-.buttons1 :hover
+.buttons1:hover
 {
 	background-color: #2ca8d4;
 	color: #FFFFFF;
@@ -76,7 +76,7 @@ body{
 	margin-right: auto;
 	
 }
-.createButton
+#createButton
 {
 	margin-left: 50px;
 }
