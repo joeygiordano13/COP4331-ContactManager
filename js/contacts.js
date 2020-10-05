@@ -263,9 +263,9 @@ function buildTable(jsonData)
         let fc = data[i].favoritecookie;
         //console.log(typeof `${data[i].firstname}` + "__" + fn);
         var row = `<tr>
-            <td width="50%">${data[i].firstname}</td>
-            <td width="75%">${data[i].lastname}</td>
-            <td width="50%">${data[i].email}</td>
+            <td>${data[i].firstname}</td>
+            <td>${data[i].lastname}</td>
+            <td>${data[i].email}</td>
             <td>${data[i].phonenumber}</td>
             <td>${data[i].favoritecookie}</td>
             <td>${data[i].datecreated}</td>
