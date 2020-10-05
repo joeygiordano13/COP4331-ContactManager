@@ -156,6 +156,7 @@ body{
 	display: none;
 	position: fixed;
 	margin-left: 25%;
+	margin-bottom: 25%;
 	border: 3px solid black;
 	
   }
@@ -163,7 +164,6 @@ body{
   /* Add styles to the form container */
 .form-container {
 	max-width: 800px;
-	margin-bottom: 25%;
 	background-color: white;
 	font-size: 25px;
 	text-align: center;
