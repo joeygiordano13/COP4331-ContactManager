@@ -8,9 +8,15 @@ body{
 	background-size: 100%;
 	padding: 0;
 }
-
+.scroll::-webkit-scrollbar{
+	display: none;
+}
+.scroll{
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
 #cookieTable, #cookieTable2{
-	overflow: hidden;
+	overflow: scroll;
 	
 	font-family: 'Ubuntu', sans-serif;
 	margin-top: 30px;
@@ -25,7 +31,7 @@ body{
   
   #cookieTable th, #cookieTable2 td 
   {
-	overflow: hidden;
+	overflow: scroll;
 	position:relative;
 	text-align: center;
 	padding: 10px;

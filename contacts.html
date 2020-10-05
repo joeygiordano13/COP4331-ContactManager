@@ -58,18 +58,15 @@
                 <button type="button" class="buttons" id="back" onclick="clear();closeWindow1();">Cancel</button>
             </form>
         </div>
-                    <button type="button" class="buttons" id="createButton" onclick="openWindow();">Add Contact</button>
-                    <button type="button" class="buttons" id="logoutButton"  onclick="doLogout();">Logout</button>
-                    
-            
 
-           
-            
-            <input type="text" name="search" id="search" placeholder="Search in here" onkeyup="clearTable();search();" size="50px">
-            <!--<button type="button" onclick="search();">Search</button> -->
+        <button type="button" class="buttons" id="createButton" onclick="openWindow();">Add Contact</button>
+        <button type="button" class="buttons" id="logoutButton"  onclick="doLogout();">Logout</button>
+                    
+        <input type="text" name="search" id="search" placeholder="Search in here" onkeyup="clearTable();search();" size="50px">
+        <!--<button type="button" onclick="search();">Search</button> -->
 
         <div class = "tableContainer">
-            <table valign="top"; id="cookieTable">
+            <table valign="top"; id="cookieTable" class="scroll">
                 <tr class = "header">
                     <th>First Name</th>
                     <th>Last Name</th>
