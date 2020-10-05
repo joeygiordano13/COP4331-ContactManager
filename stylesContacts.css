@@ -155,6 +155,7 @@ body{
 .contactWindow {
 	display: none;
 	position: fixed;
+	margin-top: 25%;
 	margin-left: 25%;
 	border: 3px solid black;
 	-webkit-animation: fadein 5s;
