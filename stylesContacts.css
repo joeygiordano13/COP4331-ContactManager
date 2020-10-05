@@ -147,14 +147,14 @@ body{
 .contactWindow {
 	display: none;
 	position: fixed;
-	
+	margin-left: 40%;
 	border: 3px solid black;
 
   }
 
   /* Add styles to the form container */
 .form-container {
-	max-width: 50%;
+	max-width: 25%;
 	padding: 10px;
 	background-color: white;
 	font-size: 25px;
