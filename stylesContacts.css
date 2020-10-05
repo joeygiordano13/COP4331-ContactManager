@@ -154,7 +154,7 @@ body{
 
   /* Add styles to the form container */
 .form-container {
-	max-width: 300px;
+	max-width: 50%;
 	padding: 10px;
 	background-color: white;
 	font-size: 25px;
