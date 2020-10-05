@@ -156,13 +156,9 @@ body{
 	display: none;
 	position: fixed;
 	margin-left: 25%;
-	margin-bottom: 25%;
+
 	border: 3px solid black;
   }
-
-#addWindow{
-	margin-top: 50px;
-}
 
   /* Add styles to the form container */
 .form-container {
@@ -184,25 +180,6 @@ body{
 	
   }
  
-.bubble
-{
-    position: aboslute;
-    top: 15vh;
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px #000;
-}
-
-.vertical-center
-{
-    min-height: 100%;
-    min-height: 100vh;
-  
-    display: flex;
-    align-items: center;
-}
-
 .fade-in {
 	animation: fadeIn ease 10s;
 	-webkit-animation: fadeIn ease 10s;
