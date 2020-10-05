@@ -24,7 +24,7 @@ body{
   
   #cookieTable th, #cookieTable2 td 
   {
-	overflow: hidden;
+	overflow: scroll;
 	text-align: center;
 	padding: 10px;
   }
